@@ -1,0 +1,203 @@
+import java.io.*;
+import java.util.*;
+
+import Tree.Expression.DataType.IntNode;
+import Tree.Expression.LiteralNodes.LiteralChar;
+import Tree.Expression.LiteralNodes.LiteralString;
+import java_cup.runtime.*;
+import java.util.*;
+import Tree.Expression.*;
+
+import Tree.BinaryOperator.*;
+import Tree.Sentences.Bucles.WhileNode;
+import Tree.Sentences.Declaration.AssignationNode;
+import Tree.Expression.BaseType.ExpressionNode;
+import java_cup.runtime.XMLElement;
+import Tree.Expression.DataType.IdNode;
+
+terminal    SEMI, PLUS, MINUS, TIMES, EQUALS , GREATERTHAN, LESSTHAN, LESSOREQUALTHAN,
+            GREATEROREQUALTHAN, NOTEQUALS, MOD, DIVIDE, ASSIGNATION , COMMA, VAR,MODOP, OR,AND, OROP, ANDOP,EQUALSEQUALS; //Operators
+
+terminal    IF, ELSE, WHILE, FOR, REPEAT, READ, WRITE; //Conditionals and bucles
+
+
+terminal      STRING , INTEGER ,BOOLEAN ,CHAR, FLOAT;//Types
+
+terminal   FUNCTION , BEGIN, END, CONSTSTR, CONSTCHAR, THEN, DO, CONTINUE, BREAK, TO, GOTO, UNTIL, PROCEDURE, DIV;// reserver words
+
+terminal   LPARENT, LCURLY,RCURLY, LPAREN, RPAREN, LBRACE, RBRACE, COLON, COMMENT, DOT;  //Especial Quotes
+
+terminal   PROGRAM;
+
+terminal  char LITRCHAR;
+
+terminal String ID, LITSTRING;
+
+terminal Integer NUMBER;
+
+terminal String lit_string;
+
+non terminal List<SentencesNode> ListOfSentences, BeginProgram ;
+
+non terminal  SentencesNode SentencesIf, SentencesElse,SentencesWhile, SentencesFor, SentencesRepeat,SetencesRead, SentencesWrite, SentencesConst,FunctionDeclaration, ProcedureDeclaretion, AssigmentOrFunctionCall, SentencesComment, SentencesDeclaration, Comments,ListOfSpecialSentences, ProcedureDeclaration ,CallFunctionOrAssignment, CallOrAssig ,Sentences; //Sentences
+
+non terminal  OptionalList, ListId, Types, Params, OptionParam, Block, LoopBucle, SentencesBucle ,SpecialSentences ,CallFunction,OptionalCallFunction ; //Support statement
+
+non terminal  MultiplicativeOperators,ExpressionUnary,ExpressionMulPrime,RelationalExpression, ExpressionAddicion, RelationalExpressionPrime,RelationalOperators , ExpressionAddicionPrime, ExpressionMul, ExpressionAdicion, AdditiveOperators;//Expression Production
+
+non terminal ExpressionNode expr ,sumfactor ,factor ,term,Assigment ;
+
+
+
+   BeginProgram ::= PROGRAM ID SEMI ListOfSentences:ls
+   {:RESULT =ls; :};
+
+
+    ListOfSentences ::=  ListOfSentences:ls Sentences:st  {: ls.add(st); RESULT = ls;:}
+                   |{: List<SentencesNode> nodeList = new ArrayList<SentencesNode>(); RESULT = nodeList; :} ;
+
+    Sentences ::=  SentencesDeclaration :r {:RESULT = r; :}|
+                   FunctionDeclaration : fd {:RESULT = fd;:} |
+                   SentencesIf :sif {:RESULT =sif; :} |
+                    SentencesWhile:sw{:RESULT =sw; :} |
+                    SentencesFor: sf {:RESULT =sf;:} |
+                    SentencesRepeat: sr{:RESULT =sr;:} |
+                    SentencesComment |
+                    ProcedureDeclaration: pd{:RESULT =pd; :} |
+                    CallFunctionOrAssignment :cf {:RESULT=cf;:}  ;
+//ID CallFunction SEMI |
+    CallFunctionOrAssignment ::= ID:id Assigment:e SEMI{:RESULT = new AssignationNode(id,e); :};
+
+    CallFunction ::= LPAREN ListId RPAREN  ;
+
+    Assigment ::= ASSIGNATION expr:e {: RESULT = e;:} ;
+
+    ProcedureDeclaration ::= PROCEDURE ID Params  SEMI LoopBucle;
+                //  |Comments
+
+     SentencesComment ::= COMMENT;
+     SentencesRepeat ::= REPEAT LoopBucle UNTIL expr SEMI;
+
+    SentencesFor ::= FOR ID  ASSIGNATION expr TO expr DO LoopBucle;
+
+   ListOfSpecialSentences ::= SentencesBucle ListOfSpecialSentences|;
+
+
+   SentencesWhile ::=  WHILE expr DO LoopBucle;
+
+
+    LoopBucle ::= SentencesBucle |
+                  BEGIN  ListOfSpecialSentences END SEMI;
+
+    SentencesBucle ::= CONTINUE SEMI |
+                        BREAK SEMI|
+                        SentencesDeclaration |
+                        SentencesIf |
+                       SentencesWhile |
+                        SentencesFor |
+                        SentencesRepeat |
+                        SentencesComment |
+                        CallFunctionOrAssignment SEMI;
+            //Error si intento ponerle un epsilon
+
+    SentencesIf ::= IF expr THEN Block ;
+
+     Block ::= Sentences |
+      BEGIN ListOfSentences END DOT SentencesElse;
+
+    SentencesElse ::= ELSE  Block |;
+
+  expr      ::= expr:e GREATERTHAN sumfactor:f
+                  {:RESULT = new GreaterThanNode(f,e);:}
+
+                | expr:e LESSTHAN sumfactor:f
+                   {:RESULT = new LessThanNode(f,e);:}
+
+                | expr:e GREATEROREQUALTHAN sumfactor:f
+                    {:RESULT = new GreatherOrEqualThanNode(f,e);:}
+
+                | expr:e LESSOREQUALTHAN sumfactor:f
+                  {:RESULT = new LessThanNode(f,e);:}
+
+                | expr:e EQUALSEQUALS sumfactor:f
+                 {:RESULT = new EqualsNode(f,e);:}
+
+                | expr:e NOTEQUALS sumfactor:f
+                 {:RESULT = new NotEqualsNode(f,e);:}
+
+                | expr:e OROP sumfactor:f
+                   {: RESULT = new OrOpNode(f,e);:}
+
+                    | expr:e ANDOP sumfactor:f{:
+                     RESULT = new AndOPNode(f,e);
+                    :}
+
+                | sumfactor:f {:RESULT =f;:}
+                ;
+
+
+   sumfactor ::= sumfactor:e PLUS factor:f
+                {: RESULT = new SumNode(f,e);:}
+                 |sumfactor:e MINUS factor:f
+                 {: RESULT = new SubNode(f,e);:}
+                 |
+                 factor :f {:
+                  RESULT = f;
+                 :};
+
+   factor    ::= factor:f TIMES term:t
+              {: RESULT = new MultNode(t,f);:}
+                 |
+                 factor:f DIVIDE term:t
+                    {: RESULT =  new DivNode(t,f);:}
+                 |
+                 factor MODOP term
+
+                 |
+
+                  term :t {:
+                    RESULT = t;
+                 :}
+                 ;
+
+   term      ::= LPAREN expr :e RPAREN {:
+                RESULT = e;
+                :}
+
+                 | ID :i {: RESULT = new IdNode(i);:}
+
+                               | NUMBER :n  {:   RESULT = new IntNode(n);:}
+                               | LITSTRING :s {:   RESULT  = new LiteralString(s); :}
+                               | LITRCHAR:c {:   RESULT  = new LiteralChar(c);:} ;
+
+OptionalCallFunction ::= CallFunction |;
+
+
+
+
+
+
+
+    FunctionDeclaration ::= FUNCTION ID Params COLON Types  SEMI LoopBucle;
+
+
+    Params ::=  LPAREN ListId COLON Types RPAREN;
+
+    Block  ::= BEGIN ListOfSentences END SEMI;
+
+    SentencesDeclaration ::= VAR ListId  COLON  Types SEMI
+
+    ;
+
+    OptionalList ::= COMMA ListId
+                 |;
+
+    ListId ::= ID OptionalList
+                    |;
+
+    Types ::=  ID |
+                INTEGER |
+                STRING|
+                CHAR;
+
+
