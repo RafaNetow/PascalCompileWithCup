@@ -44,11 +44,11 @@ dec_int_id = [A-Za-z_][A-Za-z_0-9]*
     "while"             { return symbol(sym.WHILE); }
     "for"             { return symbol(sym.FOR); }
     "to"             { return symbol(sym.TO); }
-    "int"             { return symbol(sym.INTEGER); }
+    "integer"             { return symbol(sym.INTEGER); }
     "char"             { return symbol(sym.CHAR); }
     "float"             { return symbol(sym.FLOAT); }
     "string"             { return symbol(sym.STRING); }
-    "bool"             { return symbol(sym.BOOLEAN); }
+    "boolean"             { return symbol(sym.BOOLEAN); }
     "of"            {return symbol(sym.OF);}
     "array"         {return symbol(sym.ARRAY);}
     "["             {return symbol(sym.LBRACK);}

@@ -1,14 +1,15 @@
 package Tree.Expression.DataType;
 
-import Tree.Expression.BaseType.DataType;
+
 import sun.reflect.generics.tree.BaseType;
 
 /**
  * Created by Sequeirios on 07/05/2017.
  */
-public class BooleanNode extends DataType {
+public class BooleanNode extends Semantic.BaseType {
+
     @Override
-    public BaseType ValidateSemmantic() {
-        return null;
+    public boolean IsAssignable(Semantic.BaseType otherType) {
+        return otherType instanceof  StringNode;
     }
 }

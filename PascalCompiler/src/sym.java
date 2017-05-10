@@ -6,31 +6,31 @@
 /** CUP generated class containing symbol constants. */
 public class sym {
   /* terminals */
-  public static final int GREATERTHAN = 28;
+  public static final int GREATERTHAN = 29;
   public static final int DIVIDE = 6;
-  public static final int LESSOREQUALTHAN = 30;
+  public static final int LESSOREQUALTHAN = 31;
   public static final int SCANF = 19;
   public static final int CHAR = 22;
   public static final int EQUALS = 9;
-  public static final int EQUALSEQUALS = 32;
-  public static final int INTEGER = 35;
+  public static final int EQUALSEQUALS = 33;
+  public static final int INTEGER = 26;
   public static final int LPAREN = 7;
   public static final int SEMI = 2;
   public static final int ARRAY = 25;
   public static final int FOR = 36;
   public static final int MINUS = 4;
   public static final int RPAREN = 8;
-  public static final int LESSTHAN = 29;
+  public static final int LESSTHAN = 30;
   public static final int COMMA = 38;
   public static final int PLUS = 3;
   public static final int IF = 11;
-  public static final int ID = 27;
+  public static final int ID = 28;
   public static final int OF = 18;
   public static final int EOF = 0;
   public static final int BOOLEAN = 23;
   public static final int error = 1;
   public static final int LCURLY = 12;
-  public static final int NUMBER = 26;
+  public static final int NUMBER = 27;
   public static final int RCURLY = 13;
   public static final int LBRACK = 16;
   public static final int TIMES = 5;
@@ -38,12 +38,12 @@ public class sym {
   public static final int ELSE = 14;
   public static final int RBRACK = 17;
   public static final int TO = 20;
-  public static final int NOTEQUALS = 33;
+  public static final int NOTEQUALS = 34;
   public static final int WHILE = 15;
   public static final int FLOAT = 21;
   public static final int STRING = 24;
-  public static final int GREATEROREQUALTHAN = 31;
-  public static final int VAR = 34;
+  public static final int GREATEROREQUALTHAN = 32;
+  public static final int VAR = 35;
   public static final int PRINT = 10;
   public static final String[] terminalNames = new String[] {
   "EOF",
@@ -72,6 +72,7 @@ public class sym {
   "BOOLEAN",
   "STRING",
   "ARRAY",
+  "INTEGER",
   "NUMBER",
   "ID",
   "GREATERTHAN",
@@ -81,7 +82,6 @@ public class sym {
   "EQUALSEQUALS",
   "NOTEQUALS",
   "VAR",
-  "INTEGER",
   "FOR",
   "COLON",
   "COMMA"
