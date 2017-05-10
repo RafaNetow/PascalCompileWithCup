@@ -24,6 +24,9 @@ dec_int_lit = 0 | [1-9][0-9]*
 dec_int_id = [A-Za-z_][A-Za-z_0-9]*
 %%
 <YYINITIAL> {
+     ","                { return symbol(sym.COMMA, ","); }
+    ":"                { return symbol(sym.COLON,  ":"); }
+  "var"   {return symbol(sym.VAR);}
     ";"                { return symbol(sym.SEMI); }
     "+"                {  return symbol(sym.PLUS); }
     "-"                {  return symbol(sym.MINUS); }

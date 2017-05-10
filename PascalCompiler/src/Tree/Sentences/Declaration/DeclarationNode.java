@@ -11,7 +11,13 @@ import java.util.List;
  */
 public class DeclarationNode extends SentencesNode {
      public DataType Type;
-     List<IdNode> listOfIds;
+   public  List<String> ListOfIds;
+
+
+     public  DeclarationNode(List<String> listOfId, DataType type){
+            this.ListOfIds = listOfId;
+            this.Type = type;
+     }
 
 
     @Override
