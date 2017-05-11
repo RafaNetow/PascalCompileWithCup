@@ -22,19 +22,23 @@ LineTerminator = \r|\n|\r\n
 WhiteSpace     = {LineTerminator} | [ \t\f]
 dec_int_lit = 0 | [1-9][0-9]*
 dec_int_id = [A-Za-z_][A-Za-z_0-9]*
+character = \'([^'])?\'
+
+string = \'([^'])*\'
 %%
 <YYINITIAL> {
      ","                { return symbol(sym.COMMA, ","); }
     ":"                { return symbol(sym.COLON,  ":"); }
   "var"   {return symbol(sym.VAR);}
     ";"                { return symbol(sym.SEMI); }
+   "const"                { return symbol(sym.CONST); }
     "+"                {  return symbol(sym.PLUS); }
     "-"                {  return symbol(sym.MINUS); }
     "*"                {  return symbol(sym.TIMES); }
     "/"                {  return symbol(sym.DIVIDE); }
     "("                {  return symbol(sym.LPAREN); }
     ")"                {  return symbol(sym.RPAREN); }
-    "="                 { return symbol(sym.EQUALS); }
+    ":="                 { return symbol(sym.ASSIGMENT); }
     "purinto"                 { return symbol(sym.PRINT); }
     "scanf"                 { return symbol(sym.SCANF); }
     "if"                { return symbol(sym.IF); }
@@ -58,6 +62,9 @@ dec_int_id = [A-Za-z_][A-Za-z_0-9]*
     ">="             { return symbol(sym.GREATEROREQUALTHAN); }
     "<="             { return symbol(sym.LESSOREQUALTHAN); }
     "=="             { return symbol(sym.EQUALSEQUALS); }
+    "program"             { return symbol(sym.PROGRAM); }
+    {character}  {return symbol(sym.LIT_CHAR , "lit_char");}
+    {string} {return symbol(sym.LIT_STRING ,"lit_string");}
     "!="             { return symbol(sym.NOTEQUALS); }
     {dec_int_lit}      { 
                          return symbol(sym.NUMBER, new Integer(yytext())); }

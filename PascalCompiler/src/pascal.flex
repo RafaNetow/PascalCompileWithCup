@@ -97,6 +97,8 @@ comment = {leftBracket}{commentBody}{rightBracket}
      "repeat" {return symbol(sym.REPEAT ,"repeat");}
      "program" {return symbol(sym.PROGRAM, "program");}
       "procedure" {return symbol(sym.PROCEDURE ,"procedure");}
+     "::=" {return symbol(sym.ASSIGMENT ,"::=");}
+
 
   {character}  {return symbol(sym.CHAR , "char");}
 
