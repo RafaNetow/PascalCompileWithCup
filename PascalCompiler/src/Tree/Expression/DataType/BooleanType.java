@@ -6,7 +6,7 @@ import sun.reflect.generics.tree.BaseType;
 /**
  * Created by Sequeirios on 07/05/2017.
  */
-public class BooleanNode extends Semantic.BaseType {
+public class BooleanType extends Semantic.BaseType {
 
     @Override
     public boolean IsAssignable(Semantic.BaseType otherType) {

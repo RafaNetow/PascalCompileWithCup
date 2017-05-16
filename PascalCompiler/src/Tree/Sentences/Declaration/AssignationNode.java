@@ -26,10 +26,11 @@ public class AssignationNode extends SentencesNode {
 
        if(SymbolTable.getInstance()._table.containsKey(this.Id.value)){
             if(!(SymbolTable.getInstance().getType(this.Id.value) == ExpressionToAssign.ValidateSemmantic())){
-                System.out.println("Allocation is not allowed");
+                System.out.println("Allocation is not allowed\n");
             }
        }else{
-           System.out.println("Id"+this.Id.value+" doesnt exist");
+           SymbolTable table = SymbolTable.getInstance();
+          System.out.println("Id "+this.Id.value+" doesnt exist\n");
        }
 
 

@@ -58,6 +58,11 @@ string = \'([^'])*\'
     "["             {return symbol(sym.LBRACK);}
     "]"             {return symbol(sym.RBRACK);}
     ">"             { return symbol(sym.GREATERTHAN); }
+    "do"             { return symbol(sym.DO); }
+      "."  {return symbol(sym.DOT , ".");}
+        "begin"  {return symbol(sym.BEGIN , "begin");}
+        "end"  {return symbol(sym.END , "end");}
+          "then"  {return symbol(sym.THEN , "then");}
     "<"             { return symbol(sym.LESSTHAN); }
     ">="             { return symbol(sym.GREATEROREQUALTHAN); }
     "<="             { return symbol(sym.LESSOREQUALTHAN); }

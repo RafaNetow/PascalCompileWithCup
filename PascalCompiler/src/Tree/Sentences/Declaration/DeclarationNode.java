@@ -2,6 +2,7 @@ package Tree.Sentences.Declaration;
 
 import Semantic.BaseType;
 
+import Semantic.SymbolTable;
 import Tree.Expression.DataType.IdNode;
 import Tree.Expression.SentencesNode;
 
@@ -23,6 +24,11 @@ public class DeclarationNode extends SentencesNode {
 
     @Override
     public void ValidateSemantic() {
+
+       for(String item: ListOfIds){
+           SymbolTable.getInstance().declareVariable(item, Type);
+
+       }
 
     }
 }

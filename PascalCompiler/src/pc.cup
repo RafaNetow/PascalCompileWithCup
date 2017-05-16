@@ -6,6 +6,7 @@ import Tree.Expression.LiteralNodes.LiteralChar;
 import Tree.Expression.LiteralNodes.LiteralString;
 import Tree.Expression.LiteralNodes.NumberNode;
 import Tree.Sentences.Bucles.ForNode;
+import Tree.Sentences.Conditional.BlockNode;
 import Tree.Sentences.Conditional.IfNode;
 import Tree.Sentences.Declaration.ConstNode;
 import Tree.Sentences.Declaration.DeclarationNode;
@@ -30,21 +31,21 @@ terminal            TO,FLOAT,CHAR,BOOLEAN,STRING, ARRAY,INTEGER, ASSIGMENT,CONST
 terminal Integer   NUMBER;
 terminal String   ID,LIT_STRING;
 terminal char LIT_CHAR;
-terminal GREATERTHAN, LESSTHAN, LESSOREQUALTHAN, GREATEROREQUALTHAN, EQUALSEQUALS, NOTEQUALS;
+terminal GREATERTHAN, LESSTHAN, LESSOREQUALTHAN, GREATEROREQUALTHAN, EQUALSEQUALS, NOTEQUALS,DOT;
 
-terminal VAR,FOR, PROGRAM;//Reserverd Words
+terminal VAR,FOR, PROGRAM,THEN,BEGIN,END,DO;//Reserverd Words
 
 terminal COLON,COMMA;//Special Quotes
 
 non terminal Object declaration_list;
 non terminal BaseType type;
 
-non terminal List<SentencesNode>    program, statement_list, BeginProgram;
-non terminal SentencesNode statement,  SentencesDeclaration, ConstDeclaration ;
+non terminal List<SentencesNode>    program, statement_list, BeginProgram, LoopBucle, SpecialSentences;
+non terminal SentencesNode statement,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile;
 non terminal ExpressionNode    expr, factor, term, sumfactor,TypeOfConst;
 non terminal IdNode id;
+non terminal BlockNode Block,SentencesElse;
 non terminal List<String> ListId, OptionalList;
-
 
 
  //falta arreglos
@@ -61,7 +62,7 @@ non terminal List<String> ListId, OptionalList;
 
 
 
-   statement_list ::= statement_list:xD statement:xP {:  xD.add(xP); RESULT = xD; :}
+   statement_list ::= statement_list:slist statement:st {:  slist.add(st); RESULT = slist; :}
                  | {: List<SentencesNode> nodeList = new ArrayList<SentencesNode>(); RESULT = nodeList; :}
                   ;
    statement ::= //PRINT expr:e SEMI {:  RESULT = new PrintNode(e); :}
@@ -72,22 +73,57 @@ non terminal List<String> ListId, OptionalList;
                     |
                    ConstDeclaration:st {:RESULT = st;:}
                   |
-                 IF LPAREN expr:e RPAREN LCURLY statement_list:s RCURLY {: RESULT = new IfNode(null,null,null); :}
+                    SentencesIf:st {:RESULT = st;:}
 
                  |
-                 IF LPAREN expr:e RPAREN LCURLY statement_list:s RCURLY ELSE LCURLY statement_list:s2 RCURLY {: RESULT = new IfNode(null,null,null); :}
-
-                 |
-                 WHILE LPAREN expr:e RPAREN LCURLY statement_list:s RCURLY {: RESULT = new WhileNode(); :}
+                 SentencesWhile:wd {:RESULT = wd;:}
+                 //WHILE LPAREN expr:e RPAREN LCURLY statement_list:s RCURLY {: RESULT = new WhileNode(); :}
                  |
                  FOR LPAREN id:i EQUALS expr:e TO expr:e2 RPAREN LCURLY statement_list:s RCURLY {: RESULT = new ForNode(i,e,null,null); :}
                  ;
+
+SentencesIf::= IF  expr:exp  THEN Block:block  {: IfNode node = new IfNode(exp,block); RESULT = node; :};
+
+SentencesWhile ::= WHILE expr:exp DO LoopBucle:loopbucle {:WhileNode node = new WhileNode(exp, loopbucle); RESULT = node; :};
+
+LoopBucle::=         SentencesBucle:sentencesBucle {:List<SentencesNode> list = new ArrayList<SentencesNode>(); list.add(sentencesBucle); RESULT = list;:}
+                     |
+                     BEGIN  SpecialSentences:specialsentences END SEMI {:RESULT = specialsentences;:};
+
+SentencesBucle ::=  SentencesDeclaration:sentencesdeclaration {:RESULT = sentencesdeclaration;:}
+                    |
+                    SentencesIf:sentencesif {:RESULT = sentencesif;:}
+                    |
+                    SentencesWhile:sentenceswhile {:RESULT = sentenceswhile;:};
+
+                    /*SentencesFor:sentencesfor {:RESULT = sentencesfor;:};
+                    |
+                    SentencesRepeat
+                    |
+                    SentencesComment
+                    |
+                    CallFunctionOrAssignment SEMI;*/
+
+SpecialSentences ::= SpecialSentences:specialSentences  SentencesBucle:sentenceBucle{:specialSentences.add(sentenceBucle); RESULT = specialSentences; :}
+                     | {:List<SentencesNode>  nodelist = new ArrayList<SentencesNode>(); RESULT = nodelist;:};
+
+
+ Block::= statement:s {: BlockNode node = new BlockNode(s); RESULT = node;:}
+          |
+          BEGIN statement_list:tc END SEMI SentencesElse:fc {: BlockNode node = new BlockNode(tc,fc); RESULT = node;:};
+
+
+ SentencesElse ::= ELSE  Block:bc {:  RESULT = bc;:}
+                   |
+                   {:BlockNode node = new  BlockNode(); RESULT = node; :};
+
 
 SentencesDeclaration ::=   VAR ListId:ls COLON type:typ SEMI {:DeclarationNode declaration = new DeclarationNode(ls,typ); RESULT = declaration;:};
 
 ConstDeclaration ::= CONST ID:id ASSIGMENT TypeOfConst:tc SEMI  {: ConstNode node = new ConstNode(id,tc); RESULT= node;:} ;
 
-TypeOfConst ::= LIT_CHAR:ltc {:LiteralChar nodo = new LiteralChar(ltc); RESULT = nodo;:}|
+TypeOfConst ::= LIT_CHAR:ltc {:LiteralChar nodo = new LiteralChar(ltc); RESULT = nodo;:}
+                |
                 LIT_STRING:lts {:LiteralString nodo = new LiteralString(lts);RESULT = nodo;:};
 
    OptionalList ::= COMMA ListId:ls {: RESULT = ls;:}
@@ -139,7 +175,7 @@ TypeOfConst ::= LIT_CHAR:ltc {:LiteralChar nodo = new LiteralChar(ltc); RESULT =
 
   type ::=
              CHAR {: CharNode node = new CharNode(); RESULT = node;:}
-            | BOOLEAN  {: BooleanNode node = new BooleanNode(); RESULT= node;:}
+            | BOOLEAN  {: BooleanType node = new BooleanType(); RESULT= node;:}
             | STRING {: StringNode node= new StringNode();
                  RESULT= node;:}|
                   INTEGER {: IntNode node =  new IntNode(); RESULT = node; :};

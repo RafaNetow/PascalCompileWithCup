@@ -90,6 +90,8 @@ comment = {leftBracket}{commentBody}{rightBracket}
     "end"   {return symbol(sym.END ," end");}
     "function"   {return symbol(sym.FUNCTION , "function");}
     "then"   {return symbol(sym.THEN , "then");}
+    "begin"   {return symbol(sym.BEGIN , "begin");}
+    "end"   {return symbol(sym.END , "end");}
     "."  {return symbol(sym.DOT , ".");}
      "do"   {return symbol(sym.DO , "do");}
      "continue"   {return symbol(sym.CONTINUE ,"continue");}

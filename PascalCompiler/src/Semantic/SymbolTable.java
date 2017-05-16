@@ -27,7 +27,7 @@ public class SymbolTable {
     public void declareVariable(String name, BaseType type){
 
         if(_table.containsKey(name)){
-            System.out.printf("Variable already exist");
+            System.out.printf("Variable "+name+" already exist\n");
         }else {
             _table.put(name,type);
         }
@@ -39,7 +39,7 @@ public class SymbolTable {
             return  _table.get(name);
         }
 
-        System.out.println("Base Type doesn't exist");
+        System.out.println("Base Type doesn't exist\n");
         return null;
 
     }

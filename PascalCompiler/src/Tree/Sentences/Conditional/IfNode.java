@@ -1,6 +1,8 @@
 package Tree.Sentences.Conditional;
 
 import Tree.Expression.BaseType.ExpressionNode;
+
+import Tree.Expression.DataType.BooleanType;
 import Tree.Expression.SentencesNode;
 import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 
@@ -11,17 +13,24 @@ import java.util.List;
  */
 public class IfNode extends SentencesNode {
     ExpressionNode Condition;
-    List<SentencesNode> listOfSentences;
 
-    public IfNode(ExpressionNode exp1, ExpressionNode exp2, ExpressionNode exp3){
+    BlockNode BlockCode;
 
+
+    public IfNode(ExpressionNode condition, BlockNode blockCode){
+            Condition = condition;
+        BlockCode = blockCode;
     }
 
     @Override
     public void ValidateSemantic() {
-        for (SentencesNode sentence: listOfSentences
-             ) {
-         sentence.ValidateSemantic();
+
+        if(true/*Condition.ValidateSemmantic() instanceof BooleanType*/){
+            BlockCode.ValidateSemantic();
+        }else{
+            System.out.println("Expression is not a boolean");
         }
+
+
     }
 }
