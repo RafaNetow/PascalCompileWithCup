@@ -33,15 +33,15 @@ terminal String   ID,LIT_STRING;
 terminal char LIT_CHAR;
 terminal GREATERTHAN, LESSTHAN, LESSOREQUALTHAN, GREATEROREQUALTHAN, EQUALSEQUALS, NOTEQUALS,DOT;
 
-terminal VAR,FOR, PROGRAM,THEN,BEGIN,END,DO;//Reserverd Words
+terminal VAR,FOR, PROGRAM,THEN,BEGIN,END,DO,FUNCTION;//Reserverd Words
 
 terminal COLON,COMMA;//Special Quotes
 
 non terminal Object declaration_list;
 non terminal BaseType type;
 
-non terminal List<SentencesNode>    program, statement_list, BeginProgram, LoopBucle, SpecialSentences;
-non terminal SentencesNode statement,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile;
+non terminal List<SentencesNode>    program, Statement_list, BeginProgram, LoopBucle, SpecialSentences;
+non terminal SentencesNode Statement,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration ;
 non terminal ExpressionNode    expr, factor, term, sumfactor,TypeOfConst;
 non terminal IdNode id;
 non terminal BlockNode Block,SentencesElse;
@@ -52,7 +52,7 @@ non terminal List<String> ListId, OptionalList;
 
 
 
-    program ::= BeginProgram statement_list:sl {:RESULT = sl;  :}
+    program ::= BeginProgram Statement_list:sl {:RESULT = sl;  :}
     ;
 
     BeginProgram ::= PROGRAM ID SEMI
@@ -62,10 +62,10 @@ non terminal List<String> ListId, OptionalList;
 
 
 
-   statement_list ::= statement_list:slist statement:st {:  slist.add(st); RESULT = slist; :}
+   Statement_list ::= Statement_list:slist Statement:st {:  slist.add(st); RESULT = slist; :}
                  | {: List<SentencesNode> nodeList = new ArrayList<SentencesNode>(); RESULT = nodeList; :}
                   ;
-   statement ::= //PRINT expr:e SEMI {:  RESULT = new PrintNode(e); :}
+   Statement ::= //PRINT expr:e SEMI {:  RESULT = new PrintNode(e); :}
                  // SCANF expr:e SEMI {: RESULT = new ScanNode(e); :}
                   id:i ASSIGMENT expr:e SEMI {: RESULT = new AssignationNode(i, e);:} //Aisgnacion nombre := "rafael"
                   |
@@ -76,14 +76,24 @@ non terminal List<String> ListId, OptionalList;
                     SentencesIf:st {:RESULT = st;:}
 
                  |
-                 SentencesWhile:wd {:RESULT = wd;:}  |
+                  SentencesWhile:wd {:RESULT = wd;:}  |
 
-                 FunctionDeclaration:fd {::}
+                 FunctionDeclaration:fd {::};
 
-                 //WHILE LPAREN expr:e RPAREN LCURLY statement_list:s RCURLY {: RESULT = new WhileNode(); :}
-                 |
-                 FOR LPAREN id:i EQUALS expr:e TO expr:e2 RPAREN LCURLY statement_list:s RCURLY {: RESULT = new ForNode(i,e,null,null); :}
-                 ;
+                 //WHILE LPAREN expr:e RPAREN LCURLY Statement_list:s RCURLY {: RESULT = new WhileNode(); :}
+              //   |
+            //     FOR LPAREN id:i EQUALS expr:e TO expsr:e2 RPAREN LCURLY Statement_list:s RCURLY {: RESULT = new ForNode(i,e,null,null); :}
+
+
+FunctionDeclaration ::= FUNCTION ID Params COLON type  SEMI LoopBucle {:RESULT = fun:};
+
+Params ::= LPAREN ListParamFunction/* ListId COLON type*/ RPAREN;
+
+ListParamFunction ::= VAR ListId COLON  type ListParamFunction |
+                      ListId COLON type ListParamFunction |
+                      ;
+
+
 
 SentencesIf::= IF  expr:exp  THEN Block:block  {: IfNode node = new IfNode(exp,block); RESULT = node; :};
 
@@ -111,9 +121,9 @@ SpecialSentences ::= SpecialSentences:specialSentences  SentencesBucle:sentenceB
                      | {:List<SentencesNode>  nodelist = new ArrayList<SentencesNode>(); RESULT = nodelist;:};
 
 
- Block::= statement:s {: BlockNode node = new BlockNode(s); RESULT = node;:}
+ Block::= Statement:s {: BlockNode node = new BlockNode(s); RESULT = node;:}
           |
-          BEGIN statement_list:tc END SEMI SentencesElse:fc {: BlockNode node = new BlockNode(tc,fc); RESULT = node;:};
+          BEGIN Statement_list:tc END SEMI SentencesElse:fc {: BlockNode node = new BlockNode(tc,fc); RESULT = node;:};
 
 
  SentencesElse ::= ELSE  Block:bc {:  RESULT = bc;:}

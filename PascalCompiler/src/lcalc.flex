@@ -59,6 +59,7 @@ string = \'([^'])*\'
     "]"             {return symbol(sym.RBRACK);}
     ">"             { return symbol(sym.GREATERTHAN); }
     "do"             { return symbol(sym.DO); }
+    "function"             { return symbol(sym.FUNCTION); }
       "."  {return symbol(sym.DOT , ".");}
         "begin"  {return symbol(sym.BEGIN , "begin");}
         "end"  {return symbol(sym.END , "end");}
