@@ -76,7 +76,10 @@ non terminal List<String> ListId, OptionalList;
                     SentencesIf:st {:RESULT = st;:}
 
                  |
-                 SentencesWhile:wd {:RESULT = wd;:}
+                 SentencesWhile:wd {:RESULT = wd;:}  |
+
+                 FunctionDeclaration:fd {::}
+
                  //WHILE LPAREN expr:e RPAREN LCURLY statement_list:s RCURLY {: RESULT = new WhileNode(); :}
                  |
                  FOR LPAREN id:i EQUALS expr:e TO expr:e2 RPAREN LCURLY statement_list:s RCURLY {: RESULT = new ForNode(i,e,null,null); :}

@@ -7,6 +7,7 @@ program codeDeclaration;
 if x > s then
 begin
     var a,b,c : string;
+    var a,b,c : string;
     b := 4 + 5;
 
     var e,r,t : boolean;
