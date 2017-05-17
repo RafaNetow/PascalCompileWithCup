@@ -10,6 +10,8 @@ import Tree.Sentences.Conditional.BlockNode;
 import Tree.Sentences.Conditional.IfNode;
 import Tree.Sentences.Declaration.ConstNode;
 import Tree.Sentences.Declaration.DeclarationNode;
+import Tree.Sentences.Declaration.Function.FunctionDeclaration;
+import Tree.Sentences.Declaration.Function.ParamsOfFunction;
 import java_cup.runtime.*;
 import java.util.*;
 import Tree.Expression.*;
@@ -38,16 +40,16 @@ terminal VAR,FOR, PROGRAM,THEN,BEGIN,END,DO,FUNCTION;//Reserverd Words
 terminal COLON,COMMA;//Special Quotes
 
 non terminal Object declaration_list;
-non terminal BaseType type;
+non terminal BaseType Type;
 
 non terminal List<SentencesNode>    program, Statement_list, BeginProgram, LoopBucle, SpecialSentences;
-non terminal SentencesNode Statement,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration ;
+non terminal SentencesNode Statement,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration ;
 non terminal ExpressionNode    expr, factor, term, sumfactor,TypeOfConst;
 non terminal IdNode id;
 non terminal BlockNode Block,SentencesElse;
 non terminal List<String> ListId, OptionalList;
-
-
+non terminal List<ParamsOfFunction> Params,ListParamFunction;
+non terminal ParamFunction;
  //falta arreglos
 
 
@@ -78,20 +80,21 @@ non terminal List<String> ListId, OptionalList;
                  |
                   SentencesWhile:wd {:RESULT = wd;:}  |
 
-                 FunctionDeclaration:fd {::};
+                 FunctionDeclaration:fd {:RESULT = fd;:};
 
                  //WHILE LPAREN expr:e RPAREN LCURLY Statement_list:s RCURLY {: RESULT = new WhileNode(); :}
               //   |
             //     FOR LPAREN id:i EQUALS expr:e TO expsr:e2 RPAREN LCURLY Statement_list:s RCURLY {: RESULT = new ForNode(i,e,null,null); :}
 
 
-FunctionDeclaration ::= FUNCTION ID Params COLON type  SEMI LoopBucle {:RESULT = fun:};
+FunctionDeclaration ::= FUNCTION ID Params:listParams COLON Type:Type  SEMI  SentencesDeclaration:opDeclaration LoopBucle:ListOfSentences {:FunctionDeclaration node = new FunctionDeclaration(listParams,Type,ListOfSentences,opDeclaration); RESULT = node;:};
 
-Params ::= LPAREN ListParamFunction/* ListId COLON type*/ RPAREN;
 
-ListParamFunction ::= VAR ListId COLON  type ListParamFunction |
-                      ListId COLON type ListParamFunction |
-                      ;
+Params ::= LPAREN ListParamFunction RPAREN;
+
+ListParamFunction ::= VAR ListId COLON  Type  ListParamFunction |
+                     ID COMMA ListId COLON Type  ListParamFunction |
+                       {::};
 
 
 
@@ -131,7 +134,7 @@ SpecialSentences ::= SpecialSentences:specialSentences  SentencesBucle:sentenceB
                    {:BlockNode node = new  BlockNode(); RESULT = node; :};
 
 
-SentencesDeclaration ::=   VAR ListId:ls COLON type:typ SEMI {:DeclarationNode declaration = new DeclarationNode(ls,typ); RESULT = declaration;:};
+SentencesDeclaration ::=   VAR ListId:ls COLON Type:typ SEMI {:DeclarationNode declaration = new DeclarationNode(ls,typ); RESULT = declaration;:};
 
 ConstDeclaration ::= CONST ID:id ASSIGMENT TypeOfConst:tc SEMI  {: ConstNode node = new ConstNode(id,tc); RESULT= node;:} ;
 
@@ -186,7 +189,7 @@ TypeOfConst ::= LIT_CHAR:ltc {:LiteralChar nodo = new LiteralChar(ltc); RESULT =
 
 
 
-  type ::=
+  Type ::=
              CHAR {: CharNode node = new CharNode(); RESULT = node;:}
             | BOOLEAN  {: BooleanType node = new BooleanType(); RESULT= node;:}
             | STRING {: StringNode node= new StringNode();

@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class DeclarationNode extends SentencesNode {
      public BaseType Type;
-   public  List<String> ListOfIds;
+     public  List<String> ListOfIds;
 
 
      public  DeclarationNode(List<String> listOfId, BaseType type){
@@ -21,7 +21,7 @@ public class DeclarationNode extends SentencesNode {
             this.Type = type;
      }
 
-
+     public  DeclarationNode(){};
     @Override
     public void ValidateSemantic() {
 
