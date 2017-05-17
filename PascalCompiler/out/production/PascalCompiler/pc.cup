@@ -48,7 +48,7 @@ non terminal ExpressionNode    expr, factor, term, sumfactor,TypeOfConst;
 non terminal IdNode id;
 non terminal BlockNode Block,SentencesElse;
 non terminal List<String> ListId, OptionalList;
-non terminal List<ParamsOfFunction> Params,ListParamFunction;
+non terminal List<ParamsOfFunction> Params,ListParamFunction,OptionalListParams;
 non terminal ParamFunction;
  //falta arreglos
 
@@ -87,16 +87,20 @@ non terminal ParamFunction;
             //     FOR LPAREN id:i EQUALS expr:e TO expsr:e2 RPAREN LCURLY Statement_list:s RCURLY {: RESULT = new ForNode(i,e,null,null); :}
 
 
-FunctionDeclaration ::= FUNCTION ID Params:listParams COLON Type:Type  SEMI  SentencesDeclaration:opDeclaration LoopBucle:ListOfSentences {:FunctionDeclaration node = new FunctionDeclaration(listParams,Type,ListOfSentences,opDeclaration); RESULT = node;:};
+FunctionDeclaration ::= FUNCTION ID:nameOfFunction Params:listParams COLON Type:Type  SEMI  SentencesDeclaration:opDeclaration LoopBucle:ListOfSentences {:FunctionDeclaration node = new FunctionDeclaration(listParams,Type,ListOfSentences,opDeclaration, nameOfFunction); RESULT = node;:};
 
 
-Params ::= LPAREN ListParamFunction RPAREN;
-
-ListParamFunction ::= VAR ListId COLON  Type  ListParamFunction |
-                     ID COMMA ListId COLON Type  ListParamFunction |
-                       {::};
+Params ::= LPAREN ListParamFunction: list {:RESULT =list;:} RPAREN;
 
 
+
+ListParamFunction ::= VAR ListId:listId COLON  Type:type  OptionalListParams:listParams  {:;ParamsOfFunction params = new ParamsOfFunction(true,listId,type); listParams.add(params); RESULT =listParams;:}|
+                     ListId:listId COLON Type:type  OptionalListParams:listParams {:ParamsOfFunction params = new ParamsOfFunction(false,listId,type); listParams.add(params); RESULT =listParams;:} |
+                       {: List<ParamsOfFunction> list = new ArrayList<>(); RESULT= list;:};
+
+
+OptionalListParams ::= SEMI ListParamFunction:listParams {:RESULT =listParams;:} |
+                {: List<ParamsOfFunction> list = new ArrayList<>(); RESULT= list;:};
 
 SentencesIf::= IF  expr:exp  THEN Block:block  {: IfNode node = new IfNode(exp,block); RESULT = node; :};
 

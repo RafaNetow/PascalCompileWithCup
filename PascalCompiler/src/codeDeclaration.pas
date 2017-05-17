@@ -28,7 +28,7 @@ var n,m,c : char;
 var l,i,u: integer;
 end;
 
-function max(num1, num2: string): string;
+function max(num1, num2: string; num3,  num4 :integer ;  var num9, num8 : integer): string;
 
 var result: string;
 
