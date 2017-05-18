@@ -10,12 +10,12 @@ import Tree.Expression.SentencesNode;
  */
 public class AssignationNode extends SentencesNode {
 
-    public  IdNode Id;
+    public  String Id;
 
     public ExpressionNode ExpressionToAssign;
 
 
-    public  AssignationNode (IdNode id, ExpressionNode exp){
+    public  AssignationNode (String id, ExpressionNode exp){
         this.Id = id;
         this.ExpressionToAssign= exp;
     }
@@ -24,13 +24,13 @@ public class AssignationNode extends SentencesNode {
     @Override
     public void ValidateSemantic() {
 
-       if(SymbolTable.getInstance()._table.containsKey(this.Id.value)){
-            if(!(SymbolTable.getInstance().getType(this.Id.value) == ExpressionToAssign.ValidateSemmantic())){
+       if(SymbolTable.getInstance()._table.containsKey(this.Id)){
+            if(!(SymbolTable.getInstance().getType(this.Id) == ExpressionToAssign.ValidateSemmantic())){
                 System.out.println("Allocation is not allowed\n");
             }
        }else{
            SymbolTable table = SymbolTable.getInstance();
-          System.out.println("Id "+this.Id.value+" doesnt exist\n");
+          System.out.println("Id "+this.Id+" doesnt exist\n");
        }
 
 

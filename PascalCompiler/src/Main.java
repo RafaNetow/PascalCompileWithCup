@@ -18,7 +18,7 @@ public class Main {
 
             for (SentencesNode sentence:
                  result) {
-                    sentence.ValidateSemantic();
+                  sentence.ValidateSemantic();
             }
         SymbolTable table =    SymbolTable.getInstance();
             System.out.println(code);

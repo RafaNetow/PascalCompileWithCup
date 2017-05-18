@@ -10,6 +10,7 @@ import Tree.Sentences.Conditional.BlockNode;
 import Tree.Sentences.Conditional.IfNode;
 import Tree.Sentences.Declaration.ConstNode;
 import Tree.Sentences.Declaration.DeclarationNode;
+import Tree.Sentences.Declaration.Function.CallFunction;
 import Tree.Sentences.Declaration.Function.FunctionDeclaration;
 import Tree.Sentences.Declaration.Function.ParamsOfFunction;
 import java_cup.runtime.*;
@@ -43,7 +44,7 @@ non terminal Object declaration_list;
 non terminal BaseType Type;
 
 non terminal List<SentencesNode>    program, Statement_list, BeginProgram, LoopBucle, SpecialSentences;
-non terminal SentencesNode Statement,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration ;
+non terminal SentencesNode Statement,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration,CallFunctionOrAssigment ;
 non terminal ExpressionNode    expr, factor, term, sumfactor,TypeOfConst;
 non terminal IdNode id;
 non terminal BlockNode Block,SentencesElse;
@@ -67,9 +68,8 @@ non terminal ParamFunction;
    Statement_list ::= Statement_list:slist Statement:st {:  slist.add(st); RESULT = slist; :}
                  | {: List<SentencesNode> nodeList = new ArrayList<SentencesNode>(); RESULT = nodeList; :}
                   ;
-   Statement ::= //PRINT expr:e SEMI {:  RESULT = new PrintNode(e); :}
-                 // SCANF expr:e SEMI {: RESULT = new ScanNode(e); :}
-                  id:i ASSIGMENT expr:e SEMI {: RESULT = new AssignationNode(i, e);:} //Aisgnacion nombre := "rafael"
+   Statement ::= CallFunctionOrAssigment:st{:RESULT = st;:}
+
                   |
                    SentencesDeclaration:st{:RESULT= st; :}
                     |
@@ -86,6 +86,8 @@ non terminal ParamFunction;
               //   |
             //     FOR LPAREN id:i EQUALS expr:e TO expsr:e2 RPAREN LCURLY Statement_list:s RCURLY {: RESULT = new ForNode(i,e,null,null); :}
 
+   CallFunctionOrAssigment ::=  ID:id ASSIGMENT expr:e SEMI {:RESULT = new AssignationNode(id,e);:} |
+                                ID:id LPAREN ListId:listId RPAREN SEMI {:RESULT = new  CallFunction(id,listId); :};
 
 FunctionDeclaration ::= FUNCTION ID:nameOfFunction Params:listParams COLON Type:Type  SEMI  SentencesDeclaration:opDeclaration LoopBucle:ListOfSentences {:FunctionDeclaration node = new FunctionDeclaration(listParams,Type,ListOfSentences,opDeclaration, nameOfFunction); RESULT = node;:};
 
@@ -96,7 +98,7 @@ Params ::= LPAREN ListParamFunction: list {:RESULT =list;:} RPAREN;
 
 ListParamFunction ::= VAR ListId:listId COLON  Type:type  OptionalListParams:listParams  {:;ParamsOfFunction params = new ParamsOfFunction(true,listId,type); listParams.add(params); RESULT =listParams;:}|
                      ListId:listId COLON Type:type  OptionalListParams:listParams {:ParamsOfFunction params = new ParamsOfFunction(false,listId,type); listParams.add(params); RESULT =listParams;:} |
-                       {: List<ParamsOfFunction> list = new ArrayList<>(); RESULT= list;:};
+                     {: List<ParamsOfFunction> list = new ArrayList<>(); RESULT= list;:};
 
 
 OptionalListParams ::= SEMI ListParamFunction:listParams {:RESULT =listParams;:} |

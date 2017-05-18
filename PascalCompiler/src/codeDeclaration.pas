@@ -47,6 +47,8 @@ max := result;
 end;
 end;
 
+max(a,c);
+
 
 
 
