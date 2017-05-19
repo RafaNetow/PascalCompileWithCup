@@ -28,6 +28,8 @@ public class FunctionType extends BaseType {
     }
     @Override
     public boolean IsAssignable(BaseType otherType) {
+
+
         return false;
     }
 }

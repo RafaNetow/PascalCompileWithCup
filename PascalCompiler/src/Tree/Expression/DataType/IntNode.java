@@ -9,6 +9,6 @@ import sun.reflect.generics.tree.BaseType;
 public class IntNode extends Semantic.BaseType{
 
     public boolean IsAssignable(Semantic.BaseType otherType) {
-        return otherType instanceof  StringNode;
+        return otherType instanceof  IntNode;
     }
 }

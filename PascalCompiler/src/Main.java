@@ -24,7 +24,7 @@ public class Main {
             System.out.println(code);
 
         } catch (Exception e) {
-            /* do cleanup here -- possibly rethrow e */
+
             e.printStackTrace();
         }
     }
