@@ -20,9 +20,9 @@ public  abstract class BinaryOperatorNode extends ExpressionNode{
          this.LeftOperand = leftOperand;
     }
 
-    public  BaseType ValidateSemmantic(){
-        BaseType leftType = RightOperand.ValidateSemmantic();
-        BaseType righftType = RightOperand.ValidateSemmantic();
+    public  Semantic.BaseType ValidateSemmantic(){
+        Semantic.BaseType leftType = RightOperand.ValidateSemmantic();
+        Semantic.BaseType righftType = RightOperand.ValidateSemmantic();
 
 //  if( Validation.containsKey(new Pair<>(leftType, righftType))){
 

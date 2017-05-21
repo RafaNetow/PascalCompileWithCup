@@ -73,7 +73,7 @@ non terminal ExpressionNode expr ,sumfactor ,factor ,term,Assigment ;
 
     Assigment ::= ASSIGNATION expr:e {: RESULT = e;:} ;
 
-    ProcedureDeclaration ::= PROCEDURE ID Params  SEMI LoopBucle;
+    ProcedureDeclaration ::= PROCEDURE ID Params  SEMI LoopBucle {::};
                 //  |Comments
 
      SentencesComment ::= COMMENT;

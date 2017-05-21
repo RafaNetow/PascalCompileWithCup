@@ -1,7 +1,7 @@
 package Tree.Expression.LiteralNodes;
 
 import Tree.Expression.BaseType.ExpressionNode;
-import sun.reflect.generics.tree.BaseType;
+import Tree.Expression.DataType.StringNode;
 
 /**
  * Created by Sequeirios on 05/05/2017.
@@ -13,7 +13,7 @@ public class LiteralString extends ExpressionNode {
           this.value = value;
      }
     @Override
-    public BaseType ValidateSemmantic() {
-        return null;
+    public Semantic.BaseType ValidateSemmantic() {
+        return new StringNode();
     }
 }

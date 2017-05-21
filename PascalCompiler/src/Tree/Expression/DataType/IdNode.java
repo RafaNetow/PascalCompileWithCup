@@ -16,7 +16,7 @@ public class IdNode extends ExpressionNode {
    }
 
     @Override
-    public BaseType ValidateSemmantic() {
+    public Semantic.BaseType ValidateSemmantic() {
         return null;
     }
 

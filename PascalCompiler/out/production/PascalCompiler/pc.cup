@@ -36,7 +36,7 @@ terminal String   ID,LIT_STRING;
 terminal char LIT_CHAR;
 terminal GREATERTHAN, LESSTHAN, LESSOREQUALTHAN, GREATEROREQUALTHAN, EQUALSEQUALS, NOTEQUALS,DOT;
 
-terminal VAR,FOR, PROGRAM,THEN,BEGIN,END,DO,FUNCTION;//Reserverd Words
+terminal VAR,FOR, PROGRAM,THEN,BEGIN,END,DO,FUNCTION, PROCEDURE;//Reserverd Words
 
 terminal COLON,COMMA;//Special Quotes
 
@@ -44,9 +44,9 @@ non terminal Object declaration_list;
 non terminal BaseType Type;
 
 non terminal List<SentencesNode>    program, Statement_list, BeginProgram, LoopBucle, SpecialSentences;
-non terminal SentencesNode Statement,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration,CallFunctionOrAssigment ;
-non terminal ExpressionNode    expr, factor, term, sumfactor,TypeOfConst;
-non terminal IdNode id;
+non terminal SentencesNode Statement,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration,CallFunctionOrAssigment,ProcedureDeclaration ;
+
+non terminal ExpressionNode    expr, factor, term, sumfactor,TypeOfConst,id;
 non terminal BlockNode Block,SentencesElse;
 non terminal List<String> ListId, OptionalList;
 non terminal List<ParamsOfFunction> Params,ListParamFunction,OptionalListParams;
@@ -70,21 +70,21 @@ non terminal ParamFunction;
                   ;
    Statement ::= CallFunctionOrAssigment:st{:RESULT = st;:}
 
-                  |
+                    |
                    SentencesDeclaration:st{:RESULT= st; :}
                     |
                    ConstDeclaration:st {:RESULT = st;:}
-                  |
+                    |
                     SentencesIf:st {:RESULT = st;:}
+                    |
+                  SentencesWhile:wd {:RESULT = wd;:}
+                    |
+                 FunctionDeclaration:fd {:RESULT = fd;:}
+                    |
+                 ProcedureDeclaration:pd {:RESULT = pd;:};
 
-                 |
-                  SentencesWhile:wd {:RESULT = wd;:}  |
 
-                 FunctionDeclaration:fd {:RESULT = fd;:};
-
-                 //WHILE LPAREN expr:e RPAREN LCURLY Statement_list:s RCURLY {: RESULT = new WhileNode(); :}
-              //   |
-            //     FOR LPAREN id:i EQUALS expr:e TO expsr:e2 RPAREN LCURLY Statement_list:s RCURLY {: RESULT = new ForNode(i,e,null,null); :}
+   ProcedureDeclaration ::= PROCEDURE ID:id Params:params  SEMI LoopBucle:listOfSentences {: ProcedureDeclaration node = new ProcedureDeclaration(params,id, listOfSentences); RESULT=node;:};
 
    CallFunctionOrAssigment ::=  ID:id ASSIGMENT expr:e SEMI {:RESULT = new AssignationNode(id,e);:} |
                                 ID:id LPAREN ListId:listId RPAREN SEMI {:RESULT = new  CallFunction(id,listId); :};
@@ -191,7 +191,9 @@ TypeOfConst ::= LIT_CHAR:ltc {:LiteralChar nodo = new LiteralChar(ltc); RESULT =
                  {: RESULT = i; :}
                  ;
 
-   id        ::= ID:id {:RESULT = new IdNode(id);:};
+      id        ::= ID:id {:RESULT = new IdNode(id);:} |
+                    ID:id LPAREN ListId:listId RPAREN  {:RESULT = new   CallFunctionExpression(id,listId); :}  ;
+
 
 
 

@@ -3,7 +3,7 @@
 program codeDeclaration;
 
 
-
+var test,test1 : string;
 if x > s then
 begin
     var a,b,c : string;
@@ -61,8 +61,28 @@ end;
 
 max(a,c);
 
+test := max(a,c);
+
+procedure findMin(x, y, z: integer);
 
 
+begin
+if x < y then
+begin
+m:= x;
+end;
+else
+begin
+m:= y;
+end;
+
+if z < m then
+m:= z;
+end;
+
+var i1,i2,i3 : integer;
+
+findMin(i1,i2,i3);
 
 
 

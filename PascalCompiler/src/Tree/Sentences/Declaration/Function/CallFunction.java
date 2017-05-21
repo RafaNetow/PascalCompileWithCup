@@ -3,6 +3,7 @@ package Tree.Sentences.Declaration.Function;
 import Semantic.BaseType;
 import Semantic.SymbolTable;
 import Tree.Expression.DataType.FunctionType;
+import Tree.Expression.DataType.ProcedureType;
 import Tree.Expression.SentencesNode;
 import com.sun.org.apache.bcel.internal.generic.LLOAD;
 
@@ -41,8 +42,8 @@ public class CallFunction extends SentencesNode {
         int postOfParams =0;
         boolean breakFor = false;
 
-      if(type instanceof FunctionType){
-          FunctionType function = (FunctionType)type;
+      if(type instanceof ProcedureType){
+          ProcedureType function = (ProcedureType)type;
 
           if(getCantOfParams(function.ListParam)== ListOfParams.size()) {
               for (int i = 0; i < function.ListParam.size() && !breakFor; i++) {

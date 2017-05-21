@@ -23,7 +23,7 @@ public class sym {
   public static final int MINUS = 4;
   public static final int RPAREN = 8;
   public static final int LESSTHAN = 34;
-  public static final int COMMA = 49;
+  public static final int COMMA = 50;
   public static final int BEGIN = 44;
   public static final int PLUS = 3;
   public static final int IF = 11;
@@ -41,7 +41,7 @@ public class sym {
   public static final int RCURLY = 13;
   public static final int LBRACK = 16;
   public static final int TIMES = 5;
-  public static final int COLON = 48;
+  public static final int COLON = 49;
   public static final int ELSE = 14;
   public static final int RBRACK = 17;
   public static final int TO = 20;
@@ -53,6 +53,7 @@ public class sym {
   public static final int STRING = 24;
   public static final int ASSIGMENT = 27;
   public static final int GREATEROREQUALTHAN = 36;
+  public static final int PROCEDURE = 48;
   public static final int VAR = 40;
   public static final int DO = 46;
   public static final int PRINT = 10;
@@ -105,6 +106,7 @@ public class sym {
   "END",
   "DO",
   "FUNCTION",
+  "PROCEDURE",
   "COLON",
   "COMMA"
   };

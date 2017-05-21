@@ -1,5 +1,6 @@
 package Tree.Sentences.Declaration;
 
+import Semantic.BaseType;
 import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.IdNode;
@@ -25,7 +26,7 @@ public class AssignationNode extends SentencesNode {
     public void ValidateSemantic() {
 
        if(SymbolTable.getInstance()._table.containsKey(this.Id)){
-            if(!(SymbolTable.getInstance().getType(this.Id) == ExpressionToAssign.ValidateSemmantic())){
+            if(!(SymbolTable.getInstance().getType(this.Id).IsAssignable((BaseType) ExpressionToAssign.ValidateSemmantic()))){
                 System.out.println("Allocation is not allowed\n");
             }
        }else{

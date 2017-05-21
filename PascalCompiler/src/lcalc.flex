@@ -52,7 +52,8 @@ string = \'([^'])*\'
     "char"             { return symbol(sym.CHAR); }
     "float"             { return symbol(sym.FLOAT); }
     "string"             { return symbol(sym.STRING); }
-    "boolean"             { return symbol(sym.BOOLEAN); }
+    "procedure"             { return symbol(sym.PROCEDURE); }
+     "boolean"             { return symbol(sym.BOOLEAN); }
     "of"            {return symbol(sym.OF);}
     "array"         {return symbol(sym.ARRAY);}
     "["             {return symbol(sym.LBRACK);}

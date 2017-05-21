@@ -1,7 +1,7 @@
 package Tree.Expression.LiteralNodes;
 
 import Tree.Expression.BaseType.ExpressionNode;
-import sun.reflect.generics.tree.BaseType;
+import Tree.Expression.DataType.IntNode;
 
 /**
  * Created by Sequeirios on 05/05/2017.
@@ -15,7 +15,7 @@ public class NumberNode extends ExpressionNode {
      }
 
     @Override
-    public BaseType ValidateSemmantic() {
-        return null;
+    public Semantic.BaseType ValidateSemmantic() {
+        return new IntNode();
     }
 }
