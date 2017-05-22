@@ -1,6 +1,7 @@
 package Tree.Expression.DataType;
 
 
+import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 import sun.reflect.generics.tree.BaseType;
 
@@ -17,7 +18,7 @@ public class IdNode extends ExpressionNode {
 
     @Override
     public Semantic.BaseType ValidateSemmantic() {
-        return null;
+        return SymbolTable.getInstance().getType(value);
     }
 
 }

@@ -1,9 +1,10 @@
 package Tree.Expression.BaseType;
 
+import Semantic.BaseType;
+import Tree.Expression.DataType.*;
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.IntType;
 import javafx.util.Pair;
-import sun.reflect.generics.tree.BaseType;
 
-import java.util.Dictionary;
 import java.util.HashMap;
 
 /**
@@ -13,7 +14,7 @@ public  abstract class BinaryOperatorNode extends ExpressionNode{
 
     public ExpressionNode RightOperand;
     public  ExpressionNode LeftOperand;
-    public HashMap<Pair<BaseType, BaseType>, BaseType> Validation;
+
 
     public  BinaryOperatorNode(ExpressionNode rightOperand, ExpressionNode leftOperand) {
          this.RightOperand = rightOperand;
@@ -24,13 +25,17 @@ public  abstract class BinaryOperatorNode extends ExpressionNode{
         Semantic.BaseType leftType = RightOperand.ValidateSemmantic();
         Semantic.BaseType righftType = RightOperand.ValidateSemmantic();
 
-//  if( Validation.containsKey(new Pair<>(leftType, righftType))){
-
-  //    return Validation.get(new Pair<>(leftType, righftType));
-  //}
-
-    //    System.out.printf("No se peude realziar esta operacion");
-            return  null;
+  if( leftType instanceof IntNode && righftType instanceof  IntNode){
+      return new IntNode();
+  }else if( leftType instanceof StringNode && righftType instanceof  StringNode){
+      return  new StringNode();
+  }else if( leftType instanceof CharNode && righftType instanceof  CharNode){
+      return new CharNode();
+  }else if( leftType instanceof BooleanType && righftType instanceof  BooleanType){
+      return new BooleanType();
+  }
+    System.out.printf("No se puede realziar esta operacion \n");
+            return  new DefaultType();
 
 
         }

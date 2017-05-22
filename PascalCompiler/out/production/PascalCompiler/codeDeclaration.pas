@@ -2,8 +2,11 @@
 
 program codeDeclaration;
 
-
+write('sdasda');
 var test,test1 : string;
+test1 := 4+4;
+test := test+test1+test1;
+
 if x > s then
 begin
     var a,b,c : string;
@@ -32,6 +35,7 @@ end;
 
 else
 result := num2;
+
 
 while x < y do
 begin
@@ -83,6 +87,8 @@ end;
 var i1,i2,i3 : integer;
 
 findMin(i1,i2,i3);
+
+
 
 
 

@@ -36,6 +36,8 @@ string = \'([^'])*\'
     "-"                {  return symbol(sym.MINUS); }
     "*"                {  return symbol(sym.TIMES); }
     "/"                {  return symbol(sym.DIVIDE); }
+    "true"                {  return symbol(sym.TRUE); }
+    "false"                {  return symbol(sym.FALSE); }
     "("                {  return symbol(sym.LPAREN); }
     ")"                {  return symbol(sym.RPAREN); }
     ":="                 { return symbol(sym.ASSIGMENT); }

@@ -29,8 +29,8 @@ parser code {:
 
     public HashMap<String,Integer> vars = new HashMap<String,Integer>();
 :};   
-terminal           SEMI, PLUS, MINUS, TIMES, DIVIDE, LPAREN, RPAREN, EQUALS, PRINT, IF, LCURLY, RCURLY, ELSE, WHILE, LBRACK, RBRACK, OF, SCANF;
-terminal            TO,FLOAT,CHAR,BOOLEAN,STRING, ARRAY,INTEGER, ASSIGMENT,CONST;
+terminal  Symbol      SEMI, PLUS, MINUS, TIMES, DIVIDE, LPAREN, RPAREN, EQUALS, PRINT, IF, LCURLY, RCURLY, ELSE, WHILE, LBRACK, RBRACK, OF, SCANF;
+terminal            TO,FLOAT,CHAR,BOOLEAN,STRING, ARRAY,INTEGER, ASSIGMENT,CONST,TRUE,FALSE;
 terminal Integer   NUMBER;
 terminal String   ID,LIT_STRING;
 terminal char LIT_CHAR;
@@ -140,7 +140,7 @@ SpecialSentences ::= SpecialSentences:specialSentences  SentencesBucle:sentenceB
                    {:BlockNode node = new  BlockNode(); RESULT = node; :};
 
 
-SentencesDeclaration ::=   VAR ListId:ls COLON Type:typ SEMI {:DeclarationNode declaration = new DeclarationNode(ls,typ); RESULT = declaration;:};
+SentencesDeclaration ::=   VAR ListId:ls COLON Type:typ SEMI:symbol {:DeclarationNode declaration = new DeclarationNode(ls,typ,symbol); RESULT = declaration;:};
 
 ConstDeclaration ::= CONST ID:id ASSIGMENT TypeOfConst:tc SEMI  {: ConstNode node = new ConstNode(id,tc); RESULT= node;:} ;
 
@@ -200,6 +200,5 @@ TypeOfConst ::= LIT_CHAR:ltc {:LiteralChar nodo = new LiteralChar(ltc); RESULT =
   Type ::=
              CHAR {: CharNode node = new CharNode(); RESULT = node;:}
             | BOOLEAN  {: BooleanType node = new BooleanType(); RESULT= node;:}
-            | STRING {: StringNode node= new StringNode();
-                 RESULT= node;:}|
-                  INTEGER {: IntNode node =  new IntNode(); RESULT = node; :};
+            | STRING {: StringNode node= new StringNode(); RESULT= node;:}|
+             INTEGER {: IntNode node =  new IntNode(); RESULT = node; :};

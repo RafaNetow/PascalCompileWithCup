@@ -7,6 +7,7 @@ import Tree.Expression.BaseType.ExpressionNode;
  * Created by Sequeirios on 04/05/2017.
  */
 public class LessThanNode extends BinaryOperatorNode {
+
     public LessThanNode(ExpressionNode rightOperand, ExpressionNode leftOperand) {
         super(rightOperand, leftOperand);
     }

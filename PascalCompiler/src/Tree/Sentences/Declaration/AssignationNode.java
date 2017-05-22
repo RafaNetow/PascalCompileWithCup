@@ -27,7 +27,7 @@ public class AssignationNode extends SentencesNode {
 
        if(SymbolTable.getInstance()._table.containsKey(this.Id)){
             if(!(SymbolTable.getInstance().getType(this.Id).IsAssignable((BaseType) ExpressionToAssign.ValidateSemmantic()))){
-                System.out.println("Allocation is not allowed\n");
+                System.out.println("Allocation is not allowed to Id: "+Id+"\n");
             }
        }else{
            SymbolTable table = SymbolTable.getInstance();

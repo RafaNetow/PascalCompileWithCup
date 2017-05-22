@@ -41,7 +41,7 @@ public class SymbolTable {
             return  _table.get(name);
         }
 
-        System.out.println("Base Type doesn't exist\n");
+        System.out.println("Base Type "+name+"+ doesn't exist\n");
         return null;
 
     }
