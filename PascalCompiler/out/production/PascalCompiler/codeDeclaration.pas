@@ -2,7 +2,7 @@
 
 program codeDeclaration;
 
-write('sdasda');
+write('sdasda' , 'asdsaasd');
 var test,test1 : string;
 test1 := 4+4;
 test := test+test1+test1;

@@ -10,9 +10,7 @@ import Tree.Sentences.Conditional.BlockNode;
 import Tree.Sentences.Conditional.IfNode;
 import Tree.Sentences.Declaration.ConstNode;
 import Tree.Sentences.Declaration.DeclarationNode;
-import Tree.Sentences.Declaration.Function.CallFunction;
-import Tree.Sentences.Declaration.Function.FunctionDeclaration;
-import Tree.Sentences.Declaration.Function.ParamsOfFunction;
+import Tree.Sentences.Declaration.Function.*;
 import java_cup.runtime.*;
 import java.util.*;
 import Tree.Expression.*;
@@ -45,6 +43,8 @@ non terminal BaseType Type;
 
 non terminal List<SentencesNode>    program, Statement_list, BeginProgram, LoopBucle, SpecialSentences;
 non terminal SentencesNode Statement,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration,CallFunctionOrAssigment,ProcedureDeclaration ;
+
+non terminal List<ExpressionNode> ListOfExpressions , OptionalExpression;
 
 non terminal ExpressionNode    expr, factor, term, sumfactor,TypeOfConst,id;
 non terminal BlockNode Block,SentencesElse;
@@ -87,7 +87,12 @@ non terminal ParamFunction;
    ProcedureDeclaration ::= PROCEDURE ID:id Params:params  SEMI LoopBucle:listOfSentences {: ProcedureDeclaration node = new ProcedureDeclaration(params,id, listOfSentences); RESULT=node;:};
 
    CallFunctionOrAssigment ::=  ID:id ASSIGMENT expr:e SEMI {:RESULT = new AssignationNode(id,e);:} |
-                                ID:id LPAREN ListId:listId RPAREN SEMI {:RESULT = new  CallFunction(id,listId); :};
+                                ID:id LPAREN ListOfExpressions:listId RPAREN SEMI {:RESULT = new  CallFunction(id,listId); :};
+
+ListOfExpressions ::= expr:exp OptionalExpression:listExp {: listExp.add(exp); RESULT = listExp;:};
+
+OptionalExpression ::=  COMMA ListOfExpressions:listExp {:RESULT = listExp;:}
+                   |{: List<ExpressionNode> node = new ArrayList<ExpressionNode>(); RESULT = node;:};
 
 FunctionDeclaration ::= FUNCTION ID:nameOfFunction Params:listParams COLON Type:Type  SEMI  SentencesDeclaration:opDeclaration LoopBucle:ListOfSentences {:FunctionDeclaration node = new FunctionDeclaration(listParams,Type,ListOfSentences,opDeclaration, nameOfFunction); RESULT = node;:};
 
@@ -189,10 +194,15 @@ TypeOfConst ::= LIT_CHAR:ltc {:LiteralChar nodo = new LiteralChar(ltc); RESULT =
                  |
                  id:i
                  {: RESULT = i; :}
+                 |
+                 LIT_STRING:lts {:LiteralString node = new LiteralString(lts); RESULT = node;:}
+                 |
+                 LIT_CHAR:ltc {:LiteralChar node = new LiteralChar(ltc);:}
                  ;
 
       id        ::= ID:id {:RESULT = new IdNode(id);:} |
-                    ID:id LPAREN ListId:listId RPAREN  {:RESULT = new   CallFunctionExpression(id,listId); :}  ;
+
+                    ID:id LPAREN ListOfExpressions:listId RPAREN  {:RESULT = new   CallFunctionExpression(id,listId); :}  ;
 
 
 

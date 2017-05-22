@@ -13,9 +13,9 @@ import java.util.List;
  */
 public class CallFunctionExpression extends ExpressionNode {
     public String NameOfFunction;
-    public List<String> ListOfParams;
+    public List<ExpressionNode> ListOfParams;
 
-    public CallFunctionExpression(String name, List<String> listOfParams){
+    public CallFunctionExpression(String name, List<ExpressionNode> listOfParams){
         this.ListOfParams = listOfParams;
         this.NameOfFunction = name;
     }
@@ -46,7 +46,7 @@ public class CallFunctionExpression extends ExpressionNode {
                 for (int i = 0; i < function.ListParam.size() && !breakFor; i++) {
 
                     for (int o = 0; o < function.ListParam.get(i).listId.size(); o++) {
-                        if (SymbolTable.getInstance()._table.get(ListOfParams.get(postOfParams)).IsAssignable(function.ListParam.get(i).TypeOfParam)) {
+                        if ((ListOfParams.get(postOfParams)).ValidateSemmantic().IsAssignable(function.ListParam.get(i).TypeOfParam)) {
 
                         } else {
                             System.out.println("el paremtro no es del tipo esperado");

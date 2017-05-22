@@ -2,6 +2,7 @@ package Tree.Sentences.Declaration.Function;
 
 import Semantic.BaseType;
 import Semantic.SymbolTable;
+import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.FunctionType;
 import Tree.Expression.DataType.ProcedureType;
 import Tree.Expression.SentencesNode;
@@ -15,9 +16,10 @@ import java.util.List;
 public class CallFunction extends SentencesNode {
 
     public String NameOfFunction;
-    public List<String> ListOfParams;
+    public  List<ExpressionNode> ListOfParams;
 
-    public CallFunction(String name, List<String> listOfParams){
+
+    public CallFunction(String name, List<ExpressionNode> listOfParams){
         this.ListOfParams = listOfParams;
         this.NameOfFunction = name;
     }
@@ -49,7 +51,7 @@ public class CallFunction extends SentencesNode {
               for (int i = 0; i < function.ListParam.size() && !breakFor; i++) {
 
                   for (int o = 0; o < function.ListParam.get(i).listId.size(); o++) {
-                      if (SymbolTable.getInstance()._table.get(ListOfParams.get(postOfParams)).IsAssignable(function.ListParam.get(i).TypeOfParam)) {
+                      if (ListOfParams.get(postOfParams).ValidateSemmantic().IsAssignable(function.ListParam.get(i).TypeOfParam)) {
 
                       } else {
                           System.out.println("el paremtro no es del tipo esperado");
