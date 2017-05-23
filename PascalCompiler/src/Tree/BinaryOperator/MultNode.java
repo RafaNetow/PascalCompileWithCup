@@ -13,8 +13,5 @@ public class MultNode extends BinaryOperatorNode {
         super(rightOperand, leftOperand);
     }
 
-    @Override
-    public Semantic.BaseType ValidateSemmantic() {
-        return null;
-    }
+
 }
