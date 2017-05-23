@@ -1,7 +1,10 @@
 package Tree.Sentences.Bucles;
 
 import Tree.Expression.BaseType.ExpressionNode;
+import Tree.Expression.DataType.BooleanType;
+import Tree.Expression.DataType.IntNode;
 import Tree.Expression.SentencesNode;
+import javafx.beans.binding.IntegerExpression;
 
 import java.util.List;
 
@@ -11,21 +14,34 @@ import java.util.List;
 public class ForNode extends SentencesNode {
     public ExpressionNode FirstCondition;
     public  ExpressionNode SecondCondition;
-    public ExpressionNode ThirdCondition;
-
     public List<SentencesNode> listOfSentences ;
 
-    public  ForNode(ExpressionNode exp1, ExpressionNode exp2, ExpressionNode exp3, List<SentencesNode> list){
 
+    public  ForNode(ExpressionNode exp1, ExpressionNode exp2, List<SentencesNode> list){
+        FirstCondition = exp1;
+        SecondCondition = exp2;
+        listOfSentences = list;
     }
 
     @Override
     public void ValidateSemantic() {
 
+        if(FirstCondition.ValidateSemmantic() instanceof IntNode) {
+
+        }else{
+            System.out.println("Condicion no int");
+        }
+        if(SecondCondition.ValidateSemmantic() instanceof IntNode){
+
+        }else{
+            System.out.println("Condicion no int");
+        }
         for (SentencesNode sentence: listOfSentences
              ) {
             sentence.ValidateSemantic();
 
+
         }
+
     }
 }

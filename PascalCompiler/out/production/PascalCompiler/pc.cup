@@ -42,7 +42,7 @@ non terminal Object declaration_list;
 non terminal BaseType Type;
 
 non terminal List<SentencesNode>    program, Statement_list, BeginProgram, LoopBucle, SpecialSentences,LoopRepeat;
-non terminal SentencesNode Statement, SentencesRepeat,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration,CallFunctionOrAssigment,ProcedureDeclaration ;
+non terminal SentencesNode Statement, SentencesRepeat,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration,CallFunctionOrAssigment,ProcedureDeclaration, SentencesFor ;
 
 non terminal List<ExpressionNode> ListOfExpressions , OptionalExpression;
 
@@ -83,7 +83,9 @@ non terminal ParamFunction;
                     |
                     ProcedureDeclaration:pd {:RESULT = pd;:}
                     |
-                    SentencesRepeat:sr{:RESULT = sr;:};
+                    SentencesRepeat:sr{:RESULT = sr;:}
+                    |
+                    SentencesFor:sf{:RESULT = sf;:};
 
 
     SentencesRepeat ::= REPEAT  LoopBucle:listSentences  UNTIL expr:condition SEMI {:RepeatNode node = new RepeatNode(condition,listSentences); RESULT= node;:};
@@ -119,6 +121,8 @@ SentencesIf::= IF  expr:exp  THEN Block:block  {: IfNode node = new IfNode(exp,b
 
 SentencesWhile ::= WHILE expr:exp DO LoopBucle:loopbucle {:WhileNode node = new WhileNode(exp, loopbucle); RESULT = node; :};
 
+SentencesFor ::= FOR ID  ASSIGMENT expr:expresion TO expr:expression DO LoopBucle:bucle {:ForNode fornode = new ForNode(expresion, expression, bucle); RESULT = fornode;:};
+
 LoopBucle::=         SentencesBucle:sentencesBucle {:List<SentencesNode> list = new ArrayList<SentencesNode>(); list.add(sentencesBucle); RESULT = list;:}
                      |
                      BEGIN  SpecialSentences:specialsentences END SEMI {:RESULT = specialsentences;:};
@@ -134,8 +138,9 @@ SentencesBucle ::=  SentencesDeclaration:sentencesdeclaration {:RESULT = sentenc
                     |
                     ConstDeclaration:st {:RESULT = st;:}
                     |
-                    SentencesRepeat:sr {:RESULT=sr;:};
-
+                    SentencesRepeat:sr {:RESULT=sr;:}
+                    |
+                    SentencesFor:sf {:RESULT = sf;:};
 
                     /*SentencesFor:sentencesfor {:RESULT = sentencesfor;:};
                     |

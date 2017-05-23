@@ -17,7 +17,7 @@ public class SymbolTable {
         return  instance;
     }
 
-    private  SymbolTable(){
+    public   SymbolTable(){
 
     }
 

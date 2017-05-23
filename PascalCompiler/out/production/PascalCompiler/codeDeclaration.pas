@@ -44,7 +44,7 @@ var n,m,c : char;
 var l,i,u: integer;
 end;
 
-function max(num1, num2: string ): string;
+function max(num1, num2: string ): integer;
 
 var result: string;
 
@@ -92,6 +92,14 @@ repeat
      a:= 1;
 until 8>5;
 
+var contador : integer;
+var aba : integer;
+aba := 0;
+
+for contador := 10 to 20 do
+    begin
+        aba := aba + 1;
+    end;
 
 
 
