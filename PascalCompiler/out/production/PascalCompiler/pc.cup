@@ -32,17 +32,17 @@ terminal            TO,FLOAT,CHAR,BOOLEAN,STRING, ARRAY,INTEGER, ASSIGMENT,CONST
 terminal Integer   NUMBER;
 terminal String   ID,LIT_STRING;
 terminal char LIT_CHAR;
-terminal GREATERTHAN, LESSTHAN, LESSOREQUALTHAN, GREATEROREQUALTHAN, EQUALSEQUALS, NOTEQUALS,DOT;
+terminal GREATERTHAN, LESSTHAN, LESSOREQUALTHAN, GREATEROREQUALTHAN, EQUALSEQUALS, NOTEQUALS,DOT, REPEAT;
 
-terminal VAR,FOR, PROGRAM,THEN,BEGIN,END,DO,FUNCTION, PROCEDURE;//Reserverd Words
+terminal VAR,FOR, PROGRAM,THEN,BEGIN,END,DO,FUNCTION, PROCEDURE,UNTIL;//Reserverd Words
 
 terminal COLON,COMMA;//Special Quotes
 
 non terminal Object declaration_list;
 non terminal BaseType Type;
 
-non terminal List<SentencesNode>    program, Statement_list, BeginProgram, LoopBucle, SpecialSentences;
-non terminal SentencesNode Statement,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration,CallFunctionOrAssigment,ProcedureDeclaration ;
+non terminal List<SentencesNode>    program, Statement_list, BeginProgram, LoopBucle, SpecialSentences,LoopRepeat;
+non terminal SentencesNode Statement, SentencesRepeat,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration,CallFunctionOrAssigment,ProcedureDeclaration ;
 
 non terminal List<ExpressionNode> ListOfExpressions , OptionalExpression;
 
@@ -71,17 +71,23 @@ non terminal ParamFunction;
    Statement ::= CallFunctionOrAssigment:st{:RESULT = st;:}
 
                     |
-                   SentencesDeclaration:st{:RESULT= st; :}
+                    SentencesDeclaration:st{:RESULT= st; :}
                     |
-                   ConstDeclaration:st {:RESULT = st;:}
+                    ConstDeclaration:st {:RESULT = st;:}
                     |
                     SentencesIf:st {:RESULT = st;:}
                     |
-                  SentencesWhile:wd {:RESULT = wd;:}
+                    SentencesWhile:wd {:RESULT = wd;:}
                     |
-                 FunctionDeclaration:fd {:RESULT = fd;:}
+                    FunctionDeclaration:fd {:RESULT = fd;:}
                     |
-                 ProcedureDeclaration:pd {:RESULT = pd;:};
+                    ProcedureDeclaration:pd {:RESULT = pd;:}
+                    |
+                    SentencesRepeat:sr{:RESULT = sr;:};
+
+
+    SentencesRepeat ::= REPEAT  LoopBucle:listSentences  UNTIL expr:condition SEMI {:RepeatNode node = new RepeatNode(condition,listSentences); RESULT= node;:};
+
 
 
    ProcedureDeclaration ::= PROCEDURE ID:id Params:params  SEMI LoopBucle:listOfSentences {: ProcedureDeclaration node = new ProcedureDeclaration(params,id, listOfSentences); RESULT=node;:};
@@ -121,7 +127,15 @@ SentencesBucle ::=  SentencesDeclaration:sentencesdeclaration {:RESULT = sentenc
                     |
                     SentencesIf:sentencesif {:RESULT = sentencesif;:}
                     |
-                    SentencesWhile:sentenceswhile {:RESULT = sentenceswhile;:};
+                    SentencesWhile:sentenceswhile {:RESULT = sentenceswhile;:}
+                    |
+                    CallFunctionOrAssigment:st{:RESULT = st;:}
+
+                    |
+                    ConstDeclaration:st {:RESULT = st;:}
+                    |
+                    SentencesRepeat:sr {:RESULT=sr;:};
+
 
                     /*SentencesFor:sentencesfor {:RESULT = sentencesfor;:};
                     |

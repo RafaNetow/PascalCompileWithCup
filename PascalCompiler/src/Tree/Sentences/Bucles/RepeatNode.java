@@ -1,5 +1,7 @@
 package Tree.Sentences.Bucles;
 
+import Tree.Expression.BaseType.ExpressionNode;
+import Tree.Expression.DataType.BooleanType;
 import Tree.Expression.SentencesNode;
 
 import java.util.List;
@@ -9,12 +11,23 @@ import java.util.List;
  */
 public class RepeatNode extends SentencesNode {
 
-    List<SentencesNode> listSentences;
+    ExpressionNode Condition;
+    List<SentencesNode> ListSentences;
+
+    public RepeatNode(ExpressionNode condition, List<SentencesNode> sentences){
+        this.Condition = condition;
+        this.ListSentences = sentences;
+    }
     @Override
-    public void ValidateSemantic() {
-        for (SentencesNode sentence: listSentences
-             ) {
-                sentence.ValidateSemantic();
+    public void
+    ValidateSemantic() {
+        if(Condition.ValidateSemmantic() instanceof BooleanType){
+            for (SentencesNode sentences:
+                 ListSentences) {
+                    sentences.ValidateSemantic();
+            }
+        }else{
+            System.out.println("Expression is not boolean");
         }
     }
 }

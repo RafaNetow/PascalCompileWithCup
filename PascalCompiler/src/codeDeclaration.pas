@@ -88,6 +88,10 @@ var i1,i2,i3 : integer;
 
 findMin(i1,i2,i3);
 
+repeat
+     a:= 1;
+until 8>5;
+
 
 
 

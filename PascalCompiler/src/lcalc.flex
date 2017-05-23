@@ -32,6 +32,8 @@ string = \'([^'])*\'
   "var"   {return symbol(sym.VAR);}
     ";"                { return symbol(sym.SEMI); }
    "const"                { return symbol(sym.CONST); }
+     "repeat"                { return symbol(sym.REPEAT); }
+      "until"                { return symbol(sym.UNTIL); }
     "+"                {  return symbol(sym.PLUS); }
     "-"                {  return symbol(sym.MINUS); }
     "*"                {  return symbol(sym.TIMES); }
