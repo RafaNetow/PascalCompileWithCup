@@ -36,13 +36,13 @@ terminal GREATERTHAN, LESSTHAN, LESSOREQUALTHAN, GREATEROREQUALTHAN, EQUALSEQUAL
 
 terminal VAR,FOR, PROGRAM,THEN,BEGIN,END,DO,FUNCTION, PROCEDURE,UNTIL;//Reserverd Words
 
-terminal COLON,COMMA;//Special Quotes
+terminal COLON,COMMA, COMMENT;//Special Quotes
 
 non terminal Object declaration_list;
 non terminal BaseType Type;
 
 non terminal List<SentencesNode>    program, Statement_list, BeginProgram, LoopBucle, SpecialSentences,LoopRepeat;
-non terminal SentencesNode Statement, SentencesRepeat,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration,CallFunctionOrAssigment,ProcedureDeclaration, SentencesFor ;
+non terminal SentencesNode Statement, SentencesRepeat,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration,CallFunctionOrAssigment,ProcedureDeclaration, SentencesFor,  SentencesComment ;
 
 non terminal List<ExpressionNode> ListOfExpressions , OptionalExpression;
 
@@ -85,7 +85,9 @@ non terminal ParamFunction;
                     |
                     SentencesRepeat:sr{:RESULT = sr;:}
                     |
-                    SentencesFor:sf{:RESULT = sf;:};
+                    SentencesFor:sf{:RESULT = sf;:}
+                    |
+                    SentencesComment {::};
 
 
     SentencesRepeat ::= REPEAT  LoopBucle:listSentences  UNTIL expr:condition SEMI {:RepeatNode node = new RepeatNode(condition,listSentences); RESULT= node;:};
@@ -123,6 +125,8 @@ SentencesWhile ::= WHILE expr:exp DO LoopBucle:loopbucle {:WhileNode node = new 
 
 SentencesFor ::= FOR ID  ASSIGMENT expr:expresion TO expr:expression DO LoopBucle:bucle {:ForNode fornode = new ForNode(expresion, expression, bucle); RESULT = fornode;:};
 
+SentencesComment ::= COMMENT {::};
+
 LoopBucle::=         SentencesBucle:sentencesBucle {:List<SentencesNode> list = new ArrayList<SentencesNode>(); list.add(sentencesBucle); RESULT = list;:}
                      |
                      BEGIN  SpecialSentences:specialsentences END SEMI {:RESULT = specialsentences;:};
@@ -140,7 +144,9 @@ SentencesBucle ::=  SentencesDeclaration:sentencesdeclaration {:RESULT = sentenc
                     |
                     SentencesRepeat:sr {:RESULT=sr;:}
                     |
-                    SentencesFor:sf {:RESULT = sf;:};
+                    SentencesFor:sf {:RESULT = sf;:}
+                    |
+                    SentencesComment {::};
 
                     /*SentencesFor:sentencesfor {:RESULT = sentencesfor;:};
                     |

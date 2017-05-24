@@ -6,4 +6,5 @@ package Tree.Expression;
 public abstract class SentencesNode {
 
     public abstract void ValidateSemantic();
+    //public  abstract  void GenerateTreeDirection();
 }

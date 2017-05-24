@@ -23,8 +23,13 @@ WhiteSpace     = {LineTerminator} | [ \t\f]
 dec_int_lit = 0 | [1-9][0-9]*
 dec_int_id = [A-Za-z_][A-Za-z_0-9]*
 character = \'([^'])?\'
-
+leftBracket = \{
+rightBracket = \}
 string = \'([^'])*\'
+space = [ \n\t\r]
+notBracket = [^}]|{space}
+commentBody= {notBracket}*
+comment = {leftBracket}{commentBody}{rightBracket}
 %%
 <YYINITIAL> {
      ","                { return symbol(sym.COMMA, ","); }
@@ -75,6 +80,7 @@ string = \'([^'])*\'
     "=="             { return symbol(sym.EQUALSEQUALS); }
     "program"             { return symbol(sym.PROGRAM); }
     {character}  {return symbol(sym.LIT_CHAR , "lit_char");}
+    {comment} {return symbol(sym.COMMENT);}
     {string} {return symbol(sym.LIT_STRING ,"lit_string");}
     "!="             { return symbol(sym.NOTEQUALS); }
     {dec_int_lit}      { 

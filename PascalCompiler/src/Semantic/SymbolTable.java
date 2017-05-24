@@ -8,7 +8,7 @@ import java.util.HashMap;
  */
 public class SymbolTable {
     static SymbolTable instance;
-
+int a = 10;
     static {
         instance = new SymbolTable();
     }
@@ -26,13 +26,14 @@ public class SymbolTable {
 
     public boolean declareVariable(String name, BaseType type){
 
-        if(_table.containsKey(name)){
-            System.out.printf("Variable "+name+" already exist\n");
-            return false;
-        }else {
-            _table.put(name,type);
-            return  true;
-        }
+      if(Context.getInstance().Stack.peek()._table.containsKey(name)){
+          System.out.printf("Variable "+name+" already exist\n");
+          return false;
+      }else{
+          Context.getInstance().Stack.peek()._table.put(name,type);
+          return  true;
+      }
+
 
     }
 

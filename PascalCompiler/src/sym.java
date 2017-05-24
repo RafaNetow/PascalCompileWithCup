@@ -14,6 +14,7 @@ public class sym {
   public static final int CONST = 28;
   public static final int CHAR = 22;
   public static final int EQUALS = 9;
+  public static final int COMMENT = 55;
   public static final int EQUALSEQUALS = 39;
   public static final int INTEGER = 26;
   public static final int LPAREN = 7;
@@ -116,7 +117,8 @@ public class sym {
   "PROCEDURE",
   "UNTIL",
   "COLON",
-  "COMMA"
+  "COMMA",
+  "COMMENT"
   };
 }
 
