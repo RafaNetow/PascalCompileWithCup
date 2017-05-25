@@ -1,5 +1,6 @@
 package Tree.Sentences.Declaration;
 
+import Semantic.Context;
 import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.ConstType;
@@ -20,6 +21,6 @@ public class ConstNode extends SentencesNode {
 
     @Override
     public void ValidateSemantic() {
-        SymbolTable.getInstance().declareVariable(Id, new ConstType(Literal));
+        Context.getInstance().Stack.peek()._table.put(Id, new ConstType(Literal));
     }
 }

@@ -3,6 +3,7 @@ import java.io.*;
 
 import java.util.List;
 
+import Semantic.Context;
 import Semantic.SymbolTable;
 import Tree.Expression.SentencesNode;
 
@@ -20,7 +21,7 @@ public class Main {
                  result) {
                 sentence.ValidateSemantic();
             }
-        SymbolTable table =    SymbolTable.getInstance();
+        Context table = Context.getInstance();
             System.out.println(code);
 
         } catch (Exception e) {

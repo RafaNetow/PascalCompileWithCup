@@ -3,14 +3,15 @@
 program codeDeclaration;
 
 write('sdasda' , 'asdsaasd');
-var test,test1 : string;
-test1 := 4+4;
-test := test+test1+test1;
+
+
+var x, sd,sdsd,s : integer;
+var b,r : string;
 
 if x > s then
 begin
-    var a,b,c : string;
-    var a,b,c : string;
+  var b,r:integer;
+
     b := 4 + 5;
 
     var e,r,t : boolean;
@@ -101,7 +102,7 @@ for contador := 10 to 20 do
         aba := aba + 1;
     end;
 
-{Holis}
+
 
 
 

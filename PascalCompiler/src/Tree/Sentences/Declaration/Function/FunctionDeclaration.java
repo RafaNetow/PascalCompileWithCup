@@ -1,6 +1,7 @@
 package Tree.Sentences.Declaration.Function;
 
 import Semantic.BaseType;
+import Semantic.Context;
 import Semantic.SymbolTable;
 import Tree.Expression.DataType.FunctionType;
 import Tree.Expression.SentencesNode;
@@ -31,12 +32,17 @@ public class FunctionDeclaration extends SentencesNode {
     @Override
     public void ValidateSemantic() {
 
+    Context.getInstance().Stack.push( new SymbolTable());
+        for (SentencesNode sentence: ListOfSentences) {
+            sentence.ValidateSemantic();
+        }
 
 
-        if(SymbolTable.getInstance().declareVariable(NameOfFunction, new FunctionType(ListOfParams,TypeOfFunction,ListOfSentences,LocalDeclaration,NameOfFunction))){
+        if(Context.getInstance().Stack.peek().declareVariable(NameOfFunction, new FunctionType(ListOfParams,TypeOfFunction,ListOfSentences,LocalDeclaration,NameOfFunction))){
 
         }else{
 
         }
+        Context.getInstance().TableToRemind.put(CodeGuid, Context.getInstance().Stack.pop());
     }
 }

@@ -1,6 +1,7 @@
 package Tree.Sentences.Declaration;
 
 import Semantic.BaseType;
+import Semantic.Context;
 import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.IdNode;
@@ -25,12 +26,12 @@ public class AssignationNode extends SentencesNode {
     @Override
     public void ValidateSemantic() {
 
-       if(SymbolTable.getInstance()._table.containsKey(this.Id)){
-            if(!(SymbolTable.getInstance().getType(this.Id).IsAssignable((BaseType) ExpressionToAssign.ValidateSemmantic()))){
+       if(Context.getInstance().Stack.peek().foundVariable(this.Id)){
+            if(!(Context.getInstance().Stack.peek().getVariable(Id).IsAssignable(ExpressionToAssign.ValidateSemmantic()))){
                 System.out.println("Allocation is not allowed to Id: "+Id+"\n");
             }
        }else{
-           SymbolTable table = SymbolTable.getInstance();
+
           System.out.println("Id "+this.Id+" doesnt exist\n");
        }
 

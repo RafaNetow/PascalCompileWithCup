@@ -1,5 +1,7 @@
 package Tree.Sentences.Bucles;
 
+import Semantic.Context;
+import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.BooleanType;
 import Tree.Expression.SentencesNode;
@@ -21,6 +23,7 @@ public class RepeatNode extends SentencesNode {
     @Override
     public void
     ValidateSemantic() {
+        Context.getInstance().Stack.push(new SymbolTable());
         if(Condition.ValidateSemmantic() instanceof BooleanType){
             for (SentencesNode sentences:
                  ListSentences) {
@@ -28,6 +31,7 @@ public class RepeatNode extends SentencesNode {
             }
         }else{
             System.out.println("Expression is not boolean");
-        }
+        } Context.getInstance().TableToRemind.put(CodeGuid, Context.getInstance().Stack.pop());
     }
 }
+

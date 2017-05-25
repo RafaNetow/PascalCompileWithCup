@@ -1,5 +1,7 @@
 package Tree.Sentences.Bucles;
 
+import Semantic.Context;
+import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.BooleanType;
 import Tree.Expression.DataType.IntNode;
@@ -26,6 +28,7 @@ public class ForNode extends SentencesNode {
     @Override
     public void ValidateSemantic() {
 
+        Context.getInstance().Stack.push( new SymbolTable());
         if(FirstCondition.ValidateSemmantic() instanceof IntNode) {
 
         }else{
@@ -40,8 +43,9 @@ public class ForNode extends SentencesNode {
              ) {
             sentence.ValidateSemantic();
 
-
         }
+
+        Context.getInstance().TableToRemind.put(CodeGuid, Context.getInstance().Stack.pop());
 
     }
 }

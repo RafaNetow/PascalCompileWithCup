@@ -2,6 +2,7 @@ package Tree.Sentences.Declaration;
 
 import Semantic.BaseType;
 
+import Semantic.Context;
 import Semantic.SymbolTable;
 import Tree.Expression.DataType.IdNode;
 import Tree.Expression.SentencesNode;
@@ -30,7 +31,7 @@ public class DeclarationNode extends SentencesNode {
     public void ValidateSemantic() {
 
        for(String item: ListOfIds){
-           SymbolTable.getInstance().declareVariable(item, Type);
+           Context.getInstance().Stack.peek()._table.put(item, Type);
 
        }
 

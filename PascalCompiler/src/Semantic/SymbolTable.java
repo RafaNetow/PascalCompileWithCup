@@ -1,7 +1,13 @@
 package Semantic;
 
+import Tree.Expression.DataType.DefaultType;
+import Tree.Expression.DataType.StringNode;
+
 import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Sequeirios on 09/05/2017.
@@ -37,13 +43,44 @@ int a = 10;
 
     }
 
-    public  BaseType getType(String name){
-        if(_table.containsKey(name)){
-            return  _table.get(name);
+    public boolean foundVariable(String variableName)
+    {
+        List<SymbolTable> stackList = new ArrayList<>(Context.getInstance().Stack);
+        Collections.reverse(stackList);
+        for (SymbolTable stack : stackList){
+         if (stack._table.containsKey(variableName))
+         {
+             return  true;
+         }
+     }
+
+        return  false ;
+    }
+
+    public  BaseType getVariable(String name){
+        List<SymbolTable> stackList = new ArrayList<>(Context.getInstance().Stack);
+        Collections.reverse(stackList);
+        for (SymbolTable stack : stackList){
+            if (stack._table.containsKey(name))
+            {
+                return  stack._table.get(name);
+            }
         }
 
-        System.out.println("Base Type "+name+"+ doesn't exist\n");
-        return null;
+        return  new DefaultType() ;
+    }
+
+    public  BaseType getType(String name){
+
+
+        for (SymbolTable table: Context.getInstance().Stack
+             ) {
+             if( table._table.containsKey(name))
+                 return  table._table.get(name);
+        }
+
+        System.out.println("variable:  "+name+" doesn't exist\n");
+        return new DefaultType();
 
     }
 
