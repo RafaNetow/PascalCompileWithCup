@@ -2,12 +2,33 @@
 
 program codeDeclaration;
 
-write('sdasda' , 'asdsaasd');
 
 
-var x, sd,sdsd,s : integer;
+procedure findMin(x, y, z: integer);
+
+
+begin
+    if x < y then
+    begin
+        x:= x;
+    end;
+else
+begin
+    x:= y;
+end;
+
+if z < x then
+x:= z;
+end;
+
+var i1,i2,i3 : integer;
+
+findMin(i1,i2,i3);
+
+
+var x,y, sd,sdsd,s : integer;
 var b,r : string;
-
+var m : integer;
 if x > s then
 begin
   var b,r:integer;
@@ -15,7 +36,7 @@ begin
     b := 4 + 5;
 
     var e,r,t : boolean;
-    var n,m,c : char;
+
     var l,i,u: integer;
     const pruebaString := 'hola';
     const pruebaChar := 'char';
@@ -24,7 +45,7 @@ begin
     begin
 
         var e,r,t : boolean;
-        var n,m,c : char;
+
         var l,i,u: integer;
     end;
     else
@@ -34,14 +55,13 @@ begin
 
 end;
 
-else
-result := num2;
+
 
 
 while x < y do
 begin
 var e,r,t : boolean;
-var n,m,c : char;
+
 var l,i,u: integer;
 end;
 
@@ -60,37 +80,25 @@ end;
 else
 begin
 result := num2;
-max := result;
+
 end;
 end;
 
 max(a,c);
 
+
+var test : integer;
+
+var a,c : string;
 test := max(a,c);
 
-procedure findMin(x, y, z: integer);
 
-
-begin
-if x < y then
-begin
-m:= x;
-end;
-else
-begin
-m:= y;
-end;
-
-if z < m then
-m:= z;
-end;
-
-var i1,i2,i3 : integer;
-
-findMin(i1,i2,i3);
 
 repeat
+    begin
+ var a : integer;
      a:= 1;
+end;
 until 8>5;
 
 var contador : integer;

@@ -19,4 +19,11 @@ public class SumNode extends BinaryOperatorNode {
         super(rightOperand, leftOperand);
 
     }
+
+    @Override
+    public String GenerateTreeDimensions() {
+       String nameLabel = NextLabel();
+        TableCuadroplo.add("+",this.RightOperand.GenerateTreeDimensions(),this.GenerateTreeDimensions(),nameLabel);
+        return null;
+    }
 }

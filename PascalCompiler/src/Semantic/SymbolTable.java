@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class SymbolTable {
     static SymbolTable instance;
+
 int a = 10;
     static {
         instance = new SymbolTable();

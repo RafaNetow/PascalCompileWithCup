@@ -34,7 +34,7 @@ public class CallFunctionExpression extends ExpressionNode {
     }
     @Override
     public Semantic.BaseType ValidateSemmantic() {
-        Semantic.BaseType type =  SymbolTable.getInstance()._table.get(NameOfFunction);
+        Semantic.BaseType type =  SymbolTable.getInstance().getType(NameOfFunction);
 
         int postOfParams =0;
         boolean breakFor = false;
@@ -62,7 +62,7 @@ public class CallFunctionExpression extends ExpressionNode {
             }
             return  ((FunctionType)type).TypeToReturn;
         }else{
-            System.out.println(NameOfFunction+" is not a procedure");
+            System.out.println(NameOfFunction+" is not a function");
         }
         return new DefaultType();
     }

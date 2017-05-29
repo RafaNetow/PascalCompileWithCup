@@ -37,4 +37,12 @@ public class AssignationNode extends SentencesNode {
 
 
     }
+
+    @Override
+    public String GenrarTresDirecciones() {
+
+        SymbolTable.getInstance
+        CuadroploTable.add("=", Id, null, ExpressionToAssign.GenerateTreeDimensions());
+        return null;
+    }
 }

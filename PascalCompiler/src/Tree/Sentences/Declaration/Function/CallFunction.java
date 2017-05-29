@@ -39,7 +39,7 @@ public class CallFunction extends SentencesNode {
 
     @Override
     public void ValidateSemantic() {
-      BaseType type =  SymbolTable.getInstance()._table.get(NameOfFunction);
+      BaseType type =  SymbolTable.getInstance().getType(NameOfFunction);
 
         int postOfParams =0;
         boolean breakFor = false;

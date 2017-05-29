@@ -18,4 +18,9 @@ public class NumberNode extends ExpressionNode {
     public Semantic.BaseType ValidateSemmantic() {
         return new IntNode();
     }
+
+    @Override
+    public String GenerateTreeDimensions() {
+        return String.valueOf(value);
+    }
 }

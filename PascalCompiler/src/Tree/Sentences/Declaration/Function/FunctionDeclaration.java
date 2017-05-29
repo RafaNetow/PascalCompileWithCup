@@ -32,17 +32,26 @@ public class FunctionDeclaration extends SentencesNode {
     @Override
     public void ValidateSemantic() {
 
-    Context.getInstance().Stack.push( new SymbolTable());
+
+
+            Context.getInstance().Stack.push( new SymbolTable());
+            for (ParamsOfFunction param : ListOfParams) {
+                for (String variable : param.listId) {
+                    SymbolTable.getInstance().declareVariable(variable, param.TypeOfParam);
+                }
+            }
         for (SentencesNode sentence: ListOfSentences) {
             sentence.ValidateSemantic();
         }
 
 
+
+
+        Context.getInstance().TableToRemind.put(CodeGuid, Context.getInstance().Stack.pop());
         if(Context.getInstance().Stack.peek().declareVariable(NameOfFunction, new FunctionType(ListOfParams,TypeOfFunction,ListOfSentences,LocalDeclaration,NameOfFunction))){
 
         }else{
 
         }
-        Context.getInstance().TableToRemind.put(CodeGuid, Context.getInstance().Stack.pop());
     }
 }

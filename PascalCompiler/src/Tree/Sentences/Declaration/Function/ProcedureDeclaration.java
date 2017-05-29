@@ -27,15 +27,21 @@ public class ProcedureDeclaration extends SentencesNode
     @Override
     public void ValidateSemantic() {
         Context.getInstance().Stack.push( new SymbolTable());
+        for (ParamsOfFunction param : ListOfParams) {
+            for (String variable : param.listId) {
+                SymbolTable.getInstance().declareVariable(variable, param.TypeOfParam);
+            }
+        }
         for (SentencesNode sentence: ListOfSentences) {
             sentence.ValidateSemantic();
         }
 
+
+        Context.getInstance().TableToRemind.put(CodeGuid, Context.getInstance().Stack.pop());
         if(Context.getInstance().Stack.peek().declareVariable(NameOfProcedure, new ProcedureType(ListOfParams,ListOfSentences,NameOfProcedure))){
 
         }else{
 
         }
-        Context.getInstance().TableToRemind.put(CodeGuid, Context.getInstance().Stack.pop());
     }
 }

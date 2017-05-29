@@ -22,5 +22,10 @@ public class IdNode extends ExpressionNode {
         return Context.getInstance().Stack.peek().getType(value);
     }
 
+    @Override
+    public String GenerateTreeDimensions() {
+        return value;
+    }
+
 }
 

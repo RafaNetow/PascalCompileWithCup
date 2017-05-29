@@ -8,5 +8,6 @@ import sun.reflect.generics.tree.BaseType;
 public abstract class ExpressionNode {
 
     public abstract  Semantic.BaseType ValidateSemmantic();
+    public  abstract  String    GenerateTreeDimensions();
 
 }
