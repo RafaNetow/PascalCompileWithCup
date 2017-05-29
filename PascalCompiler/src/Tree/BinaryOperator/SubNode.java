@@ -10,4 +10,9 @@ public class SubNode extends BinaryOperatorNode {
     public SubNode(ExpressionNode rightOperand, ExpressionNode leftOperand) {
         super(rightOperand, leftOperand);
     }
+
+    @Override
+    public String GenerateTreeDimensions() {
+        return null;
+    }
 }

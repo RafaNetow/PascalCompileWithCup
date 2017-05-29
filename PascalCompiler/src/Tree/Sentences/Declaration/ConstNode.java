@@ -23,4 +23,9 @@ public class ConstNode extends SentencesNode {
     public void ValidateSemantic() {
         Context.getInstance().Stack.peek()._table.put(Id, new ConstType(Literal));
     }
+
+    @Override
+    public String GenrarTresDirecciones() {
+        return null;
+    }
 }

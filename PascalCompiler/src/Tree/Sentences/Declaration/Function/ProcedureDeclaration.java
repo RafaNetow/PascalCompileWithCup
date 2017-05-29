@@ -44,4 +44,9 @@ public class ProcedureDeclaration extends SentencesNode
 
         }
     }
+
+    @Override
+    public String GenrarTresDirecciones() {
+        return null;
+    }
 }

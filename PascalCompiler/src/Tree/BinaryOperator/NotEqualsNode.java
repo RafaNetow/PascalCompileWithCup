@@ -25,4 +25,9 @@ public class NotEqualsNode extends BinaryOperatorNode {
         System.out.printf("No se puede realziar esta operacion \n");
         return  new DefaultType();
     }
+
+    @Override
+    public String GenerateTreeDimensions() {
+        return null;
+    }
 }

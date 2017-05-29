@@ -15,4 +15,9 @@ public class LiteralChar extends ExpressionNode {
     public Semantic.BaseType ValidateSemmantic() {
         return new CharNode();
     }
+
+    @Override
+    public String GenerateTreeDimensions() {
+        return null;
+    }
 }

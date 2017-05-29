@@ -14,4 +14,8 @@ public class MultNode extends BinaryOperatorNode {
     }
 
 
+    @Override
+    public String GenerateTreeDimensions() {
+        return null;
+    }
 }

@@ -3,6 +3,8 @@ package Tree.BinaryOperator;
 import Tree.Expression.BaseType.BinaryOperatorNode;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.*;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.Cuadruplo;
 
 /**
  * Created by Sequeirios on 04/05/2017.
@@ -24,4 +26,11 @@ public class LessOrEqualThanNode extends BinaryOperatorNode {
         System.out.printf("No se puede realziar esta operacion \n");
         return  new DefaultType();
     }
+
+    @Override
+    public String GenerateTreeDimensions() {
+        String nameLabel = CuadrupleTable.getInstance().newLabel();
+        return nameLabel;
+    }
+
 }

@@ -48,4 +48,9 @@ public class ForNode extends SentencesNode {
         Context.getInstance().TableToRemind.put(CodeGuid, Context.getInstance().Stack.pop());
 
     }
+
+    @Override
+    public String GenrarTresDirecciones() {
+        return null;
+    }
 }

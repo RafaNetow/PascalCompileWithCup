@@ -3,6 +3,8 @@ package Tree.BinaryOperator;
 import Tree.Expression.BaseType.BinaryOperatorNode;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.*;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.Cuadruplo;
 
 /**
  * Created by Sequeirios on 05/05/2017.
@@ -23,5 +25,11 @@ public class AndOPNode extends BinaryOperatorNode {
         }
         System.out.printf("No se puede realziar esta operacion \n");
         return  new DefaultType();
+    }
+
+    @Override
+    public String GenerateTreeDimensions() {
+        String nameLabel = CuadrupleTable.getInstance().newLabel();
+        return nameLabel;
     }
 }

@@ -37,4 +37,9 @@ public class BlockNode extends SentencesNode {
         if(ElseBlock !=null)
         ElseBlock.ValidateSemantic();
     }
+
+    @Override
+    public String GenrarTresDirecciones() {
+        return null;
+    }
 }

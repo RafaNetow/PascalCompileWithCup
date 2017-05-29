@@ -34,4 +34,9 @@ public class IfNode extends SentencesNode {
 
 
     }
+
+    @Override
+    public String GenrarTresDirecciones() {
+        return null;
+    }
 }

@@ -5,6 +5,9 @@ import Tree.Expression.BaseType.BinaryOperatorNode;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.IntNode;
 import Tree.Expression.DataType.StringNode;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.Cuadruplo;
+import TreeWaysCode.SumWay;
 import javafx.util.Pair;
 
 import java.util.HashMap;
@@ -14,7 +17,6 @@ import java.util.HashMap;
  */
 public class SumNode extends BinaryOperatorNode {
 
-
     public SumNode(ExpressionNode rightOperand, ExpressionNode leftOperand) {
         super(rightOperand, leftOperand);
 
@@ -22,8 +24,10 @@ public class SumNode extends BinaryOperatorNode {
 
     @Override
     public String GenerateTreeDimensions() {
-       String nameLabel = NextLabel();
-        TableCuadroplo.add("+",this.RightOperand.GenerateTreeDimensions(),this.GenerateTreeDimensions(),nameLabel);
-        return null;
+        SumWay sw;
+        String nameLabel = CuadrupleTable.getInstance().newLabel();
+        sw = new SumWay("+", this.RightOperand.GenerateTreeDimensions(), this.LeftOperand.GenerateTreeDimensions(), nameLabel);
+        CuadrupleTable.getInstance().AddCuadruplo(sw);
+        return nameLabel;
     }
 }

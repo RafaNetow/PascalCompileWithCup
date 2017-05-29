@@ -6,6 +6,8 @@ import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.IdNode;
 import Tree.Expression.SentencesNode;
+import TreeWaysCode.AssigantionWay;
+import TreeWaysCode.CuadrupleTable;
 
 /**
  * Created by Sequeirios on 05/05/2017.
@@ -40,9 +42,8 @@ public class AssignationNode extends SentencesNode {
 
     @Override
     public String GenrarTresDirecciones() {
-
-        SymbolTable.getInstance
-        CuadroploTable.add("=", Id, null, ExpressionToAssign.GenerateTreeDimensions());
-        return null;
+        AssigantionWay aw = new AssigantionWay("=", this.ExpressionToAssign.GenerateTreeDimensions(), this.Id);
+        CuadrupleTable.getInstance().AddCuadruplo(aw);
+        return Id;
     }
 }

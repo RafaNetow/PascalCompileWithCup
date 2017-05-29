@@ -33,5 +33,10 @@ public class RepeatNode extends SentencesNode {
             System.out.println("Expression is not boolean");
         } Context.getInstance().TableToRemind.put(CodeGuid, Context.getInstance().Stack.pop());
     }
+
+    @Override
+    public String GenrarTresDirecciones() {
+        return null;
+    }
 }
 

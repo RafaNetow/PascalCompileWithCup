@@ -66,4 +66,9 @@ public class CallFunctionExpression extends ExpressionNode {
         }
         return new DefaultType();
     }
+
+    @Override
+    public String GenerateTreeDimensions() {
+        return null;
+    }
 }

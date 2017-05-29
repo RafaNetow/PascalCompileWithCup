@@ -39,6 +39,11 @@ public class WhileNode extends SentencesNode {
 
     }
 
+    @Override
+    public String GenrarTresDirecciones() {
+        return null;
+    }
+
     public  WhileNode(ExpressionNode expressionnode, List<SentencesNode> listasecuencia){
         WhileCondition = expressionnode;
         ListSentences = listasecuencia;

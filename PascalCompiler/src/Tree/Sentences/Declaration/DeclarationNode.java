@@ -36,4 +36,9 @@ public class DeclarationNode extends SentencesNode {
        }
 
     }
+
+    @Override
+    public String GenrarTresDirecciones() {
+        return null;
+    }
 }

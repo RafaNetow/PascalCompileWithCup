@@ -16,4 +16,9 @@ public class LiteralString extends ExpressionNode {
     public Semantic.BaseType ValidateSemmantic() {
         return new StringNode();
     }
+
+    @Override
+    public String GenerateTreeDimensions() {
+        return null;
+    }
 }

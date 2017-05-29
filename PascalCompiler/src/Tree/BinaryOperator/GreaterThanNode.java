@@ -4,6 +4,8 @@ import Semantic.SymbolTable;
 import Tree.Expression.BaseType.BinaryOperatorNode;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.*;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.Cuadruplo;
 import javafx.util.Pair;
 import sun.reflect.generics.tree.BaseType;
 
@@ -29,6 +31,12 @@ public class GreaterThanNode extends BinaryOperatorNode {
         }
         System.out.printf("No se puede realziar esta operacion \n");
         return  new DefaultType();
+    }
+
+    @Override
+    public String GenerateTreeDimensions() {
+        String nameLabel = CuadrupleTable.getInstance().newLabel();
+        return nameLabel;
     }
 
 }
