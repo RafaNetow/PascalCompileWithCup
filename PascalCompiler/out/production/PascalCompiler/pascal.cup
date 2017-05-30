@@ -35,11 +35,11 @@ terminal String ID, LITSTRING;
 
 terminal Integer NUMBER;
 
-terminal String lit_string;
+terminal String lit_string, TYPE, ARRAY, OF;
 
 non terminal List<SentencesNode> ListOfSentences, BeginProgram ;
 
-non terminal  SentencesNode SentencesIf, SentencesElse,SentencesWhile, SentencesFor, SentencesRepeat,SetencesRead, SentencesWrite, SentencesConst,FunctionDeclaration, ProcedureDeclaretion, AssigmentOrFunctionCall, SentencesComment, SentencesDeclaration, Comments,ListOfSpecialSentences, ProcedureDeclaration ,CallFunctionOrAssignment, CallOrAssig ,Sentences; //Sentences
+non terminal  SentencesNode SentencesIf, SentencesElse,SentencesWhile, SentencesFor, SentencesRepeat,SetencesRead, SentencesWrite, SentencesConst,FunctionDeclaration, ProcedureDeclaretion, AssigmentOrFunctionCall, SentencesComment, SentencesDeclaration, Comments,ListOfSpecialSentences, ProcedureDeclaration ,CallFunctionOrAssignment, CallOrAssig ,Sentences, ArrayDeclaration; //Sentences
 
 non terminal  OptionalList, ListId, Types, Params, OptionParam, Block, LoopBucle, SentencesBucle ,SpecialSentences ,CallFunction,OptionalCallFunction ; //Support statement
 
@@ -64,7 +64,10 @@ non terminal ExpressionNode expr ,sumfactor ,factor ,term,Assigment ;
                     SentencesRepeat: sr{:RESULT =sr;:} |
                     SentencesComment |
                     ProcedureDeclaration: pd{:RESULT =pd; :} |
-                    CallFunctionOrAssignment :cf {:RESULT=cf;:}  ;
+                    CallFunctionOrAssignment :cf {:RESULT=cf;:}  |
+                    ArrayDeclaration:  array {:RESTUL = array;:};
+
+      ArrayDeclaration ::= TYPE ID:id ASSIGNATION ARRAY LCURLY Types:type RCURLY OF NUMBER:firstNumber  RANGE NUMBER:secondNumber SEMI  {: RESULT= new ArrayDeclartion(id,firstNumber,secondNumber,type);:} ;
 //ID CallFunction SEMI |
     CallFunctionOrAssignment ::= ID:id Assigment:e SEMI{:RESULT = new AssignationNode(id,e); :} |
                       ;
