@@ -1,6 +1,7 @@
 package Tree.Sentences.Bucles;
 
 import Semantic.Context;
+import Semantic.SemanticSymbol;
 import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 
@@ -27,7 +28,7 @@ public class WhileNode extends SentencesNode {
 
         Context.getInstance().Stack.push( new SymbolTable());
         if(!(WhileCondition.ValidateSemmantic() instanceof BooleanType))
-         System.out.println("Type in while is not boolean");
+         System.out.println(WhileCondition.GetPositionError()+" Type in while is not boolean");
 
          for (SentencesNode sentencesNode : ListSentences
                  ) {
@@ -44,9 +45,9 @@ public class WhileNode extends SentencesNode {
         return null;
     }
 
-    public  WhileNode(ExpressionNode expressionnode, List<SentencesNode> listasecuencia){
+    public  WhileNode(ExpressionNode expressionnode, List<SentencesNode> listasecuencia, SemanticSymbol symbol){
         WhileCondition = expressionnode;
         ListSentences = listasecuencia;
-
+        this.Symbol = symbol;
     }
 }

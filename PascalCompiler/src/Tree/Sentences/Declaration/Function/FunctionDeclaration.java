@@ -2,6 +2,7 @@ package Tree.Sentences.Declaration.Function;
 
 import Semantic.BaseType;
 import Semantic.Context;
+import Semantic.SemanticSymbol;
 import Semantic.SymbolTable;
 import Tree.Expression.DataType.FunctionType;
 import Tree.Expression.SentencesNode;
@@ -21,12 +22,13 @@ public class FunctionDeclaration extends SentencesNode {
        public DeclarationNode LocalDeclaration;
        public  String NameOfFunction;
 
-        public  FunctionDeclaration( List<ParamsOfFunction> list,BaseType type, List<SentencesNode> listOfSentences, SentencesNode declaration, String nameOfFunction){
+        public  FunctionDeclaration(List<ParamsOfFunction> list, BaseType type, List<SentencesNode> listOfSentences, SentencesNode declaration, String nameOfFunction, SemanticSymbol sym){
             TypeOfFunction = type;
             ListOfParams = list;
             ListOfSentences= listOfSentences;
             LocalDeclaration = (DeclarationNode) declaration;
             NameOfFunction = nameOfFunction;
+            this.Symbol = sym;
         }
 
     @Override

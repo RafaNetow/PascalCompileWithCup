@@ -1,6 +1,7 @@
 package Tree.Sentences.Bucles;
 
 import Semantic.Context;
+import Semantic.SemanticSymbol;
 import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.BooleanType;
@@ -17,12 +18,14 @@ public class ForNode extends SentencesNode {
     public ExpressionNode FirstCondition;
     public  ExpressionNode SecondCondition;
     public List<SentencesNode> listOfSentences ;
+    public  String Id;
 
-
-    public  ForNode(ExpressionNode exp1, ExpressionNode exp2, List<SentencesNode> list){
+    public  ForNode(String id,ExpressionNode exp1, ExpressionNode exp2, List<SentencesNode> list, SemanticSymbol sym){
         FirstCondition = exp1;
         SecondCondition = exp2;
         listOfSentences = list;
+        this.Symbol = sym;
+        this.Id = id;
     }
 
     @Override
@@ -32,12 +35,12 @@ public class ForNode extends SentencesNode {
         if(FirstCondition.ValidateSemmantic() instanceof IntNode) {
 
         }else{
-            System.out.println("Condicion no int");
+            System.out.println(FirstCondition.GetPositionError()+" Condicion no int");
         }
         if(SecondCondition.ValidateSemmantic() instanceof IntNode){
 
         }else{
-            System.out.println("Condicion no int");
+            System.out.println(SecondCondition.GetPositionError()+"Condicion no int");
         }
         for (SentencesNode sentence: listOfSentences
              ) {

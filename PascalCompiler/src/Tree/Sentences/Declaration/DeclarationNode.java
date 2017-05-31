@@ -3,6 +3,7 @@ package Tree.Sentences.Declaration;
 import Semantic.BaseType;
 
 import Semantic.Context;
+import Semantic.SemanticSymbol;
 import Semantic.SymbolTable;
 import Tree.Expression.DataType.IdNode;
 import Tree.Expression.SentencesNode;
@@ -17,13 +18,15 @@ import java.util.Objects;
 public class DeclarationNode extends SentencesNode {
      public BaseType Type;
      public  List<String> ListOfIds;
-     public Object Symbol;
 
 
-     public  DeclarationNode(List<String> listOfId, BaseType type, Object symbol){
+
+     public  DeclarationNode(List<String> listOfId, BaseType type, SemanticSymbol sym){
             this.ListOfIds = listOfId;
             this.Type = type;
-            this.Symbol = symbol;
+            this.Symbol = sym;
+
+
      }
 
      public  DeclarationNode(){};

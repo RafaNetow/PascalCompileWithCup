@@ -1,11 +1,13 @@
 
 import java.util.*;
 import Semantic.BaseType;
+import Semantic.SemanticSymbol;
 import Tree.Expression.DataType.*;
 import Tree.Expression.LiteralNodes.LiteralChar;
 import Tree.Expression.LiteralNodes.LiteralString;
 import Tree.Expression.LiteralNodes.NumberNode;
 import Tree.Sentences.Bucles.ForNode;
+import Tree.Sentences.Bucles.RepeatNode;
 import Tree.Sentences.Conditional.BlockNode;
 import Tree.Sentences.Conditional.IfNode;
 import Tree.Sentences.Declaration.ConstNode;
@@ -27,20 +29,20 @@ parser code {:
 
     public HashMap<String,Integer> vars = new HashMap<String,Integer>();
 :};   
-terminal  Symbol      SEMI, PLUS, MINUS, TIMES, DIVIDE, LPAREN, RPAREN, EQUALS, PRINT, IF, LCURLY, RCURLY, ELSE, WHILE, LBRACK, RBRACK, OF, SCANF;
-terminal            TO,FLOAT,CHAR,BOOLEAN,STRING, ARRAY,INTEGER, ASSIGMENT,CONST,TRUE,FALSE;
+terminal  SemanticSymbol      SEMI, PLUS, MINUS, TIMES, DIVIDE, LPAREN, RPAREN, EQUALS, PRINT, IF, LCURLY, RCURLY, ELSE, WHILE, LBRACK, RBRACK, OF, SCANF;
+terminal      SemanticSymbol      TO,FLOAT,CHAR,BOOLEAN,STRING, ARRAY,INTEGER, ASSIGMENT,CONST,TRUE,FALSE;
 terminal Integer   NUMBER;
 terminal String   ID,LIT_STRING;
 terminal char LIT_CHAR;
-terminal GREATERTHAN, LESSTHAN, LESSOREQUALTHAN, GREATEROREQUALTHAN, EQUALSEQUALS, NOTEQUALS,DOT, REPEAT;
+terminal SemanticSymbol GREATERTHAN, LESSTHAN, LESSOREQUALTHAN, GREATEROREQUALTHAN, EQUALSEQUALS, NOTEQUALS,DOT, REPEAT;
 
-terminal VAR,FOR, PROGRAM,THEN,BEGIN,END,DO,FUNCTION, PROCEDURE,UNTIL;//Reserverd Words
+terminal SemanticSymbol VAR,FOR, PROGRAM,THEN,BEGIN,END,DO,FUNCTION,UNTIL;//Reserverd Words
 
-terminal COLON,COMMA, COMMENT;//Special Quotes
+terminal SemanticSymbol COLON,COMMA, COMMENT;//Special Quotes
 
 non terminal Object declaration_list;
 non terminal BaseType Type;
-
+terminal SemanticSymbol PROCEDURE;
 non terminal List<SentencesNode>    program, Statement_list, BeginProgram, LoopBucle, SpecialSentences,LoopRepeat;
 non terminal SentencesNode Statement, SentencesRepeat,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration,CallFunctionOrAssigment,ProcedureDeclaration, SentencesFor,  SentencesComment ;
 
@@ -69,7 +71,6 @@ non terminal ParamFunction;
                  | {: List<SentencesNode> nodeList = new ArrayList<SentencesNode>(); RESULT = nodeList; :}
                   ;
    Statement ::= CallFunctionOrAssigment:st{:RESULT = st;:}
-
                     |
                     SentencesDeclaration:st{:RESULT= st; :}
                     |
@@ -90,40 +91,40 @@ non terminal ParamFunction;
                     SentencesComment {::};
 
 
-    SentencesRepeat ::= REPEAT  LoopBucle:listSentences  UNTIL expr:condition SEMI {:RepeatNode node = new RepeatNode(condition,listSentences); RESULT= node;:};
+    SentencesRepeat ::= REPEAT:repeat  LoopBucle:listSentences  UNTIL expr:condition SEMI:posCondition {:   condition.AddSymbol(posCondition);  RepeatNode node = new RepeatNode(condition,listSentences,repeat); RESULT= node;:};
 
 
 
-   ProcedureDeclaration ::= PROCEDURE ID:id Params:params  SEMI LoopBucle:listOfSentences {: ProcedureDeclaration node = new ProcedureDeclaration(params,id, listOfSentences); RESULT=node;:};
+   ProcedureDeclaration ::= PROCEDURE:pro ID:id Params:params  SEMI LoopBucle:listOfSentences {: ProcedureDeclaration node = new ProcedureDeclaration(params,id, listOfSentences , pro); RESULT=node;:};
 
-   CallFunctionOrAssigment ::=  ID:id ASSIGMENT expr:e SEMI {:RESULT = new AssignationNode(id,e);:} |
-                                ID:id LPAREN ListOfExpressions:listId RPAREN SEMI {:RESULT = new  CallFunction(id,listId); :};
+   CallFunctionOrAssigment ::=  ID:id ASSIGMENT:AssigPos expr:e SEMI:ExpPos {:e.AddSymbol(ExpPos); RESULT = new AssignationNode(id,e,AssigPos);:} |
+                                ID:id LPAREN:funcPos ListOfExpressions:listId RPAREN SEMI {:RESULT = new  CallFunction(id,listId,funcPos); :};
 
 ListOfExpressions ::= expr:exp OptionalExpression:listExp {: listExp.add(exp); RESULT = listExp;:};
 
 OptionalExpression ::=  COMMA ListOfExpressions:listExp {:RESULT = listExp;:}
                    |{: List<ExpressionNode> node = new ArrayList<ExpressionNode>(); RESULT = node;:};
 
-FunctionDeclaration ::= FUNCTION ID:nameOfFunction Params:listParams COLON Type:Type  SEMI  SentencesDeclaration:opDeclaration LoopBucle:ListOfSentences {:FunctionDeclaration node = new FunctionDeclaration(listParams,Type,ListOfSentences,opDeclaration, nameOfFunction); RESULT = node;:};
+FunctionDeclaration ::= FUNCTION:functPos ID:nameOfFunction Params:listParams COLON Type:Type  SEMI  SentencesDeclaration:opDeclaration LoopBucle:ListOfSentences {:FunctionDeclaration node = new FunctionDeclaration(listParams,Type,ListOfSentences,opDeclaration, nameOfFunction, functPos); RESULT = node;:};
 
 
 Params ::= LPAREN ListParamFunction: list {:RESULT =list;:} RPAREN;
 
 
 
-ListParamFunction ::= VAR ListId:listId COLON  Type:type  OptionalListParams:listParams  {:;ParamsOfFunction params = new ParamsOfFunction(true,listId,type); listParams.add(params); RESULT =listParams;:}|
-                     ListId:listId COLON Type:type  OptionalListParams:listParams {:ParamsOfFunction params = new ParamsOfFunction(false,listId,type); listParams.add(params); RESULT =listParams;:} |
+ListParamFunction ::= VAR:posParams ListId:listId COLON  Type:type  OptionalListParams:listParams  {:;ParamsOfFunction params = new ParamsOfFunction(true,listId,type, posParams); listParams.add(params); RESULT =listParams;:}|
+                     ListId:listId COLON:paramPos Type:type  OptionalListParams:listParams {:ParamsOfFunction params = new ParamsOfFunction(false,listId,type,paramPos); listParams.add(params); RESULT =listParams;:} |
                      {: List<ParamsOfFunction> list = new ArrayList<>(); RESULT= list;:};
 
 
 OptionalListParams ::= SEMI ListParamFunction:listParams {:RESULT =listParams;:} |
                 {: List<ParamsOfFunction> list = new ArrayList<>(); RESULT= list;:};
 
-SentencesIf::= IF  expr:exp  THEN Block:block  {: IfNode node = new IfNode(exp,block); RESULT = node; :};
+SentencesIf::= IF:ifPos  expr:exp  THEN:expPos Block:block  {: exp.AddSymbol(expPos); IfNode node = new IfNode(exp,block,ifPos); RESULT = node; :};
 
-SentencesWhile ::= WHILE expr:exp DO LoopBucle:loopbucle {:WhileNode node = new WhileNode(exp, loopbucle); RESULT = node; :};
+SentencesWhile ::= WHILE:whilePos expr:exp DO LoopBucle:loopbucle {:WhileNode node = new WhileNode(exp, loopbucle,whilePos); RESULT = node; :};
 
-SentencesFor ::= FOR ID  ASSIGMENT expr:expresion TO expr:expression DO LoopBucle:bucle {:ForNode fornode = new ForNode(expresion, expression, bucle); RESULT = fornode;:};
+SentencesFor ::= FOR:forPos ID:firstId  ASSIGMENT expr:expresion TO expr:expression DO:expPos LoopBucle:bucle {:expression.AddSymbol(expPos); ForNode fornode = new ForNode(firstId,expresion, expression, bucle,forPos); RESULT = fornode;:};
 
 SentencesComment ::= COMMENT {::};
 
@@ -148,14 +149,6 @@ SentencesBucle ::=  SentencesDeclaration:sentencesdeclaration {:RESULT = sentenc
                     |
                     SentencesComment {::};
 
-                    /*SentencesFor:sentencesfor {:RESULT = sentencesfor;:};
-                    |
-                    SentencesRepeat
-                    |
-                    SentencesComment
-                    |
-                    CallFunctionOrAssignment SEMI;*/
-
 SpecialSentences ::= SpecialSentences:specialSentences  SentencesBucle:sentenceBucle{:specialSentences.add(sentenceBucle); RESULT = specialSentences; :}
                      | {:List<SentencesNode>  nodelist = new ArrayList<SentencesNode>(); RESULT = nodelist;:};
 
@@ -172,7 +165,7 @@ SpecialSentences ::= SpecialSentences:specialSentences  SentencesBucle:sentenceB
 
 SentencesDeclaration ::=   VAR ListId:ls COLON Type:typ SEMI:symbol {:DeclarationNode declaration = new DeclarationNode(ls,typ,symbol); RESULT = declaration;:};
 
-ConstDeclaration ::= CONST ID:id ASSIGMENT TypeOfConst:tc SEMI  {: ConstNode node = new ConstNode(id,tc); RESULT= node;:} ;
+ConstDeclaration ::= CONST:constPos ID:id ASSIGMENT TypeOfConst:tc SEMI  {: ConstNode node = new ConstNode(id,tc,constPos); RESULT= node;:} ;
 
 TypeOfConst ::= LIT_CHAR:ltc {:LiteralChar nodo = new LiteralChar(ltc); RESULT = nodo;:}
                 |

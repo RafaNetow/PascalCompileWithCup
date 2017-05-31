@@ -34,7 +34,7 @@ public  abstract class BinaryOperatorNode extends ExpressionNode{
   }else if( leftType instanceof BooleanType && righftType instanceof  BooleanType){
       return new BooleanType();
   }
-    System.out.printf("No se puede realziar esta operacion \n");
+        System.out.printf(this.GetPositionError()+" No se puede realziar esta operacion \n");
             return  new DefaultType();
 
 

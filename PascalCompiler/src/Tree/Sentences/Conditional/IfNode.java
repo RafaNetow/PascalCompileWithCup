@@ -1,6 +1,7 @@
 package Tree.Sentences.Conditional;
 
 import Semantic.Context;
+import Semantic.SemanticSymbol;
 import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 
@@ -19,16 +20,17 @@ public class IfNode extends SentencesNode {
     BlockNode BlockCode;
 
 
-    public IfNode(ExpressionNode condition, BlockNode blockCode){
+    public IfNode(ExpressionNode condition, BlockNode blockCode, SemanticSymbol symbol){
             Condition = condition;
-        BlockCode = blockCode;
+           BlockCode = blockCode;
+           this.Symbol = symbol;
     }
 
     @Override
     public void ValidateSemantic() {
         Context.getInstance().Stack.push(new SymbolTable());
         if(!(Condition.ValidateSemmantic() instanceof  BooleanType))
-            System.out.println("Expression at if is no boolean");
+            System.out.println(Condition.GetPositionError()+" Expression at if is no boolean");
        this.BlockCode.ValidateSemantic();
         Context.getInstance().TableToRemind.put(CodeGuid, Context.getInstance().Stack.pop());
 

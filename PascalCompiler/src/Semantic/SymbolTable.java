@@ -85,6 +85,20 @@ int a = 10;
 
     }
 
+    public  BaseType getType(String name, SemanticSymbol sym){
+
+
+        for (SymbolTable table: Context.getInstance().Stack
+                ) {
+            if( table._table.containsKey(name))
+                return  table._table.get(name);
+        }
+
+        System.out.println("Error : Linea:" + sym.Row + " "+ " Column:"+sym.Column+  " The variable "+ name+" doesn't exist\n");
+        return new DefaultType();
+
+    }
+
 
 
 }

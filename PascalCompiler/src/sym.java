@@ -14,7 +14,7 @@ public class sym {
   public static final int CONST = 28;
   public static final int CHAR = 22;
   public static final int EQUALS = 9;
-  public static final int COMMENT = 55;
+  public static final int COMMENT = 54;
   public static final int EQUALSEQUALS = 39;
   public static final int INTEGER = 26;
   public static final int LPAREN = 7;
@@ -25,9 +25,9 @@ public class sym {
   public static final int MINUS = 4;
   public static final int RPAREN = 8;
   public static final int LESSTHAN = 36;
-  public static final int COMMA = 54;
+  public static final int COMMA = 53;
   public static final int BEGIN = 47;
-  public static final int UNTIL = 52;
+  public static final int UNTIL = 51;
   public static final int PLUS = 3;
   public static final int IF = 11;
   public static final int DOT = 41;
@@ -45,7 +45,7 @@ public class sym {
   public static final int RCURLY = 13;
   public static final int LBRACK = 16;
   public static final int TIMES = 5;
-  public static final int COLON = 53;
+  public static final int COLON = 52;
   public static final int ELSE = 14;
   public static final int RBRACK = 17;
   public static final int TO = 20;
@@ -58,7 +58,7 @@ public class sym {
   public static final int ASSIGMENT = 27;
   public static final int FALSE = 30;
   public static final int GREATEROREQUALTHAN = 38;
-  public static final int PROCEDURE = 51;
+  public static final int PROCEDURE = 55;
   public static final int VAR = 43;
   public static final int DO = 49;
   public static final int PRINT = 10;
@@ -114,11 +114,11 @@ public class sym {
   "END",
   "DO",
   "FUNCTION",
-  "PROCEDURE",
   "UNTIL",
   "COLON",
   "COMMA",
-  "COMMENT"
+  "COMMENT",
+  "PROCEDURE"
   };
 }
 

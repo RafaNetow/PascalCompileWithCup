@@ -49,7 +49,7 @@ public class CallFunctionExpression extends ExpressionNode {
                         if ((ListOfParams.get(postOfParams)).ValidateSemmantic().IsAssignable(function.ListParam.get(i).TypeOfParam)) {
 
                         } else {
-                            System.out.println("el paremtro no es del tipo esperado");
+                            System.out.println(ListOfParams.get(postOfParams).GetPositionError()+" el paremtro no es del tipo esperado");
                         }
 
                         postOfParams++;
@@ -58,11 +58,11 @@ public class CallFunctionExpression extends ExpressionNode {
                     }
                 }
             }else{
-                System.out.println("Numbers of params  are incorect");
+                System.out.println(ListOfParams.get(0).GetPositionError()+" Numbers of params  are incorect");
             }
             return  ((FunctionType)type).TypeToReturn;
         }else{
-            System.out.println(NameOfFunction+" is not a function");
+            System.out.println(this.GetPositionError()+" "+ NameOfFunction+" is not a procedure");
         }
         return new DefaultType();
     }

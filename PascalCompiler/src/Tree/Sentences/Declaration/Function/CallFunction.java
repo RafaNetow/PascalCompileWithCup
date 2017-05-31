@@ -1,6 +1,7 @@
 package Tree.Sentences.Declaration.Function;
 
 import Semantic.BaseType;
+import Semantic.SemanticSymbol;
 import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.FunctionType;
@@ -19,7 +20,7 @@ public class CallFunction extends SentencesNode {
     public  List<ExpressionNode> ListOfParams;
 
 
-    public CallFunction(String name, List<ExpressionNode> listOfParams){
+    public CallFunction(String name, List<ExpressionNode> listOfParams, SemanticSymbol sym){
         this.ListOfParams = listOfParams;
         this.NameOfFunction = name;
     }
@@ -54,7 +55,7 @@ public class CallFunction extends SentencesNode {
                       if (ListOfParams.get(postOfParams).ValidateSemmantic().IsAssignable(function.ListParam.get(i).TypeOfParam)) {
 
                       } else {
-                          System.out.println("el paremtro no es del tipo esperado");
+                          System.out.println(ListOfParams.get(postOfParams).GetPositionError()+" el paremtro no es del tipo esperado");
                       }
 
                       postOfParams++;
@@ -63,11 +64,11 @@ public class CallFunction extends SentencesNode {
                   }
               }
           }else{
-              System.out.println("Numbers of params  are incorect");
+              System.out.println(ListOfParams.get(0).GetPositionError()+" Numbers of params  are incorect");
           }
 
       }else{
-          System.out.println(NameOfFunction+" is not a procedure");
+          System.out.println(this.GetPositionError()+" "+ NameOfFunction+" is not a procedure");
       }
 
 

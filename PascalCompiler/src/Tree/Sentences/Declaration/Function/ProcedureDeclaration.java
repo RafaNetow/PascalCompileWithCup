@@ -5,8 +5,10 @@ import Semantic.SymbolTable;
 import Tree.Expression.DataType.FunctionType;
 import Tree.Expression.DataType.ProcedureType;
 import Tree.Expression.SentencesNode;
+import java_cup.runtime.Symbol;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Sequeirios on 19/05/2017.
@@ -16,13 +18,15 @@ public class ProcedureDeclaration extends SentencesNode
     public List<ParamsOfFunction> ListOfParams;
     public  String NameOfProcedure;
     public List<SentencesNode> ListOfSentences;
+    public  Object Symbol;
 
 
-    public ProcedureDeclaration(List<ParamsOfFunction> listOfParams,String nameOfProcedure, List<SentencesNode> listOfSentences){
+    public ProcedureDeclaration(List<ParamsOfFunction> listOfParams,String nameOfProcedure, List<SentencesNode> listOfSentences, Object sym){
 
             this.ListOfParams = listOfParams;
             this.NameOfProcedure = nameOfProcedure;
             this.ListOfSentences = listOfSentences;
+            Symbol= sym;
     }
     @Override
     public void ValidateSemantic() {

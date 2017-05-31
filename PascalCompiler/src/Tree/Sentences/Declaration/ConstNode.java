@@ -1,6 +1,7 @@
 package Tree.Sentences.Declaration;
 
 import Semantic.Context;
+import Semantic.SemanticSymbol;
 import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.ConstType;
@@ -14,9 +15,10 @@ public class ConstNode extends SentencesNode {
     String Id;
     ExpressionNode Literal;
 
-    public ConstNode(String id, ExpressionNode literal){
+    public ConstNode(String id, ExpressionNode literal, SemanticSymbol sym){
         this.Id = id;
         this.Literal= literal;
+        this.Symbol = sym;
     }
 
     @Override

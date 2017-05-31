@@ -21,7 +21,7 @@ public class OrOpNode extends BinaryOperatorNode {
         }else if( this.LeftOperand.ValidateSemmantic() instanceof BooleanType && this.RightOperand.ValidateSemmantic() instanceof  BooleanType){
             return new BooleanType();
         }
-        System.out.printf("No se puede realziar esta operacion \n");
+        System.out.printf(this.GetPositionError()+" No se puede realziar esta operacion \n");
         return  new DefaultType();
     }
 
