@@ -19,10 +19,17 @@ public class CuadrupleTable {
 
     public List<Cuadruplo> tabla;
     public int num = 1;
+    int tagNumber = 1;
 
     public void AddCuadruplo(Cuadruplo cuadruplo){
         tabla.add(cuadruplo);
 
+    }
+
+    public  String GetNextTag(){
+        String tagName = "tag"+tagNumber;
+        tagNumber++;
+        return  tagName;
     }
 
     public String newLabel(){

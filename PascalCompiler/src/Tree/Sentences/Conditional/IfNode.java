@@ -6,6 +6,10 @@ import Tree.Expression.BaseType.ExpressionNode;
 
 import Tree.Expression.DataType.BooleanType;
 import Tree.Expression.SentencesNode;
+import TreeWaysCode.AssigantionWay;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.IfWay;
+import TreeWaysCode.SumWay;
 import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 
 import java.util.List;
@@ -37,6 +41,11 @@ public class IfNode extends SentencesNode {
 
     @Override
     public String GenrarTresDirecciones() {
-        return null;
+        String newTag = CuadrupleTable.getInstance().GetNextTag();
+        String newid = CuadrupleTable.getInstance().newLabel();
+        IfWay iw = new IfWay("if", this.Condition.GenerateTreeDimensions(), newid
+                ,this.BlockCode.GenrarTresDirecciones(), newTag);
+        CuadrupleTable.getInstance().AddCuadruplo(iw);
+        return newid;
     }
 }

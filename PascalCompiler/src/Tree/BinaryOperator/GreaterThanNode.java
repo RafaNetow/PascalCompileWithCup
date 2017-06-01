@@ -6,6 +6,7 @@ import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.*;
 import TreeWaysCode.CuadrupleTable;
 import TreeWaysCode.Cuadruplo;
+import TreeWaysCode.GreaterThanWay;
 import javafx.util.Pair;
 import sun.reflect.generics.tree.BaseType;
 
@@ -36,6 +37,9 @@ public class GreaterThanNode extends BinaryOperatorNode {
     @Override
     public String GenerateTreeDimensions() {
         String nameLabel = CuadrupleTable.getInstance().newLabel();
+        String newTag = CuadrupleTable.getInstance().GetNextTag();
+        GreaterThanWay gtw = new GreaterThanWay(">", RightOperand.GenerateTreeDimensions(), newTag, LeftOperand.GenerateTreeDimensions(), nameLabel);
+        CuadrupleTable.getInstance().AddCuadruplo(gtw);
         return nameLabel;
     }
 

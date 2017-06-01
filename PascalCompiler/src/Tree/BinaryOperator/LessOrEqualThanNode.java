@@ -5,6 +5,7 @@ import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.*;
 import TreeWaysCode.CuadrupleTable;
 import TreeWaysCode.Cuadruplo;
+import TreeWaysCode.LessOrEqualThanWay;
 
 /**
  * Created by Sequeirios on 04/05/2017.
@@ -29,8 +30,13 @@ public class LessOrEqualThanNode extends BinaryOperatorNode {
 
     @Override
     public String GenerateTreeDimensions() {
-        String nameLabel = CuadrupleTable.getInstance().newLabel();
-        return nameLabel;
+        String newId = CuadrupleTable.getInstance().newLabel();
+        String newTag = CuadrupleTable.getInstance().GetNextTag();
+
+        LessOrEqualThanWay loew = new LessOrEqualThanWay("<=", RightOperand.GenerateTreeDimensions(), newTag, LeftOperand.GenerateTreeDimensions(), newId);
+        CuadrupleTable.getInstance().AddCuadruplo(loew);
+
+        return newId;
     }
 
 }

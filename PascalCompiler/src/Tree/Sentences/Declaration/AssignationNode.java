@@ -42,7 +42,8 @@ public class AssignationNode extends SentencesNode {
 
     @Override
     public String GenrarTresDirecciones() {
-        AssigantionWay aw = new AssigantionWay("=", this.ExpressionToAssign.GenerateTreeDimensions(), this.Id);
+        String newTag = CuadrupleTable.getInstance().GetNextTag();
+        AssigantionWay aw = new AssigantionWay("=", this.ExpressionToAssign.GenerateTreeDimensions(), newTag, this.Id );
         CuadrupleTable.getInstance().AddCuadruplo(aw);
         return Id;
     }
