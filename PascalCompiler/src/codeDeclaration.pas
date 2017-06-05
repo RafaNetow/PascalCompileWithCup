@@ -2,7 +2,7 @@
 
 program codeDeclaration;
 
-
+type linea = array [1..80] of string;
 
 procedure findMin(x, y, z: integer);
 

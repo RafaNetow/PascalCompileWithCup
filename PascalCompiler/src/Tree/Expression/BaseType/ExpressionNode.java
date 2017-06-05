@@ -11,7 +11,7 @@ public abstract class ExpressionNode {
 
     public abstract  Semantic.BaseType ValidateSemmantic();
     public  abstract  String    GenerateTreeDimensions();
-    public SemanticSymbol Symbol;
+    public SemanticSymbol Symbol = new SemanticSymbol(0,0);
     public  String GetPositionError(){
         return  "Error in Line : "+Symbol.Row+" Column: "+Symbol.Column ;
     }

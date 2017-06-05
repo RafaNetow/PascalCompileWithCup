@@ -68,7 +68,7 @@ public class CallFunction extends SentencesNode {
           }
 
       }else{
-          System.out.println(this.GetPositionError()+" "+ NameOfFunction+" is not a procedure");
+          System.out.println(ListOfParams.get(0).GetPositionError()+" "+ NameOfFunction+" is not a procedure");
       }
 
 
