@@ -44,6 +44,19 @@ int a = 10;
 
     }
 
+    public boolean declareVariable(String name, BaseType type, SemanticSymbol symbol){
+
+        if(Context.getInstance().Stack.peek()._table.containsKey(name)){
+            System.out.printf("Error line " + symbol.Row + "column " +symbol.Column +  " Variable "+name+" already exist\n");
+            return false;
+        }else{
+            Context.getInstance().Stack.peek()._table.put(name,type);
+            return  true;
+        }
+
+
+    }
+
     public boolean foundVariable(String variableName)
     {
         List<SymbolTable> stackList = new ArrayList<>(Context.getInstance().Stack);

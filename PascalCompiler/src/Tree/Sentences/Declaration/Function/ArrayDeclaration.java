@@ -2,7 +2,9 @@ package Tree.Sentences.Declaration.Function;
 
 import Semantic.BaseType;
 import Semantic.SemanticSymbol;
+import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
+import Tree.Expression.DataType.ArrayType;
 import Tree.Expression.SentencesNode;
 import sun.awt.Symbol;
 
@@ -25,7 +27,7 @@ public class ArrayDeclaration extends SentencesNode
 
     @Override
     public void ValidateSemantic() {
-
+        SymbolTable.getInstance().declareVariable(Name, new ArrayType(FirstRange,SecondRange,Type), Symbol);
     }
 
     @Override
