@@ -2,7 +2,13 @@
 
 program codeDeclaration;
 
-type linea = array [1..80] of string;
+type linea = array [1..80] of integer;
+
+ var arraytest : integer;
+
+     arraytest := linea[2];
+
+linea[2] := 4;
 
 procedure findMin(x, y, z: integer);
 

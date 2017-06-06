@@ -16,12 +16,12 @@ import sun.awt.Symbol;
  */
 public class AssignationNode extends SentencesNode {
 
-    public  String Id;
+    public  IdNode Id;
 
     public ExpressionNode ExpressionToAssign;
 
 
-    public  AssignationNode (String id, ExpressionNode exp, SemanticSymbol sym){
+    public  AssignationNode (IdNode id, ExpressionNode exp, SemanticSymbol sym){
         this.Id = id;
         this.ExpressionToAssign= exp;
         this.Symbol = sym;
@@ -31,13 +31,13 @@ public class AssignationNode extends SentencesNode {
     @Override
     public void ValidateSemantic() {
 
-       if(Context.getInstance().Stack.peek().foundVariable(this.Id)){
-            if(!(Context.getInstance().Stack.peek().getVariable(Id).IsAssignable(ExpressionToAssign.ValidateSemmantic()))){
-                System.out.println(ExpressionToAssign.GetPositionError()+" Allocation is not allowed to Id: "+Id+"\n");
+       if(Context.getInstance().Stack.peek().foundVariable(this.Id.value)){
+            if(!(Context.getInstance().Stack.peek().getVariable(Id.value).IsAssignable(ExpressionToAssign.ValidateSemmantic()))){
+                System.out.println(ExpressionToAssign.GetPositionError()+" Allocation is not allowed to Id: "+Id.value+"\n");
             }
        }else{
 
-          System.out.println(GetPositionError()+" "+this.Id+" doesn't exist\n");
+          System.out.println(GetPositionError()+" "+this.Id.value+" doesn't exist\n");
        }
 
 
@@ -45,8 +45,8 @@ public class AssignationNode extends SentencesNode {
 
     @Override
     public String GenrarTresDirecciones() {
-        AssigantionWay aw = new AssigantionWay("=", this.ExpressionToAssign.GenerateTreeDimensions(), this.Id);
+        AssigantionWay aw = new AssigantionWay("=", this.ExpressionToAssign.GenerateTreeDimensions(), this.Id.value);
         CuadrupleTable.getInstance().AddCuadruplo(aw);
-        return Id;
+        return Id.value;
     }
 }

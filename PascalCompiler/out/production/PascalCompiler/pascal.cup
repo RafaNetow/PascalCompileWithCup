@@ -48,7 +48,7 @@ non terminal SentencesNode Statement, SentencesRepeat,  SentencesDeclaration, Co
 
 non terminal List<ExpressionNode> ListOfExpressions , OptionalExpression;
 
-non terminal ExpressionNode    expr, factor, term, sumfactor,TypeOfConst,id;
+non terminal ExpressionNode    expr, factor, term, sumfactor,TypeOfConst,id, ArrayId;
 non terminal BlockNode Block,SentencesElse;
 non terminal List<String> ListId, OptionalList;
 non terminal List<ParamsOfFunction> Params,ListParamFunction,OptionalListParams;
@@ -100,8 +100,12 @@ non terminal ParamFunction;
 
    ProcedureDeclaration ::= PROCEDURE:pro ID:id Params:params  SEMI LoopBucle:listOfSentences {: ProcedureDeclaration node = new ProcedureDeclaration(params,id, listOfSentences , pro); RESULT=node;:};
 
-   CallFunctionOrAssigment ::=  ID:id ASSIGMENT:AssigPos expr:e SEMI:ExpPos {:e.AddSymbol(ExpPos); RESULT = new AssignationNode(id,e,AssigPos);:} |
+   CallFunctionOrAssigment ::=  ID:id ASSIGMENT:AssigPos expr:e SEMI:ExpPos {:e.AddSymbol(ExpPos); IdNode idNode = new IdNode(id); = new AssignationNode(idNode,e,AssigPos);:} |
+                                ArrayId:id ASSIGMENT:AssigPos expr:e SEMI:ExpPos {:e.AddSymbol(ExpPos);   RESULT = new AssignationNode(id,e,AssigPos);:} |
                                 ID:id LPAREN:funcPos ListOfExpressions:listId RPAREN SEMI {:RESULT = new  CallFunction(id,listId,funcPos); :};
+
+
+   ArrayId ::= ID:id LBRACK expr:value RBRACK {: RESULT = new IdArray(id, value);:};
 
 ListOfExpressions ::= expr:exp OptionalExpression:listExp {: listExp.add(exp); RESULT = listExp;:};
 
@@ -223,7 +227,8 @@ TypeOfConst ::= LIT_CHAR:ltc {:LiteralChar nodo = new LiteralChar(ltc); RESULT =
 
       id        ::= ID:id {:RESULT = new IdNode(id);:} |
 
-                    ID:id LPAREN ListOfExpressions:listId RPAREN  {:RESULT = new   CallFunctionExpression(id,listId); :}  ;
+                    ID:id LPAREN ListOfExpressions:listId RPAREN  {:RESULT = new   CallFunctionExpression(id,listId); :}|
+                    ID:name LBRACK expr:value RBRACK  {:RESULT = new IdArray (name, value);:};
 
 
 

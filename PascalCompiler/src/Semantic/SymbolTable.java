@@ -64,6 +64,7 @@ int a = 10;
         for (SymbolTable stack : stackList){
          if (stack._table.containsKey(variableName))
          {
+
              return  true;
          }
      }
@@ -77,6 +78,8 @@ int a = 10;
         for (SymbolTable stack : stackList){
             if (stack._table.containsKey(name))
             {
+
+
                 return  stack._table.get(name);
             }
         }
