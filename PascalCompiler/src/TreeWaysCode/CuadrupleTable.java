@@ -1,5 +1,6 @@
 package TreeWaysCode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public class CuadrupleTable {
     public CuadrupleTable(){
     }
 
-    public List<Cuadruplo> tabla;
+    public List<Cuadruplo> tabla = new ArrayList<>();
     public int num = 1;
     int tagNumber = 1;
 

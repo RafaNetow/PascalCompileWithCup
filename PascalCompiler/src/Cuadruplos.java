@@ -1,5 +1,6 @@
 import Semantic.BaseType;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class Cuadruplos {
     public String argum1;
     public String argum2;
     public String etiq;
-    public List<Cuadruplos> ListCuadrupos;
+    public List<Cuadruplos> ListCuadrupos = new ArrayList<>();
 
     public Cuadruplos(String op, String a1, String a2, String et){
         operador = op;

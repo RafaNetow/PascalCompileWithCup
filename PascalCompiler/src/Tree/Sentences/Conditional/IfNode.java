@@ -19,9 +19,7 @@ import java.util.List;
  */
 public class IfNode extends SentencesNode {
     ExpressionNode Condition;
-
     BlockNode BlockCode;
-
 
     public IfNode(ExpressionNode condition, BlockNode blockCode){
             Condition = condition;
@@ -35,17 +33,12 @@ public class IfNode extends SentencesNode {
             System.out.println("Expression at if is no boolean");
        this.BlockCode.ValidateSemantic();
         Context.getInstance().TableToRemind.put(CodeGuid, Context.getInstance().Stack.pop());
-
-
     }
 
     @Override
-    public String GenrarTresDirecciones() {
+    public String GenrarTresDirecciones(String siguiente) {
         String newTag = CuadrupleTable.getInstance().GetNextTag();
-        String newid = CuadrupleTable.getInstance().newLabel();
-        IfWay iw = new IfWay("if", this.Condition.GenerateTreeDimensions(), newid
-                ,this.BlockCode.GenrarTresDirecciones(), newTag);
-        CuadrupleTable.getInstance().AddCuadruplo(iw);
-        return newid;
+
+        return BlockCode.GenrarTresDirecciones(newTag);
     }
 }

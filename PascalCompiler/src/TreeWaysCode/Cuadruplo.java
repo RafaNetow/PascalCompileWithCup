@@ -6,11 +6,10 @@ package TreeWaysCode;
 public abstract class Cuadruplo {
     public String operand;
     public String argm1;
-    public String tab;
+    //public String tab;
 
-    public Cuadruplo(String operand, String argm1, String tab) {
+    public Cuadruplo (String operand, String argm1){
         this.operand = operand;
         this.argm1 = argm1;
-        this.tab = tab;
     }
 }

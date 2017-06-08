@@ -140,7 +140,7 @@ non terminal ExpressionNode expr ,sumfactor ,factor ,term,Assigment ;
                 ;
 
 
-   sumfactor ::= sumfactor:e PLUS factor:f
+  sumfactor ::= sumfactor:e PLUS factor:f
                 {: RESULT = new SumNode(f,e);:}
                  |sumfactor:e MINUS factor:f
                  {: RESULT = new SubNode(f,e);:}
@@ -149,7 +149,7 @@ non terminal ExpressionNode expr ,sumfactor ,factor ,term,Assigment ;
                   RESULT = f;
                  :};
 
-   factor    ::= factor:f TIMES term:t
+  factor    ::= factor:f TIMES term:t
               {: RESULT = new MultNode(t,f);:}
                  |
                  factor:f DIVIDE term:t
@@ -164,44 +164,34 @@ non terminal ExpressionNode expr ,sumfactor ,factor ,term,Assigment ;
                  :}
                  ;
 
-   term      ::= LPAREN expr :e RPAREN {:
+  term      ::= LPAREN expr :e RPAREN {:
                 RESULT = e;
                 :}
 
                  | ID :i {: RESULT = new IdNode(i);:}
 
-                               | NUMBER :n  {:   RESULT = new IntNode(n);:}
-                               | LITSTRING :s {:   RESULT  = new LiteralString(s); :}
-                               | LITRCHAR:c {:   RESULT  = new LiteralChar(c);:} ;
+                 | NUMBER :n  {:   RESULT = new IntNode(n);:}
+                 | LITSTRING :s {:   RESULT  = new LiteralString(s); :}
+                 | LITRCHAR:c {:   RESULT  = new LiteralChar(c);:} ;
 
-OptionalCallFunction ::= CallFunction |;
+   OptionalCallFunction ::= CallFunction |;
 
-
-
-
+   FunctionDeclaration ::= FUNCTION ID Params COLON Types  SEMI LoopBucle;
 
 
+   Params ::=  LPAREN ListId COLON Types RPAREN;
 
-    FunctionDeclaration ::= FUNCTION ID Params COLON Types  SEMI LoopBucle;
+   Block  ::= BEGIN ListOfSentences END SEMI;
 
+   SentencesDeclaration ::= VAR ListId  COLON  Types SEMI;
 
-    Params ::=  LPAREN ListId COLON Types RPAREN;
-
-    Block  ::= BEGIN ListOfSentences END SEMI;
-
-    SentencesDeclaration ::= VAR ListId  COLON  Types SEMI
-
-    ;
-
-    OptionalList ::= COMMA ListId
+  OptionalList ::= COMMA ListId
                  |;
 
-    ListId ::= ID OptionalList
+  ListId ::= ID OptionalList
                     |;
 
-    Types ::=  ID |
+  Types ::=  ID |
                 INTEGER |
                 STRING|
                 CHAR;
-
-

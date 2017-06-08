@@ -9,6 +9,6 @@ public abstract class SentencesNode {
 
     public abstract void ValidateSemantic();
     public UUID CodeGuid = UUID.randomUUID();
-    public  abstract  String GenrarTresDirecciones();
+    public  abstract  String GenrarTresDirecciones(String siguiente);
     //public  abstract  void GenerateTreeDirection();
 }

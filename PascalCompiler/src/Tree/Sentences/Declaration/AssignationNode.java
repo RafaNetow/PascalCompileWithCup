@@ -1,11 +1,9 @@
 package Tree.Sentences.Declaration;
 
-import Semantic.BaseType;
 import Semantic.Context;
-import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
-import Tree.Expression.DataType.IdNode;
 import Tree.Expression.SentencesNode;
+import TreeWaysCode.TagWay;
 import TreeWaysCode.AssigantionWay;
 import TreeWaysCode.CuadrupleTable;
 
@@ -41,10 +39,11 @@ public class AssignationNode extends SentencesNode {
     }
 
     @Override
-    public String GenrarTresDirecciones() {
+    public String GenrarTresDirecciones(String siguiente) {
         String newTag = CuadrupleTable.getInstance().GetNextTag();
-        AssigantionWay aw = new AssigantionWay("=", this.ExpressionToAssign.GenerateTreeDimensions(), newTag, this.Id );
+        CuadrupleTable.getInstance().AddCuadruplo(new TagWay("label", newTag));
+        AssigantionWay aw = new AssigantionWay(":=", this.ExpressionToAssign.GenerateTreeDimensions(), this.Id );
         CuadrupleTable.getInstance().AddCuadruplo(aw);
-        return Id;
+        return newTag;
     }
 }
