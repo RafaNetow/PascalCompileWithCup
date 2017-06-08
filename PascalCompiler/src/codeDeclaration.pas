@@ -37,92 +37,10 @@ var b,r : string;
 var m : integer;
 if x > s then
 begin
-  var b,r:integer;
+  x :=6;
 
-    b := 4 + 5;
-
-    var e,r,t : boolean;
-
-    var l,i,u: integer;
-    const pruebaString := 'hola';
-    const pruebaChar := 'char';
-    var l,i,u: integer;
-    if (sd > sdsd) then
-    begin
-
-        var e,r,t : boolean;
-
-        var l,i,u: integer;
     end;
     else
     begin
-
+ x :=7;
     end;
-
-end;
-
-
-
-
-while x < y do
-begin
-var e,r,t : boolean;
-
-var l,i,u: integer;
-end;
-
-function max(num1, num2: string ): integer;
-
-var result: string;
-
-begin
-if num1 > num2 then
-begin
-var a,b,c : string;
-var a,b,c : string;
-b := 4 + 5;
-end;
-
-else
-begin
-result := num2;
-
-end;
-end;
-
-max(a,c);
-
-
-var test : integer;
-
-var a,c : string;
-test := max(a,c);
-
-
-
-repeat
-    begin
- var a : integer;
-     a:= 1;
-end;
-until 8>5;
-
-var contador : integer;
-var aba : integer;
-aba := 0;
-
-for contador := 10 to 20 do
-    begin
-        aba := aba + 1;
-    end;
-
-
-
-
-
-
-
-
-
-
-

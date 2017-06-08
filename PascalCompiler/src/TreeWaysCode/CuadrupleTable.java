@@ -1,5 +1,6 @@
 package TreeWaysCode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,12 +18,19 @@ public class CuadrupleTable {
     public CuadrupleTable(){
     }
 
-    public List<Cuadruplo> tabla;
+    public List<Cuadruplo> tabla = new ArrayList<>();
     public int num = 1;
+    int tagNumber = 1;
 
     public void AddCuadruplo(Cuadruplo cuadruplo){
         tabla.add(cuadruplo);
 
+    }
+
+    public  String GetNextTag(){
+        String tagName = "tag"+tagNumber;
+        tagNumber++;
+        return  tagName;
     }
 
     public String newLabel(){

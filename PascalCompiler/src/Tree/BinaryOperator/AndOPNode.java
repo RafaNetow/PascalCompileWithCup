@@ -3,8 +3,10 @@ package Tree.BinaryOperator;
 import Tree.Expression.BaseType.BinaryOperatorNode;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.*;
+import TreeWaysCode.AndOpWay;
 import TreeWaysCode.CuadrupleTable;
 import TreeWaysCode.Cuadruplo;
+import TreeWaysCode.IfWay;
 
 /**
  * Created by Sequeirios on 05/05/2017.
@@ -29,7 +31,12 @@ public class AndOPNode extends BinaryOperatorNode {
 
     @Override
     public String GenerateTreeDimensions() {
-        String nameLabel = CuadrupleTable.getInstance().newLabel();
-        return nameLabel;
+        String newId = CuadrupleTable.getInstance().newLabel();
+        String newTag = CuadrupleTable.getInstance().GetNextTag();
+        AndOpWay aow = new AndOpWay("and", RightOperand.GenerateTreeDimensions(), newTag, LeftOperand.GenerateTreeDimensions(), newId);
+        CuadrupleTable.getInstance().AddCuadruplo(aow);
+        return newId;
     }
+
+
 }

@@ -3,6 +3,8 @@ package Tree.BinaryOperator;
 import Tree.Expression.BaseType.BinaryOperatorNode;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.*;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.LessThanWay;
 
 /**
  * Created by Sequeirios on 04/05/2017.
@@ -29,7 +31,13 @@ public class LessThanNode extends BinaryOperatorNode {
 
     @Override
     public String GenerateTreeDimensions() {
-        return null;
+
+        String newId = CuadrupleTable.getInstance().newLabel();
+        String newTag = CuadrupleTable.getInstance().GetNextTag();
+
+        LessThanWay ltw = new LessThanWay("<", RightOperand.GenerateTreeDimensions(), newTag, LeftOperand.GenerateTreeDimensions(), newId);
+        CuadrupleTable.getInstance().AddCuadruplo(ltw);
+        return newId;
     }
 }
 

@@ -21,6 +21,7 @@ public class NumberNode extends ExpressionNode {
 
     @Override
     public String GenerateTreeDimensions() {
-        return String.valueOf(value);
+
+         return String.valueOf(value);
     }
 }

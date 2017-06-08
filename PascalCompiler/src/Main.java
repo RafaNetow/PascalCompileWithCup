@@ -6,6 +6,7 @@ import java.util.List;
 import Semantic.Context;
 import Semantic.SymbolTable;
 import Tree.Expression.SentencesNode;
+import TreeWaysCode.CuadrupleTable;
 
 
 public class Main {
@@ -21,7 +22,13 @@ public class Main {
                  result) {
                 sentence.ValidateSemantic();
             }
+
+            for (SentencesNode sentence:
+                 result) {
+                sentence.GenrarTresDirecciones("first");
+            }
         Context table = Context.getInstance();
+            CuadrupleTable ctable = CuadrupleTable.getInstance();
             System.out.println(code);
 
         } catch (Exception e) {

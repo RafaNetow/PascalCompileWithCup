@@ -3,6 +3,8 @@ package Tree.BinaryOperator;
 import Tree.Expression.BaseType.BinaryOperatorNode;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.*;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.OrOpWay;
 
 /**
  * Created by Sequeirios on 05/05/2017.
@@ -27,6 +29,13 @@ public class OrOpNode extends BinaryOperatorNode {
 
     @Override
     public String GenerateTreeDimensions() {
-        return null;
+        String newTag = CuadrupleTable.getInstance().GetNextTag();
+        String newid = CuadrupleTable.getInstance().newLabel();
+
+        OrOpWay oow = new OrOpWay("or", this.RightOperand.GenerateTreeDimensions(), newTag,
+                this.LeftOperand.GenerateTreeDimensions(), newid);
+        CuadrupleTable.getInstance().AddCuadruplo(oow);
+
+        return newid;
     }
 }

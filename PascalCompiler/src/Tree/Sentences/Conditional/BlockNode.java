@@ -1,6 +1,10 @@
 package Tree.Sentences.Conditional;
 
 import Tree.Expression.SentencesNode;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.GotoWay;
+import TreeWaysCode.IfWay;
+import TreeWaysCode.TagWay;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +15,9 @@ import java.util.List;
 public class BlockNode extends SentencesNode {
     List<SentencesNode> TrueBlock ;
     BlockNode ElseBlock;
+    String Condition;
+
+
 
 //only one sentences
     public BlockNode (SentencesNode sentence){
@@ -38,8 +45,30 @@ public class BlockNode extends SentencesNode {
         ElseBlock.ValidateSemantic();
     }
 
+    public  void SetCondition( String condition){
+        this.Condition = condition;
+    }
+
     @Override
-    public String GenrarTresDirecciones() {
-        return null;
+    public String GenrarTresDirecciones(String siguiente) {
+        String trueTag = CuadrupleTable.getInstance().GetNextTag();
+        String falseTag = CuadrupleTable.getInstance().GetNextTag();
+
+        CuadrupleTable.getInstance().AddCuadruplo(new IfWay("if",Condition,trueTag,"",""));
+        CuadrupleTable.getInstance().AddCuadruplo(new GotoWay("goto",falseTag));
+
+
+        CuadrupleTable.getInstance().AddCuadruplo((new TagWay("label",trueTag)));
+        for (SentencesNode sn : TrueBlock
+             ) {
+            sn.GenrarTresDirecciones(siguiente);
+        }
+        CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",falseTag));
+        if(ElseBlock!= null)
+         ElseBlock.GenrarTresDirecciones(siguiente);
+
+
+         return  siguiente;
+
     }
 }

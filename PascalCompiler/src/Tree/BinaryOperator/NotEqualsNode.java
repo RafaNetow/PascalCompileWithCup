@@ -3,6 +3,8 @@ package Tree.BinaryOperator;
 import Tree.Expression.BaseType.BinaryOperatorNode;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.*;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.NotEqualsWay;
 
 /**
  * Created by Sequeirios on 04/05/2017.
@@ -28,6 +30,13 @@ public class NotEqualsNode extends BinaryOperatorNode {
 
     @Override
     public String GenerateTreeDimensions() {
-        return null;
+        String newId = CuadrupleTable.getInstance().newLabel();
+        String newTag = CuadrupleTable.getInstance().GetNextTag();
+
+        NotEqualsWay neway = new NotEqualsWay("!=", RightOperand.GenerateTreeDimensions(), newTag,
+                LeftOperand.GenerateTreeDimensions(), newId);
+        CuadrupleTable.getInstance().AddCuadruplo(neway);
+
+        return  newId;
     }
 }

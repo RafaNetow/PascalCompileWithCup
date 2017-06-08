@@ -7,6 +7,10 @@ import Tree.Expression.BaseType.ExpressionNode;
 
 import Tree.Expression.DataType.BooleanType;
 import Tree.Expression.SentencesNode;
+import TreeWaysCode.AssigantionWay;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.IfWay;
+import TreeWaysCode.SumWay;
 import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 
 import java.util.List;
@@ -16,9 +20,7 @@ import java.util.List;
  */
 public class IfNode extends SentencesNode {
     ExpressionNode Condition;
-
     BlockNode BlockCode;
-
 
     public IfNode(ExpressionNode condition, BlockNode blockCode, SemanticSymbol symbol){
             Condition = condition;
@@ -33,12 +35,12 @@ public class IfNode extends SentencesNode {
             System.out.println(Condition.GetPositionError()+" Expression at if is no boolean");
        this.BlockCode.ValidateSemantic();
         Context.getInstance().TableToRemind.put(CodeGuid, Context.getInstance().Stack.pop());
-
-
     }
 
     @Override
-    public String GenrarTresDirecciones() {
-        return null;
+    public String GenrarTresDirecciones(String siguiente) {
+        String newTag = CuadrupleTable.getInstance().GetNextTag();
+
+        return BlockCode.GenrarTresDirecciones(newTag);
     }
 }

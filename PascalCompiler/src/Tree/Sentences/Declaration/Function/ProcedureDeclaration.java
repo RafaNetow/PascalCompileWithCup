@@ -50,7 +50,7 @@ public class ProcedureDeclaration extends SentencesNode
     }
 
     @Override
-    public String GenrarTresDirecciones() {
+    public String GenrarTresDirecciones(String siguiente) {
         return null;
     }
 }
