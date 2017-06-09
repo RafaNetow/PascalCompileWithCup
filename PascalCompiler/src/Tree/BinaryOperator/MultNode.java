@@ -19,9 +19,8 @@ public class MultNode extends BinaryOperatorNode {
     @Override
     public String GenerateTreeDimensions() {
         String newId = CuadrupleTable.getInstance().newLabel();
-        String newTag = CuadrupleTable.getInstance().GetNextTag();
 
-        MultiWay mw = new MultiWay("*", RightOperand.GenerateTreeDimensions(), newTag, LeftOperand.GenerateTreeDimensions(),
+        MultiWay mw = new MultiWay("*", RightOperand.GenerateTreeDimensions(), LeftOperand.GenerateTreeDimensions(),
                 newId);
         CuadrupleTable.getInstance().AddCuadruplo(mw);
         return newId;

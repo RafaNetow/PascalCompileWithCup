@@ -32,8 +32,7 @@ public class AndOPNode extends BinaryOperatorNode {
     @Override
     public String GenerateTreeDimensions() {
         String newId = CuadrupleTable.getInstance().newLabel();
-        String newTag = CuadrupleTable.getInstance().GetNextTag();
-        AndOpWay aow = new AndOpWay("and", RightOperand.GenerateTreeDimensions(), newTag, LeftOperand.GenerateTreeDimensions(), newId);
+        AndOpWay aow = new AndOpWay("and", RightOperand.GenerateTreeDimensions(), LeftOperand.GenerateTreeDimensions(), newId);
         CuadrupleTable.getInstance().AddCuadruplo(aow);
         return newId;
     }

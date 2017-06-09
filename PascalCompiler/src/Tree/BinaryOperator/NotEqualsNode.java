@@ -33,7 +33,7 @@ public class NotEqualsNode extends BinaryOperatorNode {
         String newId = CuadrupleTable.getInstance().newLabel();
         String newTag = CuadrupleTable.getInstance().GetNextTag();
 
-        NotEqualsWay neway = new NotEqualsWay("!=", RightOperand.GenerateTreeDimensions(), newTag,
+        NotEqualsWay neway = new NotEqualsWay("!=", RightOperand.GenerateTreeDimensions(),
                 LeftOperand.GenerateTreeDimensions(), newId);
         CuadrupleTable.getInstance().AddCuadruplo(neway);
 

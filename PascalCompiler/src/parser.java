@@ -767,7 +767,7 @@ class CUP$parser$actions {
 		int posConditionleft = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).left;
 		int posConditionright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		SemanticSymbol posCondition = (SemanticSymbol)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
-		   condition.AddSymbol(posCondition);  RepeatNode node = new RepeatNode(condition,listSentences,repeat); RESULT= node;
+		   condition.AddSymbol(posCondition);  RepeatNode node = new RepeatNode(condition,listSentences); RESULT= node;
               CUP$parser$result = parser.getSymbolFactory().newSymbol("SentencesRepeat",9, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-4)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;

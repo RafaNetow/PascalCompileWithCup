@@ -17,8 +17,7 @@ public class EqualsNode extends BinaryOperatorNode {
     @Override
     public String GenerateTreeDimensions() {
         String nameLabel = CuadrupleTable.getInstance().newLabel();
-        String newTag = CuadrupleTable.getInstance().GetNextTag();
-        EqualsWay ew = new EqualsWay("==", RightOperand.GenerateTreeDimensions(), newTag, LeftOperand.GenerateTreeDimensions(), nameLabel);
+        EqualsWay ew = new EqualsWay("==", RightOperand.GenerateTreeDimensions(), LeftOperand.GenerateTreeDimensions(), nameLabel);
         CuadrupleTable.getInstance().AddCuadruplo(ew);
         return nameLabel;
     }

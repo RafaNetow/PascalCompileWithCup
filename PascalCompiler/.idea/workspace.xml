@@ -24,107 +24,114 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="IdArray.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/IdArray.java">
+      <file leaf-file-name="MultNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/MultNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotEqualsNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/NotEqualsNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrOpNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/OrOpNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrOpWay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/OrOpWay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#201#202#0" expanded="true" />
+                <element signature="e#252#253#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArrayType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/ArrayType.java">
+      <file leaf-file-name="SubNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/SubNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SumNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/SumNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SumWay.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/SumWay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#575#576#0" expanded="true" />
+                <element signature="e#200#201#0" expanded="true" />
+                <element signature="e#251#252#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssignationNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/AssignationNode.java">
+      <file leaf-file-name="SubWay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/SubWay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+              <folding>
+                <element signature="e#200#201#0" expanded="true" />
+                <element signature="e#251#252#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotEqualsWay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/NotEqualsWay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StringNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/StringNode.java">
+      <file leaf-file-name="MultiWay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/MultiWay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SymbolTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Semantic/SymbolTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Stack.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Stack.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WhileNode.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Bucles/WhileNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeclarationNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/DeclarationNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConstNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/ConstNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="119">
+              <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+              <folding>
+                <element signature="e#204#205#0" expanded="true" />
+                <element signature="e#255#256#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,7 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>SentencesFor</find>
       <find>callFunctionOrAssigment</find>
       <find>i</find>
       <find>FUNCTION</find>
@@ -154,7 +160,6 @@
       <find>LIT_STRING</find>
       <find>callfunction</find>
       <find>id</find>
-      <find>ArrayDeclaration</find>
       <find>DECLARATION</find>
       <find>declaration</find>
       <find>ARRAY</find>
@@ -170,6 +175,8 @@
       <find>Assignation</find>
       <find>idNode</find>
       <find>AssignationNode</find>
+      <find>ArrayDeclaration</find>
+      <find>TYPE</find>
     </findStrings>
     <replaceStrings>
       <replace>SentencesWhile</replace>
@@ -188,57 +195,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Semantic/Context.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Expression/DataType/IdNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/NumberNode.java" />
-        <option value="$PROJECT_DIR$/src/TreeWaysCode/CuadrupleTable.java" />
-        <option value="$PROJECT_DIR$/src/TreeWaysCode/Cuadruplo.java" />
-        <option value="$PROJECT_DIR$/src/TreeWaysCode/OptionalArgument.java" />
-        <option value="$PROJECT_DIR$/src/TreeWaysCode/SumWay.java" />
-        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/SumNode.java" />
-        <option value="$PROJECT_DIR$/src/TreeWaysCode/AssigantionWay.java" />
-        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/EqualsNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Sentences/Conditional/BlockNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/LiteralString.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/LiteralChar.java" />
-        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/DivNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/MultNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/SubNode.java" />
-        <option value="$PROJECT_DIR$/src/SemanticSymbol.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/ProcedureDeclaration.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/DeclarationNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/ConstNode.java" />
-        <option value="$PROJECT_DIR$/src/Semantic/SemanticSymbol.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/FunctionDeclaration.java" />
         <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/ParamsOfFunction.java" />
-        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/AndOPNode.java" />
         <option value="$PROJECT_DIR$/src/Tree/Expression/BaseType/BinaryOperatorNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/GreaterThanNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/GreatherOrEqualThanNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/LessOrEqualThanNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/LessThanNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/NotEqualsNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/OrOpNode.java" />
         <option value="$PROJECT_DIR$/src/Tree/Sentences/Bucles/ForNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Sentences/Bucles/RepeatNode.java" />
         <option value="$PROJECT_DIR$/src/Tree/Sentences/Bucles/WhileNode.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Sentences/Conditional/IfNode.java" />
         <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/CallFunctionExpression.java" />
         <option value="$PROJECT_DIR$/src/Tree/Expression/SentencesNode.java" />
         <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/CallFunction.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Expression/BaseType/ExpressionNode.java" />
         <option value="$PROJECT_DIR$/src/pc.cup" />
         <option value="$PROJECT_DIR$/src/lcalc.flex" />
         <option value="$PROJECT_DIR$/src/pascal.flex" />
         <option value="$PROJECT_DIR$/src/Lexer.java" />
-        <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/ArrayDeclaration.java" />
         <option value="$PROJECT_DIR$/src/Semantic/SymbolTable.java" />
         <option value="$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/IdArray.java" />
         <option value="$PROJECT_DIR$/src/pascal.cup" />
-        <option value="$PROJECT_DIR$/src/parser.java" />
-        <option value="$PROJECT_DIR$/src/codeDeclaration.pas" />
         <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/AssignationNode.java" />
         <option value="$PROJECT_DIR$/src/Tree/Expression/DataType/ArrayType.java" />
+        <option value="$PROJECT_DIR$/src/codeDeclaration.pas" />
+        <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/ArrayDeclaration.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/DeclarationNode.java" />
+        <option value="$PROJECT_DIR$/src/Tree/Expression/BaseType/ExpressionNode.java" />
+        <option value="$PROJECT_DIR$/src/Tree/Sentences/Bucles/RepeatNode.java" />
+        <option value="$PROJECT_DIR$/src/parser.java" />
+        <option value="$PROJECT_DIR$/src/Tree/Sentences/Conditional/IfNode.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/IfWay.java" />
+        <option value="$PROJECT_DIR$/src/Tree/Sentences/Conditional/BlockNode.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/OptionalArgument.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/AndOpWay.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/DivNodeWay.java" />
+        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/EqualsNode.java" />
+        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/AndOPNode.java" />
+        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/DivNode.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/EqualsWay.java" />
+        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/GreaterThanNode.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/GreaterThanWay.java" />
+        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/GreatherOrEqualThanNode.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/GreatherOrEqualThanWay.java" />
+        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/LessOrEqualThanNode.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/LessOrEqualThanWay.java" />
+        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/LessThanNode.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/LessThanWay.java" />
+        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/MultNode.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/MultiWay.java" />
+        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/NotEqualsNode.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/NotEqualsWay.java" />
+        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/OrOpNode.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/OrOpWay.java" />
+        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/SubNode.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/SubWay.java" />
+        <option value="$PROJECT_DIR$/src/Tree/BinaryOperator/SumNode.java" />
+        <option value="$PROJECT_DIR$/src/TreeWaysCode/SumWay.java" />
       </list>
     </option>
   </component>
@@ -270,8 +277,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -490,55 +495,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Expression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataType" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PascalCompiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PascalCompiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Expression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BaseType" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PascalCompiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PascalCompiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tree" />
+              <option name="myItemId" value="BinaryOperator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -562,6 +519,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1033,15 +992,17 @@
       <workItem from="1496118491134" duration="20421000" />
       <workItem from="1496250952774" duration="18618000" />
       <workItem from="1496717716465" duration="2960000" />
+      <workItem from="1496942372071" duration="2359000" />
+      <workItem from="1496944970577" duration="4014000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="371280000" />
+    <option name="totallyTimeSpent" value="377653000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1053,12 +1014,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33615223" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33615223" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3139535" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1078125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10729167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1133,11 +1094,17 @@
           <properties />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Semantic/SymbolTable.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="50" />
+      <option name="time" value="51" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -1150,10 +1117,237 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/BaseType/BinaryOperatorNode.java">
+    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/ArrayType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="36" column="93" lean-forward="false" selection-start-line="36" selection-start-column="93" selection-end-line="36" selection-end-column="93" />
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#575#576#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/ConstNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/codeDeclaration.pas">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pascal.cup">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="94" column="29" lean-forward="false" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="29" />
+          <folding>
+            <marker date="1496942059069" expanded="true" signature="826:913" ph="{...}" />
+            <marker date="1496942059069" expanded="false" signature="893:909" ph="&lt;~&gt;" />
+            <marker date="1496942059069" expanded="true" signature="2500:2514" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="2635:2668" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="2692:2775" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="2843:2855" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="2925:2937" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="3004:3016" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="3078:3090" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="3155:3167" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="3237:3249" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="3320:3332" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="3397:3409" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="3471:3483" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="3619:3634" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="3770:3839" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="3989:4107" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="4210:4311" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="4394:4488" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="4576:4643" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="4740:4787" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="4841:4874" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="4939:4975" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="5038:5055" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="5080:5156" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="5325:5464" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="5514:5527" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="5642:5763" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="5860:5979" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="6007:6070" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="6135:6154" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="6177:6240" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="6307:6389" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="6462:6534" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="6651:6774" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="6868:6967" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="7066:7092" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="7161:7191" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="7262:7283" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="7360:7384" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="7457:7469" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="7537:7549" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="7615:7625" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="7688:7700" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="7855:7919" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="7947:8029" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="8059:8109" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="8186:8240" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="8282:8296" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="8341:8391" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="8467:8554" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="8634:8696" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="8733:8788" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="8842:8900" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="8943:8956" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="8979:9038" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="9015:9023" ph="&lt;~&gt;" />
+            <marker date="1496942059069" expanded="true" signature="9082:9105" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="9182:9218" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="9269:9302" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="9363:9408" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="9466:9506" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="9561:9592" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="9644:9678" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="9713:9726" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="9810:9838" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="9905:9933" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="10000:10013" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="10093:10122" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="10203:10231" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="10296:10309" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="10389:10402" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="10469:10498" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="10561:10574" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="10630:10689" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="10743:10783" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="10834:10858" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="10932:10982" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="11042:11077" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="11116:11163" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="11191:11243" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="11269:11318" ph="{...}" />
+            <marker date="1496942059069" expanded="true" signature="11345:11392" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/ArrayDeclaration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="29" column="98" lean-forward="false" selection-start-line="29" selection-start-column="98" selection-end-line="29" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Semantic/SymbolTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="46" column="19" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/DeclarationNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/Default.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/ConstType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/SentencesNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#429#430#0" expanded="false" />
+            <element signature="e#509#510#0" expanded="false" />
+            <element signature="e#560#561#0" expanded="false" />
+            <element signature="e#591#592#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/CallFunctionExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="51" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2368#2369#0" expanded="false" />
+            <element signature="e#2395#2396#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Semantic/SemanticSymbol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/BaseType/ExpressionNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding>
+            <element signature="e#569#570#0" expanded="false" />
+            <element signature="e#604#605#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/ProcedureDeclaration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="790" column="45" lean-forward="false" selection-start-line="790" selection-start-column="45" selection-end-line="790" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/AssigantionWay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Bucles/ForNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1161,61 +1355,23 @@
     <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Bucles/RepeatNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="35" column="57" lean-forward="false" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+          <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/AssigantionWay.java">
+    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Bucles/WhileNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="72" lean-forward="false" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="72" />
-          <folding>
-            <element signature="e#209#210#0" expanded="false" />
-            <element signature="e#246#247#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/OptionalArgument.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="413">
+          <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Conditional/BlockNode.java">
+    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/AssignationNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Conditional/IfNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="32" column="62" lean-forward="false" selection-start-line="32" selection-start-column="62" selection-end-line="32" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/LiteralChar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <element signature="e#495#496#0" expanded="false" />
-            <element signature="e#522#523#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/SumWay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="115">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1228,222 +1384,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/ProcedureDeclaration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/FunctionDeclaration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="44" column="26" lean-forward="false" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/ParamsOfFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/BaseType/ExpressionNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="57" lean-forward="false" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#437#438#0" expanded="false" />
-            <element signature="e#517#518#0" expanded="false" />
-            <element signature="e#569#570#0" expanded="false" />
-            <element signature="e#604#605#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/CuadrupleTable.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pascal.flex">
+    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Conditional/IfNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="96" column="43" lean-forward="false" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pascal.cup">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="69" column="27" lean-forward="true" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="205" />
-          <folding>
-            <marker date="1496716099907" expanded="true" signature="826:913" ph="{...}" />
-            <marker date="1496716099907" expanded="false" signature="893:909" ph="&lt;~&gt;" />
-            <marker date="1496716099907" expanded="true" signature="2500:2514" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="2635:2668" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="2692:2775" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="2843:2855" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="2925:2937" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3004:3016" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3078:3090" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3155:3167" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3237:3249" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3320:3332" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3397:3409" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3471:3483" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3619:3634" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3770:3839" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3989:4107" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4028:4107" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4210:4311" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4394:4488" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4576:4643" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4576:4645" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4738:4787" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4740:4787" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4841:4874" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4939:4975" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="5038:5055" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="5080:5156" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="5325:5464" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="5514:5527" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="5642:5763" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="5860:5979" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6007:6070" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6135:6154" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6177:6240" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6307:6389" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6330:6389" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6462:6534" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6651:6774" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6680:6774" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6681:6774" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6868:6967" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7066:7092" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7161:7191" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7262:7283" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7360:7384" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7457:7469" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7537:7549" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7615:7625" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7688:7700" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7855:7919" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7947:8029" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8059:8109" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8186:8240" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8282:8296" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8341:8391" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8467:8554" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8634:8696" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8733:8788" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8842:8900" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8943:8956" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8979:9038" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9015:9023" ph="&lt;~&gt;" />
-            <marker date="1496716099907" expanded="true" signature="9082:9105" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9182:9218" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9269:9302" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9363:9408" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9466:9506" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9561:9592" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9644:9678" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9713:9726" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9810:9838" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9905:9933" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10000:10013" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10093:10122" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10203:10231" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10296:10309" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10389:10402" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10469:10498" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10561:10574" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10630:10689" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10743:10783" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10834:10858" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10932:10982" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="11042:11077" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="11077:11163" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="11116:11163" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="11191:11243" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="11269:11318" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="11345:11392" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/java-cup-11b-runtime.jar!/java_cup/runtime/lr_parser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pascal.flex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="58" column="48" lean-forward="false" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/ArrayDeclaration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1018#1019#0" expanded="false" />
-            <element signature="e#1045#1046#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/CallFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="58" column="23" lean-forward="true" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        <state relative-caret-position="92">
+          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/CallFunctionExpression.java">
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/IfWay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="64" column="98" lean-forward="false" selection-start-line="64" selection-start-column="98" selection-end-line="64" selection-end-column="98" />
+        <state relative-caret-position="153">
+          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/FunctionType.java">
+    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Conditional/BlockNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Semantic/BaseType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Semantic/SemanticSymbol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="224">
+          <caret line="56" column="85" lean-forward="false" selection-start-line="56" selection-start-column="85" selection-end-line="56" selection-end-column="85" />
           <folding />
         </state>
       </provider>
@@ -1456,327 +1424,224 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/CharNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/ProcedureType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/LiteralString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="20" />
-          <folding>
-            <element signature="e#492#493#0" expanded="false" />
-            <element signature="e#519#520#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/SentencesNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="53" lean-forward="false" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Bucles/ForNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cuadruplos.java">
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/AndOpWay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pascal.cup">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="84" lean-forward="false" selection-start-line="50" selection-start-column="77" selection-end-line="50" selection-end-column="84" />
+          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
           <folding>
-            <marker date="1496716099907" expanded="true" signature="826:913" ph="{...}" />
-            <marker date="1496716099907" expanded="false" signature="893:909" ph="&lt;~&gt;" />
-            <marker date="1496716099907" expanded="true" signature="2500:2514" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="2635:2668" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="2692:2775" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="2843:2855" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="2925:2937" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3004:3016" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3078:3090" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3155:3167" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3237:3249" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3320:3332" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3397:3409" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3471:3483" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3619:3634" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3770:3839" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="3989:4107" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4028:4107" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4210:4311" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4394:4488" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4576:4643" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4576:4645" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4738:4787" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4740:4787" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4841:4874" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="4939:4975" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="5038:5055" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="5080:5156" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="5325:5464" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="5514:5527" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="5642:5763" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="5860:5979" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6007:6070" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6135:6154" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6177:6240" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6307:6389" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6330:6389" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6462:6534" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6651:6774" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6680:6774" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6681:6774" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="6868:6967" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7066:7092" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7161:7191" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7262:7283" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7360:7384" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7457:7469" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7537:7549" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7615:7625" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7688:7700" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7855:7919" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="7947:8029" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8059:8109" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8186:8240" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8282:8296" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8341:8391" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8467:8554" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8634:8696" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8733:8788" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8842:8900" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8943:8956" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="8979:9038" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9015:9023" ph="&lt;~&gt;" />
-            <marker date="1496716099907" expanded="true" signature="9082:9105" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9182:9218" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9269:9302" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9363:9408" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9466:9506" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9561:9592" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9644:9678" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9713:9726" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9810:9838" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="9905:9933" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10000:10013" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10093:10122" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10203:10231" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10296:10309" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10389:10402" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10469:10498" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10561:10574" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10630:10689" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10743:10783" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10834:10858" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="10932:10982" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="11042:11077" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="11077:11163" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="11116:11163" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="11191:11243" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="11269:11318" ph="{...}" />
-            <marker date="1496716099907" expanded="true" signature="11345:11392" ph="{...}" />
+            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13260">
-          <caret line="811" column="68" lean-forward="false" selection-start-line="811" selection-start-column="68" selection-end-line="811" selection-end-column="68" />
-          <folding>
-            <element signature="e#1270#1271#0" expanded="false" />
-            <element signature="e#1294#1295#0" expanded="false" />
-            <element signature="e#28498#28499#0" expanded="false" />
-            <element signature="e#28553#28554#0" expanded="false" />
-            <element signature="e#29589#29590#0" expanded="false" />
-            <element signature="e#29619#29620#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14025">
-          <caret line="842" column="44" lean-forward="false" selection-start-line="842" selection-start-column="44" selection-end-line="842" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/IdNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/codeDeclaration.pas">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Vector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="314" column="0" lean-forward="false" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
-          <folding>
-            <element signature="e#11730#11731#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/NumberNode.java">
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/DivNodeWay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/IntNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
-            <element signature="e#238#239#0" expanded="true" />
-            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
+            <element signature="e#257#258#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/ArrayList.java">
+    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/AndOPNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="33" column="63" lean-forward="false" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/DivNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/EqualsNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/EqualsWay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <element signature="e#205#206#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/GreaterThanWay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/OptionalArgument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/GreaterThanNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/GreatherOrEqualThanNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="36" column="58" lean-forward="true" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/GreatherOrEqualThanWay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="850" column="0" lean-forward="false" selection-start-line="850" selection-start-column="0" selection-end-line="850" selection-end-column="0" />
+          <caret line="6" column="62" lean-forward="false" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/LessOrEqualThanNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="35" column="50" lean-forward="false" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/LessOrEqualThanWay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="58" lean-forward="false" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/LessThanNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="37" column="36" lean-forward="false" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/LessThanWay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/MultiWay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
           <folding>
-            <element signature="e#31041#31042#0" expanded="true" />
-            <element signature="e#31086#31087#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Semantic/Context.java">
+    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/MultNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/NotEqualsWay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/NotEqualsNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/OrOpNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/OrOpWay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
           <folding>
-            <element signature="e#480#481#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Stack.java">
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/SubWay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Semantic/SymbolTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/StringNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/IdArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#200#201#0" expanded="true" />
+            <element signature="e#251#252#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/ArrayType.java">
+    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/SubNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/BinaryOperator/SumNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/SumWay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
+            <element signature="e#200#201#0" expanded="true" />
+            <element signature="e#251#252#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/DeclarationNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/ConstNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/AssignationNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Bucles/WhileNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>

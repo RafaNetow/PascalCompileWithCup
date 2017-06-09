@@ -22,16 +22,18 @@ public class ArrayDeclaration extends SentencesNode
             this.FirstRange = firstRange;
             this.SecondRange = secondRange;
             Type = type;
-            Symbol = symbol;
+          //  Symbol = symbol;
    }
 
     @Override
     public void ValidateSemantic() {
-        SymbolTable.getInstance().declareVariable(Name, new ArrayType(FirstRange,SecondRange,Type), Symbol);
+        SymbolTable.getInstance().declareVariable(Name, new ArrayType(FirstRange,SecondRange,Type));
     }
 
     @Override
-    public String GenrarTresDirecciones() {
+    public String GenrarTresDirecciones(String siguiente) {
         return null;
     }
+
+
 }

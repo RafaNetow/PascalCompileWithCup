@@ -5,11 +5,12 @@ package TreeWaysCode;
  */
 public class OptionalArgument extends Cuadruplo {
     public String argm2;
-    public String tag;
+    public String Label;
 
-    public OptionalArgument(String operand, String argm1, String tag, String argm2, String label) {
+
+    public OptionalArgument(String operand, String argm1, String argm2, String label) {
         super(operand, argm1);
         this.argm2 = argm2;
-        this.tag = tag;
+        this.Label = label;
     }
 }

@@ -33,7 +33,7 @@ public class LessOrEqualThanNode extends BinaryOperatorNode {
         String newId = CuadrupleTable.getInstance().newLabel();
         String newTag = CuadrupleTable.getInstance().GetNextTag();
 
-        LessOrEqualThanWay loew = new LessOrEqualThanWay("<=", RightOperand.GenerateTreeDimensions(), newTag, LeftOperand.GenerateTreeDimensions(), newId);
+        LessOrEqualThanWay loew = new LessOrEqualThanWay("<=", RightOperand.GenerateTreeDimensions(), LeftOperand.GenerateTreeDimensions(), newId);
         CuadrupleTable.getInstance().AddCuadruplo(loew);
 
         return newId;

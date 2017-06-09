@@ -38,7 +38,7 @@ public class GreaterThanNode extends BinaryOperatorNode {
     public String GenerateTreeDimensions() {
         String nameLabel = CuadrupleTable.getInstance().newLabel();
         String newTag = CuadrupleTable.getInstance().GetNextTag();
-        GreaterThanWay gtw = new GreaterThanWay(">", RightOperand.GenerateTreeDimensions(), newTag, LeftOperand.GenerateTreeDimensions(), nameLabel);
+        GreaterThanWay gtw = new GreaterThanWay(">", RightOperand.GenerateTreeDimensions(), LeftOperand.GenerateTreeDimensions(), nameLabel);
         CuadrupleTable.getInstance().AddCuadruplo(gtw);
         return nameLabel;
     }

@@ -24,7 +24,7 @@ public class DeclarationNode extends SentencesNode {
      public  DeclarationNode(List<String> listOfId, BaseType type, SemanticSymbol sym){
             this.ListOfIds = listOfId;
             this.Type = type;
-            this.Symbol = sym;
+          //  this.Symbol = sym;
 
 
      }

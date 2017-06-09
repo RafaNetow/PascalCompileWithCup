@@ -17,10 +17,10 @@ public class RepeatNode extends SentencesNode {
     ExpressionNode Condition;
     List<SentencesNode> ListSentences;
 
-    public RepeatNode(ExpressionNode condition, List<SentencesNode> sentences, SemanticSymbol sym){
+    public RepeatNode(ExpressionNode condition, List<SentencesNode> sentences){
         this.Condition = condition;
         this.ListSentences = sentences;
-        this.Symbol = sym;
+
 
     }
     @Override

@@ -33,9 +33,9 @@ public class LessThanNode extends BinaryOperatorNode {
     public String GenerateTreeDimensions() {
 
         String newId = CuadrupleTable.getInstance().newLabel();
-        String newTag = CuadrupleTable.getInstance().GetNextTag();
 
-        LessThanWay ltw = new LessThanWay("<", RightOperand.GenerateTreeDimensions(), newTag, LeftOperand.GenerateTreeDimensions(), newId);
+
+        LessThanWay ltw = new LessThanWay("<", RightOperand.GenerateTreeDimensions(), LeftOperand.GenerateTreeDimensions(), newId);
         CuadrupleTable.getInstance().AddCuadruplo(ltw);
         return newId;
     }

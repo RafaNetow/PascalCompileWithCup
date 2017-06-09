@@ -5,7 +5,7 @@ package TreeWaysCode;
  */
 public class OrOpWay extends OptionalArgument{
 
-    public OrOpWay(String operand, String argm1, String tag, String argm2, String label) {
-        super(operand, argm1, tag, argm2, label);
+    public OrOpWay(String operand, String argm1, String argm2, String label) {
+        super(operand, argm1, argm2, label);
     }
 }

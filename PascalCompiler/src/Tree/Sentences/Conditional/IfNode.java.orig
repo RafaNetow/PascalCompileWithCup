@@ -22,7 +22,12 @@ public class IfNode extends SentencesNode {
     ExpressionNode Condition;
     BlockNode BlockCode;
 
+<<<<<<< HEAD
+
     public IfNode(ExpressionNode condition, BlockNode blockCode, SemanticSymbol symbol){
+=======
+    public IfNode(ExpressionNode condition, BlockNode blockCode){
+>>>>>>> 3ways
             Condition = condition;
            BlockCode = blockCode;
            this.Symbol = symbol;
@@ -41,7 +46,6 @@ public class IfNode extends SentencesNode {
     public String GenrarTresDirecciones(String siguiente) {
         String newTag = CuadrupleTable.getInstance().GetNextTag();
 
-       BlockCode.SetCondition( Condition.GenerateTreeDimensions());
         return BlockCode.GenrarTresDirecciones(newTag);
     }
 }

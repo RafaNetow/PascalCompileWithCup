@@ -29,10 +29,10 @@ public class OrOpNode extends BinaryOperatorNode {
 
     @Override
     public String GenerateTreeDimensions() {
-        String newTag = CuadrupleTable.getInstance().GetNextTag();
+
         String newid = CuadrupleTable.getInstance().newLabel();
 
-        OrOpWay oow = new OrOpWay("or", this.RightOperand.GenerateTreeDimensions(), newTag,
+        OrOpWay oow = new OrOpWay("or", this.RightOperand.GenerateTreeDimensions(),
                 this.LeftOperand.GenerateTreeDimensions(), newid);
         CuadrupleTable.getInstance().AddCuadruplo(oow);
 

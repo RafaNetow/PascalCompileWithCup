@@ -20,8 +20,7 @@ public class DivNode extends BinaryOperatorNode {
     @Override
     public String GenerateTreeDimensions() {
         String nameLabel = CuadrupleTable.getInstance().newLabel();
-        String newTag = CuadrupleTable.getInstance().GetNextTag();
-        DivNodeWay dnw = new DivNodeWay("/", RightOperand.GenerateTreeDimensions(), newTag, LeftOperand.GenerateTreeDimensions(), nameLabel);
+        DivNodeWay dnw = new DivNodeWay("/", RightOperand.GenerateTreeDimensions(), LeftOperand.GenerateTreeDimensions(), nameLabel);
         CuadrupleTable.getInstance().AddCuadruplo(dnw);
         return nameLabel;
     }

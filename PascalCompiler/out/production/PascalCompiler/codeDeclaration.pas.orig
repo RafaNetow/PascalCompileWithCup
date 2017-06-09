@@ -1,10 +1,11 @@
+<<<<<<< HEAD
 
 
 program codeDeclaration;
 
 type linea = array [1..80] of integer;
 
- var arraytest : string;
+ var arraytest : integer;
 
      arraytest := linea[2];
 
@@ -35,12 +36,14 @@ findMin(i1,i2,i3);
 var x,y, sd,sdsd,s : integer;
 var b,r : string;
 var m : integer;
+=======
+>>>>>>> 3ways
 if x > s then
 begin
   x :=6;
 
-    end;
-    else
+end;
+ else
     begin
  x :=7;
     end;

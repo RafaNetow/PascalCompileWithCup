@@ -18,8 +18,8 @@ public class SubNode extends BinaryOperatorNode {
     public String GenerateTreeDimensions() {
         SubWay sw;
         String nameLabel = CuadrupleTable.getInstance().newLabel();
-        String newTag = CuadrupleTable.getInstance().GetNextTag();
-        sw = new SubWay("+", this.RightOperand.GenerateTreeDimensions(), newTag,
+
+        sw = new SubWay("+", this.RightOperand.GenerateTreeDimensions(),
                 this.LeftOperand.GenerateTreeDimensions(), nameLabel);
         CuadrupleTable.getInstance().AddCuadruplo(sw);
         return nameLabel;

@@ -4,7 +4,7 @@ program codeDeclaration;
 
 type linea = array [1..80] of integer;
 
- var arraytest : integer;
+ var arraytest : string;
 
      arraytest := linea[2];
 

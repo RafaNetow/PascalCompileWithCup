@@ -54,7 +54,7 @@ public class BlockNode extends SentencesNode {
         String trueTag = CuadrupleTable.getInstance().GetNextTag();
         String falseTag = CuadrupleTable.getInstance().GetNextTag();
 
-        CuadrupleTable.getInstance().AddCuadruplo(new IfWay("if",Condition,trueTag,"",""));
+        CuadrupleTable.getInstance().AddCuadruplo(new IfWay("if",Condition,"",trueTag));
         CuadrupleTable.getInstance().AddCuadruplo(new GotoWay("goto",falseTag));
 
 

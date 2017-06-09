@@ -34,7 +34,7 @@ public class GreatherOrEqualThanNode extends BinaryOperatorNode {
         String nameLabel = CuadrupleTable.getInstance().newLabel();
         String newTag = CuadrupleTable.getInstance().GetNextTag();
 
-        GreatherOrEqualThanWay groew = new GreatherOrEqualThanWay(">=", RightOperand.GenerateTreeDimensions(), newTag,
+        GreatherOrEqualThanWay groew = new GreatherOrEqualThanWay(">=", RightOperand.GenerateTreeDimensions(),
                 LeftOperand.GenerateTreeDimensions(), nameLabel);
         CuadrupleTable.getInstance().AddCuadruplo(groew);
         return nameLabel;

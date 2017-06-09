@@ -1,0 +1,288 @@
+
+import java.util.*;
+import Semantic.BaseType;
+import Semantic.SemanticSymbol;
+import Tree.Expression.DataType.*;
+import Tree.Expression.LiteralNodes.LiteralChar;
+import Tree.Expression.LiteralNodes.LiteralString;
+import Tree.Expression.LiteralNodes.NumberNode;
+import Tree.Sentences.Bucles.ForNode;
+import Tree.Sentences.Bucles.RepeatNode;
+import Tree.Sentences.Conditional.BlockNode;
+import Tree.Sentences.Conditional.IfNode;
+import Tree.Sentences.Declaration.ConstNode;
+import Tree.Sentences.Declaration.DeclarationNode;
+import Tree.Sentences.Declaration.Function.*;
+import java_cup.runtime.*;
+import java.util.*;
+import Tree.Expression.*;
+import Tree.BinaryOperator.*;
+import Tree.Sentences.Bucles.WhileNode;
+import Tree.Sentences.Declaration.AssignationNode;
+import Tree.Expression.BaseType.ExpressionNode;
+parser code {:
+    
+
+   
+
+
+
+    public HashMap<String,Integer> vars = new HashMap<String,Integer>();
+:};   
+terminal  SemanticSymbol      SEMI, PLUS, MINUS, TIMES, DIVIDE, LPAREN, RPAREN, EQUALS, PRINT, IF, LCURLY, RCURLY, ELSE, WHILE, LBRACK, RBRACK, OF, SCANF;
+terminal      SemanticSymbol      TO,FLOAT,CHAR,BOOLEAN,STRING, ARRAY,INTEGER, ASSIGMENT,CONST,TRUE,FALSE;
+terminal Integer   NUMBER;
+terminal String   ID,LIT_STRING;
+terminal char LIT_CHAR;
+terminal SemanticSymbol GREATERTHAN, LESSTHAN, LESSOREQUALTHAN, GREATEROREQUALTHAN, EQUALSEQUALS, NOTEQUALS,DOT, REPEAT;
+
+terminal SemanticSymbol VAR,FOR, PROGRAM,THEN,BEGIN,END,DO,FUNCTION,UNTIL, TYPE, RANGE;//Reserverd Words
+
+terminal SemanticSymbol COLON,COMMA, COMMENT;//Special Quotes
+
+non terminal Object declaration_list;
+non terminal BaseType Type;
+terminal SemanticSymbol PROCEDURE, EQUAL;
+non terminal List<SentencesNode>    program, Statement_list, BeginProgram, LoopBucle, SpecialSentences,LoopRepeat;
+non terminal SentencesNode Statement, SentencesRepeat,  SentencesDeclaration, ConstDeclaration, Assigment,SentencesIf, SentencesBucle, SentencesWhile,FunctionDeclaration,OptionalDeclaration,CallFunctionOrAssigment,ProcedureDeclaration, SentencesFor,  SentencesComment,ArrayDeclaration ;
+
+non terminal List<ExpressionNode> ListOfExpressions , OptionalExpression;
+
+non terminal ExpressionNode    expr, factor, term, sumfactor,TypeOfConst,id, ArrayId;
+non terminal BlockNode Block,SentencesElse;
+non terminal List<String> ListId, OptionalList;
+non terminal List<ParamsOfFunction> Params,ListParamFunction,OptionalListParams;
+non terminal ParamFunction;
+ //falta arreglos
+
+
+
+    program ::= BeginProgram Statement_list:sl {:RESULT = sl;  :}
+    ;
+
+    BeginProgram ::= PROGRAM ID SEMI
+    |
+    ;
+
+
+
+
+   Statement_list ::= Statement_list:slist Statement:st {:  slist.add(st); RESULT = slist; :}
+                 | {: List<SentencesNode> nodeList = new ArrayList<SentencesNode>(); RESULT = nodeList; :}
+                  ;
+   Statement ::= CallFunctionOrAssigment:st{:RESULT = st;:}
+                    |
+                    SentencesDeclaration:st{:RESULT= st; :}
+                    |
+                    ConstDeclaration:st {:RESULT = st;:}
+                    |
+                    SentencesIf:st {:RESULT = st;:}
+                    |
+                    SentencesWhile:wd {:RESULT = wd;:}
+                    |
+                    FunctionDeclaration:fd {:RESULT = fd;:}
+                    |
+                    ProcedureDeclaration:pd {:RESULT = pd;:}
+                    |
+                    SentencesRepeat:sr{:RESULT = sr;:}
+                    |
+                    SentencesFor:sf{:RESULT = sf;:}
+                    |
+                    SentencesComment {::}
+                    |
+                    ArrayDeclaration:  array {:RESULT = array;:};
+
+    ArrayDeclaration ::= TYPE:pos ID:id EQUAL ARRAY LBRACK expr:firstNumber  RANGE expr:secondNumber RBRACK  OF Type:type  SEMI  {: RESULT= new ArrayDeclaration(id,firstNumber,secondNumber,type, pos);:} ;
+//type linea = array [1..80] of string;
+    SentencesRepeat ::= REPEAT:repeat  LoopBucle:listSentences  UNTIL expr:condition SEMI:posCondition {:   condition.AddSymbol(posCondition);  RepeatNode node = new RepeatNode(condition,listSentences,repeat); RESULT= node;:};
+
+
+
+   ProcedureDeclaration ::= PROCEDURE:pro ID:id Params:params  SEMI LoopBucle:listOfSentences {: ProcedureDeclaration node = new ProcedureDeclaration(params,id, listOfSentences , pro); RESULT=node;:};
+
+   CallFunctionOrAssigment ::=  ID:id ASSIGMENT:AssigPos expr:e SEMI:ExpPos {:e.AddSymbol(ExpPos); IdNode idNode = new IdNode(id); = new AssignationNode(idNode,e,AssigPos);:} |
+                                ArrayId:id ASSIGMENT:AssigPos expr:e SEMI:ExpPos {:e.AddSymbol(ExpPos);   RESULT = new AssignationNode(id,e,AssigPos);:} |
+                                ID:id LPAREN:funcPos ListOfExpressions:listId RPAREN SEMI {:RESULT = new  CallFunction(id,listId,funcPos); :};
+
+
+   ArrayId ::= ID:id LBRACK expr:value RBRACK {: RESULT = new IdArray(id, value);:};
+
+ListOfExpressions ::= expr:exp OptionalExpression:listExp {: listExp.add(exp); RESULT = listExp;:};
+
+OptionalExpression ::=  COMMA ListOfExpressions:listExp {:RESULT = listExp;:}
+                   |{: List<ExpressionNode> node = new ArrayList<ExpressionNode>(); RESULT = node;:};
+
+FunctionDeclaration ::= FUNCTION:functPos ID:nameOfFunction Params:listParams COLON Type:Type  SEMI  SentencesDeclaration:opDeclaration LoopBucle:ListOfSentences {:FunctionDeclaration node = new FunctionDeclaration(listParams,Type,ListOfSentences,opDeclaration, nameOfFunction, functPos); RESULT = node;:};
+
+
+Params ::= LPAREN ListParamFunction: list {:RESULT =list;:} RPAREN;
+
+
+
+ListParamFunction ::= VAR:posParams ListId:listId COLON  Type:type  OptionalListParams:listParams  {:;ParamsOfFunction params = new ParamsOfFunction(true,listId,type, posParams); listParams.add(params); RESULT =listParams;:}|
+                     ListId:listId COLON:paramPos Type:type  OptionalListParams:listParams {:ParamsOfFunction params = new ParamsOfFunction(false,listId,type,paramPos); listParams.add(params); RESULT =listParams;:} |
+                     {: List<ParamsOfFunction> list = new ArrayList<>(); RESULT= list;:};
+
+
+OptionalListParams ::= SEMI ListParamFunction:listParams {:RESULT =listParams;:} |
+                {: List<ParamsOfFunction> list = new ArrayList<>(); RESULT= list;:};
+
+SentencesIf::= IF:ifPos  expr:exp  THEN:expPos Block:block  {: exp.AddSymbol(expPos); IfNode node = new IfNode(exp,block,ifPos); RESULT = node; :};
+
+SentencesWhile ::= WHILE:whilePos expr:exp DO LoopBucle:loopbucle {:WhileNode node = new WhileNode(exp, loopbucle,whilePos); RESULT = node; :};
+
+SentencesFor ::= FOR:forPos ID:firstId  ASSIGMENT expr:expresion TO expr:expression DO:expPos LoopBucle:bucle {:expression.AddSymbol(expPos); ForNode fornode = new ForNode(firstId,expresion, expression, bucle,forPos); RESULT = fornode;:};
+
+SentencesComment ::= COMMENT {::};
+
+LoopBucle::=         SentencesBucle:sentencesBucle {:List<SentencesNode> list = new ArrayList<SentencesNode>(); list.add(sentencesBucle); RESULT = list;:}
+                     |
+                     BEGIN  SpecialSentences:specialsentences END SEMI {:RESULT = specialsentences;:};
+
+SentencesBucle ::=  SentencesDeclaration:sentencesdeclaration {:RESULT = sentencesdeclaration;:}
+                    |
+                    SentencesIf:sentencesif {:RESULT = sentencesif;:}
+                    |
+                    SentencesWhile:sentenceswhile {:RESULT = sentenceswhile;:}
+                    |
+                    CallFunctionOrAssigment:st{:RESULT = st;:}
+
+                    |
+                    ConstDeclaration:st {:RESULT = st;:}
+                    |
+                    SentencesRepeat:sr {:RESULT=sr;:}
+                    |
+                    SentencesFor:sf {:RESULT = sf;:}
+                    |
+                    SentencesComment {::};
+
+SpecialSentences ::= SpecialSentences:specialSentences  SentencesBucle:sentenceBucle{:specialSentences.add(sentenceBucle); RESULT = specialSentences; :}
+                     | {:List<SentencesNode>  nodelist = new ArrayList<SentencesNode>(); RESULT = nodelist;:};
+
+
+ Block::= Statement:s {: BlockNode node = new BlockNode(s); RESULT = node;:}
+          |
+          BEGIN Statement_list:tc END SEMI SentencesElse:fc {: BlockNode node = new BlockNode(tc,fc); RESULT = node;:};
+
+
+ SentencesElse ::= ELSE  Block:bc {:  RESULT = bc;:}
+                   |
+                   {:BlockNode node = new  BlockNode(); RESULT = node; :};
+
+
+SentencesDeclaration ::=   VAR ListId:ls COLON Type:typ SEMI:symbol {:DeclarationNode declaration = new DeclarationNode(ls,typ,symbol); RESULT = declaration;:};
+
+ConstDeclaration ::= CONST:constPos ID:id ASSIGMENT TypeOfConst:tc SEMI  {: ConstNode node = new ConstNode(id,tc,constPos); RESULT= node;:} ;
+
+TypeOfConst ::= LIT_CHAR:ltc {:LiteralChar nodo = new LiteralChar(ltc); RESULT = nodo;:}
+                |
+                LIT_STRING:lts {:LiteralString nodo = new LiteralString(lts);RESULT = nodo;:};
+
+   OptionalList ::= COMMA ListId:ls {: RESULT = ls;:}
+                 |{:ArrayList<String> ls = new ArrayList<String>();RESULT= ls; :};
+
+    ListId ::= ID:id OptionalList:ls {:ls.add(id); RESULT= ls;:}
+                    |;
+
+   expr      ::= expr:e GREATERTHAN sumfactor:f {: RESULT = new GreaterThanNode(f,e); :}
+                | expr:e LESSTHAN sumfactor:f {: RESULT = new LessThanNode(f,e); :}
+                | expr:e GREATEROREQUALTHAN sumfactor:f {: RESULT = new GreatherOrEqualThanNode (f,e); :}
+                | expr:e LESSOREQUALTHAN sumfactor:f {: RESULT = new LessOrEqualThanNode(f,e); :}
+                | expr:e EQUALSEQUALS sumfactor:f {: RESULT = new EqualsNode(f,e); :}
+                | expr:e NOTEQUALS sumfactor:f {: RESULT = new NotEqualsNode(f,e); :}
+                | sumfactor:f {: RESULT = f; :}
+                ;
+
+<<<<<<< HEAD
+   sumfactor ::= sumfactor:e PLUS factor:f
+                 {: RESULT = new SumNode(f,e); :}
+=======
+  sumfactor ::= sumfactor:e PLUS factor:f
+                {: RESULT = new SumNode(f,e);:}
+>>>>>>> 3ways
+                 |sumfactor:e MINUS factor:f
+                 {: RESULT = new SubNode(f,e); :}
+                 |
+<<<<<<< HEAD
+                 factor:f
+                 {: RESULT = f; :}
+                 ;
+   factor    ::= factor:f TIMES term:t
+                 {: RESULT = new MultNode(t,f); :}
+=======
+                 factor :f {:
+                  RESULT = f;
+                 :};
+
+  factor    ::= factor:f TIMES term:t
+              {: RESULT = new MultNode(t,f);:}
+>>>>>>> 3ways
+                 |
+                 factor:f DIVIDE term:t
+                 {: RESULT = new DivNode(t,f); :}
+                 |
+                 term:t
+                 {: RESULT = t; :}
+                 ;
+
+   term      ::= LPAREN expr:e RPAREN
+                 {: RESULT = e; :}
+                 |
+                 NUMBER:n
+                 {: RESULT = new NumberNode(n); :}
+                 |
+                 id:i
+                 {: RESULT = i; :}
+                 |
+                 LIT_STRING:lts {:LiteralString node = new LiteralString(lts); RESULT = node;:}
+                 |
+                 LIT_CHAR:ltc {:LiteralChar node = new LiteralChar(ltc);:}
+                 ;
+
+<<<<<<< HEAD
+      id        ::= ID:id {:RESULT = new IdNode(id);:} |
+
+                    ID:id LPAREN ListOfExpressions:listId RPAREN  {:RESULT = new   CallFunctionExpression(id,listId); :}|
+                    ID:name LBRACK expr:value RBRACK  {:RESULT = new IdArray (name, value);:};
+
+
+
+
+  Type ::=
+             CHAR {: CharNode node = new CharNode(); RESULT = node;:}
+            | BOOLEAN  {: BooleanType node = new BooleanType(); RESULT= node;:}
+            | STRING {: StringNode node= new StringNode(); RESULT= node;:}|
+             INTEGER {: IntNode node =  new IntNode(); RESULT = node; :};
+=======
+  term      ::= LPAREN expr :e RPAREN {:
+                RESULT = e;
+                :}
+
+                 | ID :i {: RESULT = new IdNode(i);:}
+
+                 | NUMBER :n  {:   RESULT = new IntNode(n);:}
+                 | LITSTRING :s {:   RESULT  = new LiteralString(s); :}
+                 | LITRCHAR:c {:   RESULT  = new LiteralChar(c);:} ;
+
+   OptionalCallFunction ::= CallFunction |;
+
+   FunctionDeclaration ::= FUNCTION ID Params COLON Types  SEMI LoopBucle;
+
+
+   Params ::=  LPAREN ListId COLON Types RPAREN;
+
+   Block  ::= BEGIN ListOfSentences END SEMI;
+
+   SentencesDeclaration ::= VAR ListId  COLON  Types SEMI;
+
+  OptionalList ::= COMMA ListId
+                 |;
+
+  ListId ::= ID OptionalList
+                    |;
+
+  Types ::=  ID |
+                INTEGER |
+                STRING|
+                CHAR;
+>>>>>>> 3ways

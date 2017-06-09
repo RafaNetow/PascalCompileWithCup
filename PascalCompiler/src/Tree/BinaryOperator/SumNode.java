@@ -26,8 +26,8 @@ public class SumNode extends BinaryOperatorNode {
     public String GenerateTreeDimensions() {
         SumWay sw;
         String nameLabel = CuadrupleTable.getInstance().newLabel();
-        String nameTag = CuadrupleTable.getInstance().GetNextTag();
-        sw = new SumWay("+", this.RightOperand.GenerateTreeDimensions(), nameTag, this.LeftOperand.GenerateTreeDimensions(),                       nameLabel);
+
+        sw = new SumWay("+", this.RightOperand.GenerateTreeDimensions(), this.LeftOperand.GenerateTreeDimensions(),                       nameLabel);
         CuadrupleTable.getInstance().AddCuadruplo(sw);
         return nameLabel;
     }
