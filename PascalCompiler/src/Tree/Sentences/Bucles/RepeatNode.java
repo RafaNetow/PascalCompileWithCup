@@ -6,6 +6,8 @@ import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.BooleanType;
 import Tree.Expression.SentencesNode;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.TagWay;
 
 import java.util.List;
 
@@ -39,6 +41,14 @@ public class RepeatNode extends SentencesNode {
 
     @Override
     public String GenrarTresDirecciones(String siguiente) {
+
+        CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",siguiente));
+        String  repeatLogic = CuadrupleTable.getInstance().GetNextTag();
+
+        for (SentencesNode sentencesNode : ListSentences){
+
+        }
+
         return null;
     }
 }

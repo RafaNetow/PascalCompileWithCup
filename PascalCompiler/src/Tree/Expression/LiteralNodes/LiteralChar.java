@@ -18,6 +18,6 @@ public class LiteralChar extends ExpressionNode {
 
     @Override
     public String GenerateTreeDimensions() {
-        return null;
+        return String.valueOf(Id);
     }
 }

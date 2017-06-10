@@ -19,6 +19,8 @@ public class LiteralString extends ExpressionNode {
 
     @Override
     public String GenerateTreeDimensions() {
-        return null;
+
+
+         return  value;
     }
 }
