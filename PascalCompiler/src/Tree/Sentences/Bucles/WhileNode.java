@@ -57,7 +57,10 @@ public class WhileNode extends SentencesNode {
           CuadrupleTable.getInstance().AddCuadruplo(new IfWay("if",whileResult,"",trueResult));
           CuadrupleTable.getInstance().AddCuadruplo(new GotoWay("goto",siguienteEtiquieta));
           CuadrupleTable.getInstance().AddCuadruplo(new TagWay("label",trueResult));
-          String currentSig = siguiente;
+
+        String labelWhenIGoingToJump = CuadrupleTable.getInstance().GetNextTag();
+        CuadrupleTable.getInstance().AddCuadruplo( new GotoWay("goto",labelWhenIGoingToJump));
+        String currentSig = labelWhenIGoingToJump;
         for (SentencesNode sentences: ListSentences
              ) {
               currentSig=  sentences.GenrarTresDirecciones(currentSig);

@@ -2,6 +2,8 @@
 
 program codeDeclaration;
 
+while a<2
+
 type linea = array [1..80] of integer;
 
  var arraytest : string;
