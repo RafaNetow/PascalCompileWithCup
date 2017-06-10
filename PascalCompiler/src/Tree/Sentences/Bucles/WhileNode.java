@@ -50,12 +50,12 @@ public class WhileNode extends SentencesNode {
 
 
     {
-        String whileEtiqueta =    CuadrupleTable.getInstance().GetNextTag();
+        String siguienteEtiquieta =    CuadrupleTable.getInstance().GetNextTag();
         String trueResult = CuadrupleTable.getInstance().GetNextTag();
-          CuadrupleTable.getInstance().AddCuadruplo(new TagWay("label",whileEtiqueta));
+          CuadrupleTable.getInstance().AddCuadruplo(new TagWay("label",siguiente));
           String whileResult=  this.WhileCondition.GenerateTreeDimensions();
           CuadrupleTable.getInstance().AddCuadruplo(new IfWay("if",whileResult,"",trueResult));
-          CuadrupleTable.getInstance().AddCuadruplo(new GotoWay("goto",siguiente));
+          CuadrupleTable.getInstance().AddCuadruplo(new GotoWay("goto",siguienteEtiquieta));
           CuadrupleTable.getInstance().AddCuadruplo(new TagWay("label",trueResult));
           String currentSig = siguiente;
         for (SentencesNode sentences: ListSentences
@@ -63,9 +63,9 @@ public class WhileNode extends SentencesNode {
               currentSig=  sentences.GenrarTresDirecciones(currentSig);
         }
 
+        CuadrupleTable.getInstance().AddCuadruplo( new GotoWay("goto",siguiente));
 
-
-        return null;
+        return siguienteEtiquieta;
     }
 
     public  WhileNode(ExpressionNode expressionnode, List<SentencesNode> listasecuencia, SemanticSymbol symbol){
