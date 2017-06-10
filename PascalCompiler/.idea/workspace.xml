@@ -77,8 +77,8 @@
       <file leaf-file-name="LiteralChar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/LiteralChar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state relative-caret-position="255">
+              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#295#296#0" expanded="true" />
@@ -92,41 +92,43 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CharNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/CharNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Literal.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/Literal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="IdArray.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/IdArray.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-              <folding />
+            <state relative-caret-position="390">
+              <caret line="39" column="28" lean-forward="false" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WhileNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Bucles/WhileNode.java">
+      <file leaf-file-name="BooleanType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/BooleanType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="codeDeclaration.pas" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/codeDeclaration.pas">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AssignationNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tree/Sentences/Declaration/AssignationNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -191,7 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Tree/Sentences/Bucles/ForNode.java" />
         <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/CallFunctionExpression.java" />
         <option value="$PROJECT_DIR$/src/Tree/Expression/SentencesNode.java" />
         <option value="$PROJECT_DIR$/src/Tree/Sentences/Declaration/Function/CallFunction.java" />
@@ -241,6 +242,7 @@
         <option value="$PROJECT_DIR$/src/Tree/Sentences/Bucles/RepeatNode.java" />
         <option value="$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/LiteralString.java" />
         <option value="$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/LiteralChar.java" />
+        <option value="$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/Literal.java" />
         <option value="$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/IdArray.java" />
       </list>
     </option>
@@ -1015,12 +1017,12 @@
       <workItem from="1496250952774" duration="18618000" />
       <workItem from="1496717716465" duration="2960000" />
       <workItem from="1496942372071" duration="2359000" />
-      <workItem from="1496944970577" duration="15103000" />
+      <workItem from="1496944970577" duration="18739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388742000" />
+    <option name="totallyTimeSpent" value="392378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1106,7 +1108,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/IdArray.java</url>
-          <line>24</line>
+          <line>25</line>
           <properties />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
@@ -1139,22 +1141,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Semantic/SymbolTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="46" column="19" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/Default.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/ConstType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1264,21 +1250,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/BooleanType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TreeWaysCode/AndOpWay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
           <folding>
-            <element signature="e#203#204#0" expanded="true" />
-            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#203#204#0" expanded="false" />
+            <element signature="e#254#255#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1288,8 +1266,8 @@
         <state relative-caret-position="119">
           <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
-            <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#257#258#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="false" />
+            <element signature="e#257#258#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1323,8 +1301,8 @@
         <state relative-caret-position="119">
           <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
-            <element signature="e#205#206#0" expanded="true" />
-            <element signature="e#256#257#0" expanded="true" />
+            <element signature="e#205#206#0" expanded="false" />
+            <element signature="e#256#257#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1406,8 +1384,8 @@
         <state relative-caret-position="119">
           <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
           <folding>
-            <element signature="e#204#205#0" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="false" />
+            <element signature="e#255#256#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1449,8 +1427,8 @@
         <state relative-caret-position="119">
           <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
           <folding>
-            <element signature="e#201#202#0" expanded="true" />
-            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="false" />
+            <element signature="e#252#253#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1460,8 +1438,8 @@
         <state relative-caret-position="102">
           <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
           <folding>
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
+            <element signature="e#200#201#0" expanded="false" />
+            <element signature="e#251#252#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1479,8 +1457,8 @@
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
+            <element signature="e#200#201#0" expanded="false" />
+            <element signature="e#251#252#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1565,10 +1543,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/BooleanType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/DataType/CharNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/LiteralChar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        <state relative-caret-position="255">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#295#296#0" expanded="true" />
@@ -1581,11 +1575,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/Literal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tree/Expression/LiteralNodes/IdArray.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="390">
+          <caret line="39" column="28" lean-forward="false" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
