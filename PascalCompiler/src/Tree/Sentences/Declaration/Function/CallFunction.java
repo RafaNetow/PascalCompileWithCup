@@ -7,6 +7,9 @@ import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.FunctionType;
 import Tree.Expression.DataType.ProcedureType;
 import Tree.Expression.SentencesNode;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.GotoWay;
+import TreeWaysCode.TagWay;
 import com.sun.org.apache.bcel.internal.generic.LLOAD;
 
 import java.util.List;
@@ -76,6 +79,16 @@ public class CallFunction extends SentencesNode {
 
     @Override
     public String GenrarTresDirecciones(String siguiente) {
-        return null;
+
+        String tagToJump = CuadrupleTable.getInstance().GetNextTag();
+        CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",siguiente));
+        for (ExpressionNode sentence:
+             ListOfParams) {
+        CuadrupleTable.getInstance().AddCuadruplo( new ParamWay("param",sentence.GenerateTreeDimensions()));
+        CuadrupleTable.getInstance().AddCuadruplo(new CallFuntionWay("call", this.NameOfFunction));
+        }
+
+        CuadrupleTable.getInstance().AddCuadruplo( new GotoWay("goto",tagToJump));
+        return tagToJump;
     }
 }

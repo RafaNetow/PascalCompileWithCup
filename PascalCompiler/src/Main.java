@@ -22,12 +22,12 @@ public class Main {
                  result) {
                 sentence.ValidateSemantic();
             }
-
+         String currentTag=   CuadrupleTable.getInstance().GetNextTag();
             for (SentencesNode sentence:
                  result) {
-                sentence.GenrarTresDirecciones("first");
+               currentTag= sentence.GenrarTresDirecciones(currentTag);
             }
-        Context table = Context.getInstance();
+            Context table = Context.getInstance();
             CuadrupleTable ctable = CuadrupleTable.getInstance();
             System.out.println(code);
 

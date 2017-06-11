@@ -34,7 +34,7 @@ public class IdArray extends IdNode {
     @Override
     public String GenerateTreeDimensions() {
         String saveResult =  CuadrupleTable.getInstance().newLabel();
-        CuadrupleTable.getInstance().AddCuadruplo( new MultiWay("*",String.valueOf(Value.ValidateSemmantic()),GetValueForBase(),saveResult));
+        CuadrupleTable.getInstance().AddCuadruplo( new MultiWay("*",String.valueOf(Value.GenerateTreeDimensions()),GetValueForBase(),saveResult));
         String valueToReturn = CuadrupleTable.getInstance().newLabel();
         CuadrupleTable.getInstance().AddCuadruplo( new AssigantionWay("=",valueToReturn,value+"["+saveResult+"]"));
         return valueToReturn;
@@ -44,13 +44,14 @@ public class IdArray extends IdNode {
     public String  GetValueForBase( ){
         if(this.ValidateSemmantic() instanceof CharNode)
             return  "2";
-        if(this.ValidateSemmantic() instanceof IntNode){
+        if(this.ValidateSemmantic() instanceof IntNode)
             return  "4";
             if(this.ValidateSemmantic() instanceof  BooleanType)
             return  "2";
+
             if(this.ValidateSemmantic() instanceof  StringNode)
                 return String.valueOf(((LiteralString) Value).value.length());
+        return "0";
 
-        }
     }
 }

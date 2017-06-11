@@ -42,6 +42,7 @@ public class RepeatNode extends SentencesNode {
     @Override
     public String GenrarTresDirecciones(String siguiente) {
 
+
         CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",siguiente));
         String  repeatLogic = CuadrupleTable.getInstance().GetNextTag();
 
