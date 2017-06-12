@@ -28,6 +28,6 @@ public class ConstNode extends SentencesNode {
 
     @Override
     public String GenrarTresDirecciones(String siguiente) {
-        return null;
+        return siguiente;
     }
 }

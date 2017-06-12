@@ -59,6 +59,6 @@ public class FunctionDeclaration extends SentencesNode {
 
     @Override
     public String GenrarTresDirecciones(String siguiente) {
-        return null;
+        return siguiente;
     }
 }

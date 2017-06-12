@@ -33,6 +33,10 @@ public class ForNode extends SentencesNode {
     public void ValidateSemantic() {
 
         Context.getInstance().Stack.push( new SymbolTable());
+        if(SymbolTable.getInstance().getType(Id) instanceof  IntNode){
+            System.out.println("Error line :"+Symbol.Row + "column: "+Symbol.Column +  " ID:"+ this.Id+ "Isn't a integer" );
+        }
+
         if(FirstCondition.ValidateSemmantic() instanceof IntNode) {
 
         }else{
@@ -59,11 +63,15 @@ public class ForNode extends SentencesNode {
 
         String nextJump = CuadrupleTable.getInstance().GetNextTag();
         String trueLabel = CuadrupleTable.getInstance().GetNextTag();
-        String count = CuadrupleTable.getInstance().newLabel();
-        CuadrupleTable.getInstance().AddCuadruplo( new InitCount("count",count,FirstCondition.GenerateTreeDimensions()));
-        CuadrupleTable.getInstance().AddCuadruplo(new TagWay("label",siguiente));
+        String initFor = CuadrupleTable.getInstance().GetNextTag();
+
+        CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",siguiente));
+        CuadrupleTable.getInstance().AddCuadruplo( new AssigantionWay("=",Id,FirstCondition.GenerateTreeDimensions()));
+        CuadrupleTable.getInstance().AddCuadruplo( new GotoWay("goto",initFor));
+
+        CuadrupleTable.getInstance().AddCuadruplo(new TagWay("label",initFor));
         String resultCondition = CuadrupleTable.getInstance().newLabel();
-        CuadrupleTable.getInstance().AddCuadruplo( new LessThanWay("<",count,SecondCondition.GenerateTreeDimensions(),resultCondition));
+        CuadrupleTable.getInstance().AddCuadruplo( new LessThanWay("<",Id,SecondCondition.GenerateTreeDimensions(),resultCondition));
 
         CuadrupleTable.getInstance().AddCuadruplo( new IfWay("if",resultCondition,"",trueLabel));
         CuadrupleTable.getInstance().AddCuadruplo( new GotoWay("goto",nextJump));
@@ -75,8 +83,8 @@ public class ForNode extends SentencesNode {
             currentSig=  sentences.GenrarTresDirecciones(currentSig);
         }
         CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",currentSig));
-        CuadrupleTable.getInstance().AddCuadruplo(new SumWay("+",count,"1",count));
-        CuadrupleTable.getInstance().AddCuadruplo( new GotoWay("goto",siguiente));
+        CuadrupleTable.getInstance().AddCuadruplo(new SumWay("+",Id,"1",Id));
+        CuadrupleTable.getInstance().AddCuadruplo( new GotoWay("goto",initFor));
 
 
         return nextJump;

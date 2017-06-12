@@ -4,6 +4,9 @@ import Semantic.SymbolTable;
 import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.DefaultType;
 import Tree.Expression.DataType.FunctionType;
+import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.GotoWay;
+import TreeWaysCode.TagWay;
 import sun.reflect.generics.tree.BaseType;
 
 import java.util.List;
@@ -69,6 +72,13 @@ public class CallFunctionExpression extends ExpressionNode {
 
     @Override
     public String GenerateTreeDimensions() {
-        return null;
+        String tagToJump = CuadrupleTable.getInstance().GetNextTag();
+
+        for (ExpressionNode sentence:
+                ListOfParams) {
+            CuadrupleTable.getInstance().AddCuadruplo( new ParamWay("param",sentence.GenerateTreeDimensions()));
+            CuadrupleTable.getInstance().AddCuadruplo(new CallFuntionWay("call", this.NameOfFunction));
+        }
+        return tagToJump;
     }
 }

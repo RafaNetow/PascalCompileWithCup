@@ -32,7 +32,7 @@ public class ArrayDeclaration extends SentencesNode
 
     @Override
     public String GenrarTresDirecciones(String siguiente) {
-        return null;
+        return siguiente;
     }
 
 

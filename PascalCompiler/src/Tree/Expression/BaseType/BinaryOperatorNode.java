@@ -20,10 +20,10 @@ public  abstract class BinaryOperatorNode extends ExpressionNode{
          this.RightOperand = rightOperand;
          this.LeftOperand = leftOperand;
     }
-
+//a = 2+4;
     public  Semantic.BaseType ValidateSemmantic(){
         Semantic.BaseType leftType = RightOperand.ValidateSemmantic();
-        Semantic.BaseType righftType = RightOperand.ValidateSemmantic();
+        Semantic.BaseType righftType = LeftOperand.ValidateSemmantic();
 
   if( leftType instanceof IntNode && righftType instanceof  IntNode){
       return new IntNode();

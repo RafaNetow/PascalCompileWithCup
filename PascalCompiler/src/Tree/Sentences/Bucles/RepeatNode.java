@@ -7,6 +7,8 @@ import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.BooleanType;
 import Tree.Expression.SentencesNode;
 import TreeWaysCode.CuadrupleTable;
+import TreeWaysCode.GotoWay;
+import TreeWaysCode.IfWay;
 import TreeWaysCode.TagWay;
 
 import java.util.List;
@@ -43,14 +45,24 @@ public class RepeatNode extends SentencesNode {
     public String GenrarTresDirecciones(String siguiente) {
 
 
-        CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",siguiente));
+        String  nextJump = CuadrupleTable.getInstance().GetNextTag();
         String  repeatLogic = CuadrupleTable.getInstance().GetNextTag();
+        CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",siguiente));
+        CuadrupleTable.getInstance().AddCuadruplo( new GotoWay("goto",repeatLogic));
+        CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",repeatLogic));
+      String currentSiguiente=  CuadrupleTable.getInstance().GetNextTag();
 
         for (SentencesNode sentencesNode : ListSentences){
-
+       currentSiguiente=sentencesNode.GenrarTresDirecciones(currentSiguiente);
         }
+        CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",currentSiguiente));
+        String conditionResul = Condition.GenerateTreeDimensions();
+        CuadrupleTable.getInstance().AddCuadruplo( new IfWay("if",conditionResul,"",siguiente));
+        CuadrupleTable.getInstance().AddCuadruplo( new GotoWay("goto",nextJump));
 
-        return null;
+
+
+        return nextJump;
     }
 }
 
