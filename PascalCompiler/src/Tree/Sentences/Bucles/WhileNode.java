@@ -66,6 +66,7 @@ public class WhileNode extends SentencesNode {
               currentSig=  sentences.GenrarTresDirecciones(currentSig);
         }
 
+        CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",currentSig));
         CuadrupleTable.getInstance().AddCuadruplo( new GotoWay("goto",siguiente));
 
         return siguienteEtiquieta;

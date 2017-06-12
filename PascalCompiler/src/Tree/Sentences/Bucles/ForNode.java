@@ -7,6 +7,7 @@ import Tree.Expression.BaseType.ExpressionNode;
 import Tree.Expression.DataType.BooleanType;
 import Tree.Expression.DataType.IntNode;
 import Tree.Expression.SentencesNode;
+import TreeWaysCode.*;
 import javafx.beans.binding.IntegerExpression;
 
 import java.util.List;
@@ -54,6 +55,30 @@ public class ForNode extends SentencesNode {
 
     @Override
     public String GenrarTresDirecciones(String siguiente) {
-        return null;
+
+
+        String nextJump = CuadrupleTable.getInstance().GetNextTag();
+        String trueLabel = CuadrupleTable.getInstance().GetNextTag();
+        String count = CuadrupleTable.getInstance().newLabel();
+        CuadrupleTable.getInstance().AddCuadruplo( new InitCount("count",count,FirstCondition.GenerateTreeDimensions()));
+        CuadrupleTable.getInstance().AddCuadruplo(new TagWay("label",siguiente));
+        String resultCondition = CuadrupleTable.getInstance().newLabel();
+        CuadrupleTable.getInstance().AddCuadruplo( new LessThanWay("<",count,SecondCondition.GenerateTreeDimensions(),resultCondition));
+
+        CuadrupleTable.getInstance().AddCuadruplo( new IfWay("if",resultCondition,"",trueLabel));
+        CuadrupleTable.getInstance().AddCuadruplo( new GotoWay("goto",nextJump));
+
+        CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",trueLabel));
+        String currentSig = CuadrupleTable.getInstance().GetNextTag();
+        for (SentencesNode sentences: this.listOfSentences
+                ) {
+            currentSig=  sentences.GenrarTresDirecciones(currentSig);
+        }
+        CuadrupleTable.getInstance().AddCuadruplo( new TagWay("label",currentSig));
+        CuadrupleTable.getInstance().AddCuadruplo(new SumWay("+",count,"1",count));
+        CuadrupleTable.getInstance().AddCuadruplo( new GotoWay("goto",siguiente));
+
+
+        return nextJump;
     }
 }
